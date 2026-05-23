@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IT Consulting — SoftFlex</title>
+  <meta name="description" content="Strategic technology advisory: architecture review, stack selection, digital transformation planning, and vendor evaluation for growth-stage companies.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="page-glow">
+
+<div class="grid-overlay"></div>
+
+<!-- ── NAV ───────────────────────────────────────────────────── -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">
+      <svg width="28" height="28" viewBox="0 0 80 80" fill="none" aria-hidden="true">
+        <defs><linearGradient id="lg1" x1="0" y1="0" x2="80" y2="80" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#4F8CFF"/><stop offset="100%" stop-color="#3DD9FF"/></linearGradient></defs>
+        <rect x="6" y="6" width="32" height="32" rx="8" fill="url(#lg1)" opacity="0.95"/>
+        <rect x="42" y="6" width="32" height="32" rx="8" fill="none" stroke="url(#lg1)" stroke-width="5"/>
+        <rect x="6" y="42" width="32" height="32" rx="8" fill="none" stroke="url(#lg1)" stroke-width="5"/>
+        <rect x="42" y="42" width="32" height="32" rx="8" fill="url(#lg1)" opacity="0.95"/>
+      </svg>
+      <span>SoftFlex</span>
+    </a>
+    <ul class="nav-links">
+      <li class="nav-item">
+        <a href="#" class="nav-link active">Services <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="mega-menu">
+          <div class="mega-card"><a href="web-mobile.html"><div class="mega-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><h4>Web & Mobile Dev</h4><p>Full-cycle development from scoping to deployment.</p></a></div>
+          <div class="mega-card"><a href="qa-testing.html"><div class="mega-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div><h4>QA & Testing</h4><p>End-to-end QA to ship reliable software.</p></a></div>
+          <div class="mega-card" style="background:var(--bg-elevated);border-color:rgba(79,140,255,0.25);"><a href="it-consulting.html"><div class="mega-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg></div><h4>IT Consulting</h4><p>Strategic technology advisory for your goals.</p></a></div>
+        </div>
+      </li>
+      <li><a href="../industries.html" class="nav-link">Industries</a></li>
+      <li><a href="../case-studies.html" class="nav-link">Case Studies</a></li>
+      <li><a href="../contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-cta"><a href="../contact.html" class="btn btn-primary btn-sm">Get in touch</a></div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- Mobile nav -->
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-links">
+    <button class="mobile-accordion-toggle" id="mobileServicesToggle">Services <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <div class="mobile-accordion-body" id="mobileServicesBody">
+      <a href="web-mobile.html" class="mobile-service-link">Web & Mobile Dev</a>
+      <a href="qa-testing.html" class="mobile-service-link">QA & Testing</a>
+      <a href="it-consulting.html" class="mobile-service-link">IT Consulting</a>
+    </div>
+    <a href="../industries.html" class="mobile-nav-link">Industries</a>
+    <a href="../case-studies.html" class="mobile-nav-link">Case Studies</a>
+    <a href="../contact.html" class="mobile-nav-link">Contact</a>
+  </div>
+  <div class="mobile-nav-footer"><a href="../contact.html" class="btn btn-primary" style="width:100%;justify-content:center;">Get in touch</a></div>
+</div>
+
+<!-- ── HERO ──────────────────────────────────────────────────── -->
+<header class="hero">
+  <div class="container">
+    <span class="hero-eyebrow"><span class="dot"></span>IT Consulting</span>
+    <h1 class="hero-title">Technology decisions<br>that <span class="serif">age well</span></h1>
+    <p class="hero-subtitle">Strategy before execution. We help you assess your current stack, evaluate your options, and make architecture decisions you won't regret two years from now.</p>
+    <div class="hero-actions">
+      <a href="../contact.html" class="btn btn-primary btn-lg">Start a conversation</a>
+      <a href="../case-studies.html" class="btn btn-secondary btn-lg">See our work</a>
+    </div>
+  </div>
+</header>
+
+<!-- ── WHEN YOU NEED IT ──────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">When it applies</span>
+      <h2 class="section-title">Companies call us when the path forward isn't clear</h2>
+      <p class="section-subtitle">You don't always need more code. Sometimes you need a second opinion on the architecture, an independent assessment of a vendor proposal, or a clear view of what a rewrite actually involves.</p>
+    </div>
+    <div class="diff-grid">
+      <div class="diff-item">
+        <div class="diff-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <h4>Starting a new product</h4>
+        <p>You need a stack decision and architecture blueprint before writing the first line. We'll help you choose well.</p>
+      </div>
+      <div class="diff-item">
+        <div class="diff-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3l18 18M10.5 10.677a2 2 0 102.823 2.823"/><path d="M7.362 7.561C5.68 8.74 4.279 10.42 3 12c1.889 2.991 5.282 6 9 6 1.55 0 3.043-.523 4.395-1.35M12 6c3.392 0 6.235 2.354 8.714 5.518"/></svg></div>
+        <h4>Evaluating a rewrite</h4>
+        <p>Your team says the codebase needs to be rewritten. We'll give you an independent assessment of whether that's true and what it actually involves.</p>
+      </div>
+      <div class="diff-item">
+        <div class="diff-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <h4>Scaling infrastructure</h4>
+        <p>You're growing faster than your architecture was designed for. We identify the bottlenecks and the right path to scale.</p>
+      </div>
+      <div class="diff-item">
+        <div class="diff-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-4 0v2"/><circle cx="12" cy="14" r="2"/></svg></div>
+        <h4>Vendor or platform selection</h4>
+        <p>You have 3 vendors shortlisted and need an independent technical evaluation. We've done this before — in your industry.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONSULTING SERVICES ───────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">What we cover</span>
+      <h2 class="section-title">Five consulting services, clearly scoped</h2>
+    </div>
+    <div class="capabilities-grid">
+      <div class="capability-item">
+        <div class="cap-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg></div>
+        <h4>Technology assessment</h4>
+        <p>A structured review of your current stack, architecture, processes, and team capabilities. Output: written findings and ranked recommendations.</p>
+      </div>
+      <div class="capability-item">
+        <div class="cap-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+        <h4>Architecture review</h4>
+        <p>We examine your system design for scalability, security, and maintainability risks. Identify problems before they become production incidents.</p>
+      </div>
+      <div class="capability-item">
+        <div class="cap-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <h4>Stack selection</h4>
+        <p>Framework-agnostic evaluation of technology options against your specific requirements, team skill set, and long-term roadmap.</p>
+      </div>
+      <div class="capability-item">
+        <div class="cap-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3l18 18"/><path d="M7.5 7.5a2 2 0 013 2 2 2 0 012 3M8 16a2 2 0 012-2h4a2 2 0 012 2v2a2 2 0 01-2 2h-4a2 2 0 01-2-2v-2z"/></svg></div>
+        <h4>Digital transformation planning</h4>
+        <p>A phased roadmap for modernizing your technology operations — prioritized by business value, not technical preference.</p>
+      </div>
+      <div class="capability-item">
+        <div class="cap-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-4 0v2"/></svg></div>
+        <h4>Vendor evaluation</h4>
+        <p>Structured comparison of vendor proposals — technical capabilities, integration effort, total cost of ownership, and lock-in risk.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── OUR APPROACH ──────────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="section-header" style="text-align:center;display:flex;flex-direction:column;align-items:center;">
+      <span class="section-eyebrow">Our approach</span>
+      <h2 class="section-title" style="max-width:560px;">What you actually get from a consulting engagement</h2>
+    </div>
+    <div class="process-steps">
+      <div class="process-step"><div class="step-number">01</div><h4>Discovery sessions</h4><p>Structured interviews with your technical leads, product team, and relevant stakeholders. We understand the problem before proposing anything.</p></div>
+      <div class="process-step"><div class="step-number">02</div><h4>Documentation & analysis</h4><p>We document the current state — architecture diagrams, dependency maps, identified risks — and present it back to you for alignment.</p></div>
+      <div class="process-step"><div class="step-number">03</div><h4>Recommendations</h4><p>Written, prioritized recommendations with clear rationale. Options-based when relevant — you make the final call with full context.</p></div>
+      <div class="process-step"><div class="step-number">04</div><h4>Implementation handoff</h4><p>Optionally, we can carry the recommendations forward into execution — through our development or QA services, or alongside your internal team.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── DOMAIN EXPERTISE ──────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Domain expertise</span>
+      <h2 class="section-title">Advisory informed by industry depth</h2>
+      <p class="section-subtitle">General technology advice is rarely useful. Our recommendations are informed by deep operational experience in specific industries.</p>
+    </div>
+    <div class="cards-grid-3">
+      <div class="service-card">
+        <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-4 0v2M12 12v4"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg></div>
+        <h3>Fintech security</h3>
+        <p>PCI-DSS compliance, fraud prevention architecture, secure payment flows, and audit-ready infrastructure. We know what regulators look for.</p>
+      </div>
+      <div class="service-card">
+        <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div>
+        <h3>Gaming scalability</h3>
+        <p>Architecture for high-concurrency platforms, real-money transaction flows, and latency-sensitive systems under unpredictable load.</p>
+      </div>
+      <div class="service-card">
+        <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div>
+        <h3>eCommerce performance</h3>
+        <p>Platform architecture for peak traffic, integration-heavy environments, and multi-channel commerce at scale.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CASE STUDY HIGHLIGHTS ─────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="section-header-row">
+      <div>
+        <span class="section-eyebrow">Our work</span>
+        <h2 class="section-title">Consulting outcomes that mattered</h2>
+      </div>
+      <a href="../case-studies.html" class="btn btn-secondary btn-sm">See all work <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg></a>
+    </div>
+    <div class="cards-grid-2">
+      <div class="cs-card">
+        <div class="cs-card-img"><img src="https://placehold.co/720x405/0F172A/4F8CFF?text=Fintech+Architecture" alt="Fintech architecture review" loading="lazy"></div>
+        <div class="cs-card-body">
+          <div class="cs-tags"><span class="tag tag-blue">Finance</span><span class="tag tag-cyan">Consulting</span></div>
+          <h3>Architecture review that prevented a $2M rewrite six months in</h3>
+          <p>We identified the root cause of a fintech startup's scaling failures and proposed a targeted fix — saving a full rewrite and six months of rework.</p>
+          <a href="../case-studies/detail.html" class="card-link">Read case study <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg></a>
+        </div>
+      </div>
+      <div class="cs-card">
+        <div class="cs-card-img"><img src="https://placehold.co/720x405/131C31/4F8CFF?text=Enterprise+Migration" alt="Enterprise legacy migration" loading="lazy"></div>
+        <div class="cs-card-body">
+          <div class="cs-tags"><span class="tag tag-neutral">Enterprise</span><span class="tag tag-blue">Consulting</span></div>
+          <h3>Legacy migration: 4 systems consolidated, 40% ops cost reduction</h3>
+          <p>Assessed and consolidated four legacy enterprise tools into a single modern platform. Delivered a phased migration plan with zero-disruption execution.</p>
+          <a href="../case-studies/detail.html" class="card-link">Read case study <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ───────────────────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="section-header" style="max-width:640px;">
+      <span class="section-eyebrow">Questions</span>
+      <h2 class="section-title">Common questions about our consulting service</h2>
+    </div>
+    <div class="faq-list" style="max-width:760px;">
+      <div class="faq-item">
+        <button class="faq-question">What does a consulting engagement actually include? <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Every engagement includes discovery sessions, a documented analysis of the current state, and written recommendations with rationale. Depending on scope, this may also include architecture diagrams, a technology roadmap, or a vendor evaluation matrix. You own all deliverables. The format and depth are agreed upfront during scoping.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Do you work independently or alongside our existing team? <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Both models work. We can conduct an independent review and present findings externally — useful when you want an unbiased perspective your internal team can't provide. Or we can work alongside your engineering and product teams as a technical partner, embedded in your process. We recommend the independent model when objectivity matters, and the embedded model when speed of implementation matters.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">What deliverables do we receive? <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Typical deliverables include: a current-state assessment document, an architecture or process diagram, a prioritized recommendations report, and (if applicable) a vendor comparison matrix or migration roadmap. Every deliverable is written to be understood by a non-technical business stakeholder, not just engineers. We don't deliver slide decks that go unread.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">How long does a consulting engagement take? <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">A focused architecture review typically takes 2–3 weeks. A comprehensive technology assessment for a mid-size organization takes 4–6 weeks. Ongoing advisory retainers run month-to-month. We scope the engagement before it starts so you know what you're committing to — no open-ended billing.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FINAL CTA ─────────────────────────────────────────────── -->
+<section class="cta-banner">
+  <div class="container">
+    <h2>Not sure which direction to take?<br><span class="serif">Start with a conversation.</span></h2>
+    <p>Tell us where you're stuck. We'll tell you honestly whether we can help and what that looks like.</p>
+    <div class="cta-banner-actions">
+      <a href="../contact.html" class="btn btn-primary btn-lg">Start a conversation</a>
+      <a href="../case-studies.html" class="btn btn-secondary btn-lg">See our work</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ────────────────────────────────────────────────── -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-brand-logo"><svg width="24" height="24" viewBox="0 0 80 80" fill="none" aria-hidden="true"><defs><linearGradient id="lgF" x1="0" y1="0" x2="80" y2="80" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#4F8CFF"/><stop offset="100%" stop-color="#3DD9FF"/></linearGradient></defs><rect x="6" y="6" width="32" height="32" rx="8" fill="url(#lgF)" opacity="0.95"/><rect x="42" y="6" width="32" height="32" rx="8" fill="none" stroke="url(#lgF)" stroke-width="5"/><rect x="6" y="42" width="32" height="32" rx="8" fill="none" stroke="url(#lgF)" stroke-width="5"/><rect x="42" y="42" width="32" height="32" rx="8" fill="url(#lgF)" opacity="0.95"/></svg><span>SoftFlex</span></div>
+        <p class="footer-tagline">End-to-end software development for growth-stage companies.</p>
+        <div class="social-links"><a href="#" class="social-link" aria-label="LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a><a href="#" class="social-link" aria-label="GitHub"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg></a></div>
+        <p class="footer-address">MarketGrid LLC<br>Delaware, USA</p>
+      </div>
+      <div class="footer-col"><h5>Services</h5><div class="footer-links"><a href="web-mobile.html">Web & Mobile Development</a><a href="qa-testing.html">QA & Software Testing</a><a href="it-consulting.html">IT Consulting</a></div></div>
+      <div class="footer-col"><h5>Company</h5><div class="footer-links"><a href="../industries.html">Industries</a><a href="../case-studies.html">Case Studies</a><a href="../contact.html">Contact Us</a></div></div>
+      <div class="footer-col"><h5>Legal</h5><div class="footer-links"><span>Privacy Policy</span><span>Terms of Service</span></div></div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 SoftFlex (MarketGrid LLC). All rights reserved. · Delaware, USA</p>
+      <p class="footer-copy">ISO 9001 · ISO 27001</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+  hamburger.addEventListener('click', () => { const open = mobileNav.classList.toggle('open'); hamburger.classList.toggle('open', open); document.body.style.overflow = open ? 'hidden' : ''; });
+  document.getElementById('mobileServicesToggle').addEventListener('click', function() { document.getElementById('mobileServicesBody').classList.toggle('open'); this.classList.toggle('open'); });
+  document.querySelectorAll('.faq-question').forEach(btn => { btn.addEventListener('click', () => { const item = btn.closest('.faq-item'); const wasOpen = item.classList.contains('open'); document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open')); if (!wasOpen) item.classList.add('open'); }); });
+</script>
+</body>
+</html>
