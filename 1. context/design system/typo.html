@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gamma — Typography System (Barlow)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,700&display=swap" rel="stylesheet" />
+<style>
+  /* ============================================
+     GAMMA · TYPOGRAPHY SYSTEM
+     Font: Barlow
+     Source: gamma-template.framer.website
+     ============================================ */
+
+  :root {
+    /* === COLOR TOKENS === */
+    --color-white:    #ffffff;
+    --color-bg:       #1a1a1a;
+    --color-accent:   #ee4e34;
+    --color-muted:    #949a9a;
+    --color-surface:  #2e2f2f;
+    --color-border:   #3a3b3b;
+
+    /* === FONT FAMILY === */
+    --font-primary: "Barlow", "Barlow Placeholder", -apple-system, BlinkMacSystemFont, sans-serif;
+
+    /* === FONT WEIGHTS (from Gamma source) === */
+    --fw-light:     300;
+    --fw-regular:   400;
+    --fw-medium:    500;   /* Default body weight in Gamma */
+    --fw-semibold:  600;
+    --fw-bold:      700;   /* Default bold weight */
+    --fw-extrabold: 800;
+    --fw-black:     900;
+
+    /* === FONT SIZES (modular scale based on Gamma 16px base) === */
+    --fs-display-2xl: clamp(64px, 9vw, 128px);   /* Hero "Transform Your..." */
+    --fs-display-xl:  clamp(56px, 7vw, 96px);
+    --fs-display-lg:  clamp(44px, 5.5vw, 72px);  /* Section H2 */
+    --fs-h1:          clamp(40px, 4.5vw, 56px);
+    --fs-h2:          clamp(32px, 3.5vw, 44px);
+    --fs-h3:          28px;
+    --fs-h4:          22px;
+    --fs-h5:          18px;
+    --fs-h6:          16px;
+    --fs-body-lg:     18px;
+    --fs-body:        16px;   /* Gamma default */
+    --fs-body-sm:     14px;
+    --fs-caption:     13px;
+    --fs-xs:          12px;
+
+    /* === LINE HEIGHTS === */
+    --lh-display:  1.02;     /* Tight for hero */
+    --lh-tight:    1.1;      /* Headings */
+    --lh-snug:     1.25;
+    --lh-base:     1.6;      /* Body — Gamma 160% */
+    --lh-relaxed:  1.75;
+
+    /* === LETTER SPACING === */
+    --ls-tighter:  -0.03em;
+    --ls-tight:    -0.015em;
+    --ls-normal:   0em;      /* Gamma default */
+    --ls-wide:     0.04em;
+    --ls-wider:    0.1em;    /* Eyebrows / labels */
+    --ls-widest:   0.18em;
+
+    /* === SPACING === */
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+    --space-7: 48px;
+    --space-8: 64px;
+    --space-9: 96px;
+    --space-10: 128px;
+  }
+
+  /* === RESET === */
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--color-bg);
+    color: var(--color-white);
+    font-family: var(--font-primary);
+    font-size: var(--fs-body);
+    font-weight: var(--fw-medium);
+    line-height: var(--lh-base);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* ============================================
+     TYPOGRAPHY CLASSES
+     ============================================ */
+
+  .t-display-2xl {
+    font-family: var(--font-primary);
+    font-size: var(--fs-display-2xl);
+    font-weight: var(--fw-medium);
+    line-height: var(--lh-display);
+    letter-spacing: var(--ls-tight);
+  }
+  .t-display-xl {
+    font-family: var(--font-primary);
+    font-size: var(--fs-display-xl);
+    font-weight: var(--fw-medium);
+    line-height: var(--lh-display);
+    letter-spacing: var(--ls-tight);
+  }
+  .t-display-lg {
+    font-family: var(--font-primary);
+    font-size: var(--fs-display-lg);
+    font-weight: var(--fw-medium);
+    line-height: var(--lh-tight);
+    letter-spacing: var(--ls-tight);
+  }
+  .t-h1 {
+    font-family: var(--font-primary);
+    font-size: var(--fs-h1);
+    font-weight: var(--fw-medium);
+    line-height: var(--lh-tight);
+    letter-spacing: var(--ls-tight);
+  }
+  .t-h2 {
+    font-family: var(--font-primary);
+    font-size: var(--fs-h2);
+    font-weight: var(--fw-medium);
+    line-height: var(--lh-tight);
+    letter-spacing: var(--ls-tight);
+  }
+  .t-h3 {
+    font-family: var(--font-primary);
+    font-size: var(--fs-h3);
+    font-weight: var(--fw-semibold);
+    line-height: var(--lh-snug);
+    letter-spacing: var(--ls-normal);
+  }
+  .t-h4 {
+    font-family: var(--font-primary);
+    font-size: var(--fs-h4);
+    font-weight: var(--fw-semibold);
+    line-height: var(--lh-snug);
+    letter-spacing: var(--ls-normal);
+  }
+  .t-h5 {
+    font-family: var(--font-primary);
+    font-size: var(--fs-h5);
+    font-weight: var(--fw-semibold);
+    line-height: var(--lh-snug);
+    letter-spacing: var(--ls-normal);
+  }
+  .t-h6 {
+    font-family: var(--font-primary);
+    font-size: var(--fs-h6);
+    font-weight: var(--fw-semibold);
+    line-height: var(--lh-snug);
+    letter-spacing: var(--ls-wide);
+    text-transform: uppercase;
+  }
+  .t-body-lg {
+    font-family: var(--font-primary);
+    font-size: var(--fs-body-lg);
+    font-weight: var(--fw-regular);
+    line-height: var(--lh-relaxed);
+    letter-spacing: var(--ls-normal);
+  }
+  .t-body {
+    font-family: var(--font-primary);
+    font-size: var(--fs-body);
+    font-weight: var(--fw-medium);
+    line-height: var(--lh-base);
+    letter-spacing: var(--ls-normal);
+  }
+  .t-body-sm {
+    font-family: var(--font-primary);
+    font-size: var(--fs-body-sm);
+    font-weight: var(--fw-medium);
+    line-height: var(--lh-base);
+    letter-spacing: var(--ls-normal);
+  }
+  .t-caption {
+    font-family: var(--font-primary);
+    font-size: var(--fs-caption);
+    font-weight: var(--fw-regular);
+    line-height: var(--lh-snug);
+    letter-spacing: var(--ls-normal);
+    color: var(--color-muted);
+  }
+  .t-eyebrow {
+    font-family: var(--font-primary);
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-medium);
+    line-height: 1;
+    letter-spacing: var(--ls-wider);
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+  .t-label {
+    font-family: var(--font-primary);
+    font-size: var(--fs-body-sm);
+    font-weight: var(--fw-semibold);
+    line-height: 1.2;
+    letter-spacing: var(--ls-wide);
+    text-transform: uppercase;
+  }
+  .t-overline {
+    font-family: var(--font-primary);
+    font-size: 11px;
+    font-weight: var(--fw-bold);
+    line-height: 1;
+    letter-spacing: var(--ls-widest);
+    text-transform: uppercase;
+  }
+
+  /* utility helpers */
+  .accent { color: var(--color-accent); }
+  .muted  { color: var(--color-muted); }
+  .italic { font-style: italic; }
+
+  /* ============================================
+     PAGE LAYOUT
+     ============================================ */
+
+  .page {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: var(--space-8) var(--space-6);
+  }
+
+  /* HEADER */
+  .ds-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: var(--space-6);
+    align-items: end;
+    padding-bottom: var(--space-7);
+    border-bottom: 1px solid var(--color-surface);
+    margin-bottom: var(--space-9);
+  }
+  .ds-header__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-wider);
+    text-transform: uppercase;
+    color: var(--color-muted);
+    margin-bottom: var(--space-3);
+  }
+  .ds-header__eyebrow::before {
+    content: "";
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--color-accent);
+  }
+  .ds-header__title {
+    font-size: var(--fs-display-xl);
+    font-weight: var(--fw-medium);
+    line-height: var(--lh-display);
+    letter-spacing: var(--ls-tight);
+    margin: 0;
+  }
+  .ds-header__meta {
+    color: var(--color-muted);
+    font-size: var(--fs-body-sm);
+    max-width: 320px;
+    text-align: right;
+  }
+
+  /* SECTION */
+  section.ds {
+    margin-bottom: var(--space-10);
+  }
+  .ds__head {
+    display: grid;
+    grid-template-columns: 60px 1fr 360px;
+    gap: var(--space-5);
+    align-items: baseline;
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid var(--color-surface);
+    margin-bottom: var(--space-7);
+  }
+  .ds__num {
+    font-size: var(--fs-body-sm);
+    font-weight: var(--fw-medium);
+    color: var(--color-muted);
+    font-feature-settings: "tnum";
+  }
+  .ds__title {
+    font-size: var(--fs-h2);
+    font-weight: var(--fw-medium);
+    line-height: var(--lh-tight);
+    letter-spacing: var(--ls-tight);
+    margin: 0;
+  }
+  .ds__desc {
+    color: var(--color-muted);
+    font-size: var(--fs-body-sm);
+    line-height: var(--lh-base);
+  }
+
+  /* TYPE TABLE */
+  .type-table {
+    display: flex;
+    flex-direction: column;
+  }
+  .type-row {
+    display: grid;
+    grid-template-columns: 160px 1fr 220px;
+    gap: var(--space-6);
+    align-items: baseline;
+    padding: var(--space-6) 0;
+    border-bottom: 1px solid var(--color-surface);
+  }
+  .type-row:last-child { border-bottom: none; }
+  .type-row__label {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .type-row__name {
+    font-size: var(--fs-body-sm);
+    font-weight: var(--fw-semibold);
+  }
+  .type-row__class {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: var(--fs-xs);
+    color: var(--color-muted);
+  }
+  .type-row__sample {
+    margin: 0;
+    color: var(--color-white);
+  }
+  .type-row__spec {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: var(--fs-xs);
+    color: var(--color-muted);
+    text-align: right;
+    line-height: 1.6;
+  }
+  .type-row__spec span:first-child { color: var(--color-white); }
+
+  /* WEIGHT GRID */
+  .weight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-4);
+  }
+  .weight-card {
+    border: 1px solid var(--color-surface);
+    border-radius: 12px;
+    padding: var(--space-5);
+    background: var(--color-surface);
+    transition: border-color 0.3s ease;
+  }
+  .weight-card:hover { border-color: var(--color-accent); }
+  .weight-card__sample {
+    font-size: 48px;
+    line-height: 1;
+    margin-bottom: var(--space-5);
+    letter-spacing: var(--ls-tight);
+  }
+  .weight-card__meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: var(--fs-xs);
+    color: var(--color-muted);
+    font-family: ui-monospace, monospace;
+  }
+  .weight-card__meta strong {
+    color: var(--color-white);
+    font-weight: var(--fw-semibold);
+    font-family: var(--font-primary);
+    font-size: var(--fs-body-sm);
+  }
+
+  /* SPECIMEN BLOCK (hero-like) */
+  .specimen {
+    padding: var(--space-8) var(--space-7);
+    background: linear-gradient(180deg, var(--color-surface) 0%, var(--color-bg) 100%);
+    border: 1px solid var(--color-surface);
+    border-radius: 24px;
+    margin-bottom: var(--space-6);
+    position: relative;
+    overflow: hidden;
+  }
+  .specimen::before {
+    content: "GAMMA";
+    position: absolute;
+    bottom: -40px;
+    right: -20px;
+    font-size: 240px;
+    font-weight: var(--fw-black);
+    color: rgba(238, 78, 52, 0.04);
+    letter-spacing: var(--ls-tight);
+    line-height: 1;
+    pointer-events: none;
+  }
+  .specimen__eyebrow {
+    margin-bottom: var(--space-4);
+  }
+  .specimen__title {
+    margin: 0 0 var(--space-5);
+    max-width: 900px;
+    position: relative;
+  }
+  .specimen__body {
+    max-width: 600px;
+    color: var(--color-muted);
+    position: relative;
+  }
+
+  /* PAIRING EXAMPLES */
+  .pairings {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: var(--space-5);
+  }
+  .pairing {
+    padding: var(--space-6);
+    background: var(--color-surface);
+    border-radius: 16px;
+    border: 1px solid transparent;
+    transition: border-color 0.3s;
+  }
+  .pairing:hover { border-color: var(--color-accent); }
+  .pairing__num {
+    font-size: var(--fs-caption);
+    color: var(--color-accent);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--ls-wider);
+    text-transform: uppercase;
+    margin-bottom: var(--space-4);
+    display: block;
+  }
+  .pairing > * + * { margin-top: var(--space-3); }
+  .pairing h4 { margin: 0; }
+  .pairing p { margin: 0; }
+
+  /* FOOTER */
+  .ds-footer {
+    margin-top: var(--space-10);
+    padding-top: var(--space-7);
+    border-top: 1px solid var(--color-surface);
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    color: var(--color-muted);
+    font-size: var(--fs-body-sm);
+  }
+  .ds-footer a { color: var(--color-accent); text-decoration: none; }
+
+  @media (max-width: 860px) {
+    .ds-header { grid-template-columns: 1fr; }
+    .ds-header__meta { text-align: left; }
+    .ds__head { grid-template-columns: 1fr; gap: var(--space-3); }
+    .type-row { grid-template-columns: 1fr; gap: var(--space-3); }
+    .type-row__spec { text-align: left; }
+    .specimen::before { font-size: 140px; }
+  }
+</style>
+</head>
+<body>
+  <main class="page">
+
+    <!-- HEADER -->
+    <header class="ds-header">
+      <div>
+        <div class="ds-header__eyebrow">Typography System · v1.0</div>
+        <h1 class="ds-header__title">The voice of <span class="accent italic">Gamma</span>.</h1>
+      </div>
+      <p class="ds-header__meta">A single-family system built on Barlow — engineered for confident headlines and clear, professional body copy in the consulting space.</p>
+    </header>
+
+    <!-- 01 · FONT FAMILY SPECIMEN -->
+    <section class="ds">
+      <div class="ds__head">
+        <span class="ds__num">(01)</span>
+        <h2 class="ds__title">Type family</h2>
+        <p class="ds__desc">Barlow — a slightly condensed grotesque designed by Jeremy Tribby. Geometric, low-contrast, modern.</p>
+      </div>
+      <div class="specimen">
+        <div class="t-eyebrow specimen__eyebrow">Barlow · Sans Serif · Variable</div>
+        <h3 class="t-display-lg specimen__title">Transform your business with expert consulting for <span class="accent italic">strategic success</span>.</h3>
+        <p class="t-body-lg specimen__body">Maximize your business potential with Gamma's tailored consulting services. Gain strategic insights and expert guidance to drive growth, optimize operations, and achieve lasting success.</p>
+      </div>
+    </section>
+
+    <!-- 02 · TYPE SCALE -->
+    <section class="ds">
+      <div class="ds__head">
+        <span class="ds__num">(02)</span>
+        <h2 class="ds__title">Type scale</h2>
+        <p class="ds__desc">A 14-step scale anchored at 16px / 160% — Gamma's body baseline — with display sizes that scale fluidly.</p>
+      </div>
+      <div class="type-table">
+
+        <div class="type-row">
+          <div class="type-row__label">
+            <span class="type-row__name">Display 2XL</span>
+            <span class="type-row__class">.t-display-2xl</span>
+          </div>
+          <p class="type-row__sample t-display-2xl">Gamma.</p>
+          <div class="type-row__spec">
+            <span>128 / 102%</span>
+            <span>weight 500 · -0.015em</span>
+          </div>
+        </div>
+
+        <div class="type-row">
+          <div class="type-row__label">
+            <span class="type-row__name">Display XL</span>
+            <span class="type-row__class">.t-display-xl</span>
+          </div>
+          <p class="type-row__sample t-display-xl">Strategic Success</p>
+          <div class="type-row__spec">
+            <span>96 / 102%</span>
+            <span>weight 500 · -0.015em</span>
+          </div>
+        </div>
+
+        <div class="type-row">
+          <div class="type-row__label">
+            <span class="type-row__name">Display LG</span>
+            <span class="type-row__class">.t-display-lg</span>
+          </div>
+          <p class="type-row__sample t-display-lg">Transform Your Business</p>
+          <div class="type-row__spec">
+            <span>72 / 110%</span>
+            <span>weight 500 · -0.015em</span>
+          </div>
+        </div>
+
+        <div class="type-row">
+          <div class="type-row__label">
+            <span class="type-row__name">Heading 1</span>
+            <span class="type-row__class">.t-h1</span>
+          </div>
+          <p class="type-row__sample t-h1">Explore our achievements</p>
+          <div class="type-row__spec">
+            <span>56 / 110%</span>
+            <span>weight 500 · -0.015em</span>
+          </div>
+        </div>
+
+        <div class="type-row">
+          <div class="type-row__label">
+            <span class="type-row__name">Heading 2</span>
+            <span class="type-row__class">.t-h2</span>
+          </div>
+          <p class="type-row__sample t-h2">Transparent pricing for everyone</p>
+          <div class="type-row__spec">
+            <span>44 / 110%</span>
+            <span>weight 500 · -0.015em</span>
+          </div>
+        </div>
+
+        <div class="type-row">
+          <div class="type-row__label">
+            <span class="type-row__name">Heading 3</span>
+            <span class="type-row__class">.t-h3</span>
+          </div>
+          <p class="type-row__sample t-h3">Predictive analytics for loan approvals</p>
+          <div class="type-row__spec">
+            <span>28 / 125%</span>
+            <span>weight 600 · 0em</span>
+          </div>
+        </div>
+
+        <div class="type-row">
+          <div class="type-row__label">
+            <span class="type-row__name">Heading 4</span>
+            <span class="type-row__class">.t-h4</span>
+          </div>
+          <p class="type-row__sample t-h4">Customer testimonials</p>
+          <div class="type-row__spec">
+            <span>22 / 125%</span>
+            <span>weight 600 · 0em</span>
+          </div>
+        </div>
+
+        <div class="type-row">
+          <div class="type-row__label">
+            <span class="type-row__name">Heading 5</span>
+            <span class="type-row__class">.t-h5</span>
+          </div>
+          <p class="type-row__sample t-h5">Unlock Efficiency</p>
+          <div class="type-row__spec">
+            <span>18 / 125%</span>
+            <span>weight 600 · 0em</span>
+          </div>
+        </div>
+
+        <div class="type-row">
+          <div class="type-row__label">
+            <span class="type-row__name">Heading 6</span>
+            <span class="type-row__class">.t-h6</span>
+          </div>
+          <p class="type-row__sample t-h6">Institutions Transformed</p>
+          <div class="type-row__spec">
+            <span>16 / 125%</span>
+            <span>weight 600 · 0.04em · UPPER</span>
+          </div>
+        </div>
+
+        <div class="type-row">
+          <div class="type-row__label">
+            <span class="type-row__name">Body Large</span>
+            <span class="type-row__class">.t-body-lg</span>
+          </div>
+          <p class="type-row__sample t-body-lg">Maximize your business potential with Gamma's tailored consulting services and expert guidance.</p>
+          <div class="type-row__spec">
+            <span>18 / 175%</span>
+            <span>weight 400 · 0em</span>
+          </div>
+        </div>
+
+        <div class="type-row">
+          <div class="type-row__label">
+            <span class="type-row__name">Body</span>
+            <span class="type-row__class">.t-body</span>
+          </div>
+          <p class="type-row__sample t-body">Gamma has been consistently recognized as a leader in innovative lending solutions for institutions worldwide.</p>
+          <div class="type-row__spec">
+            <span>16 / 160% · base</span>
+            <span>weight 500 · 0em</span>
+          </div>
+        </div>
+
+        <div class="type-row">
+          <div class="type-row__label">
+            <span class="type-row__name">Body Small</span>
+            <span class="type-row__class">.t-body-sm</span>
+          </div>
+          <p class="type-row__sample t-body-sm">Trusted by 100+ financial institutions to modernize their lending operations and cut processing time by 30%.</p>
+          <div class="type-row__spec">
+            <span>14 / 160%</span>
+            <span>weight 500 · 0em</span>
+          </div>
+        </div>
+
+        <div class="type-row">
+          <div class="type-row__label">
+            <span class="type-row__name">Caption</span>
+            <span class="type-row__class">.t-caption</span>
+          </div>
+          <p class="type-row__sample t-caption">A leading manufacturing company utilized Gamma's services.</p>
+          <div class="type-row__spec">
+            <span>13 / 125%</span>
+            <span>weight 400 · muted</span>
+          </div>
+        </div>
+
+        <div class="type-row">
+          <div class="type-row__label">
+            <span class="type-row__name">Eyebrow</span>
+            <span class="type-row__class">.t-eyebrow</span>
+          </div>
+          <p class="type-row__sample t-eyebrow">Showcasing Success</p>
+          <div class="type-row__spec">
+            <span>12 / 1</span>
+            <span>weight 500 · 0.1em · UPPER</span>
+          </div>
+        </div>
+
+        <div class="type-row">
+          <div class="type-row__label">
+            <span class="type-row__name">Label</span>
+            <span class="type-row__class">.t-label</span>
+          </div>
+          <p class="type-row__sample t-label">Book a Demo</p>
+          <div class="type-row__spec">
+            <span>14 / 120%</span>
+            <span>weight 600 · 0.04em · UPPER</span>
+          </div>
+        </div>
+
+        <div class="type-row">
+          <div class="type-row__label">
+            <span class="type-row__name">Overline</span>
+            <span class="type-row__class">.t-overline</span>
+          </div>
+          <p class="type-row__sample t-overline">(01) Analysis</p>
+          <div class="type-row__spec">
+            <span>11 / 1</span>
+            <span>weight 700 · 0.18em · UPPER</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 03 · FONT WEIGHTS -->
+    <section class="ds">
+      <div class="ds__head">
+        <span class="ds__num">(03)</span>
+        <h2 class="ds__title">Weights</h2>
+        <p class="ds__desc">Barlow ships 9 weights. Gamma uses 500 for body, 600 for sub-headings, and 700 for emphasis.</p>
+      </div>
+      <div class="weight-grid">
+        <div class="weight-card">
+          <div class="weight-card__sample" style="font-weight:300">Aa</div>
+          <div class="weight-card__meta"><strong>Light</strong><span>300</span></div>
+        </div>
+        <div class="weight-card">
+          <div class="weight-card__sample" style="font-weight:400">Aa</div>
+          <div class="weight-card__meta"><strong>Regular</strong><span>400</span></div>
+        </div>
+        <div class="weight-card" style="border-color: var(--color-accent)">
+          <div class="weight-card__sample" style="font-weight:500">Aa</div>
+          <div class="weight-card__meta"><strong>Medium · default</strong><span class="accent">500</span></div>
+        </div>
+        <div class="weight-card">
+          <div class="weight-card__sample" style="font-weight:600">Aa</div>
+          <div class="weight-card__meta"><strong>SemiBold</strong><span>600</span></div>
+        </div>
+        <div class="weight-card" style="border-color: var(--color-accent)">
+          <div class="weight-card__sample" style="font-weight:700">Aa</div>
+          <div class="weight-card__meta"><strong>Bold · emphasis</strong><span class="accent">700</span></div>
+        </div>
+        <div class="weight-card">
+          <div class="weight-card__sample" style="font-weight:800">Aa</div>
+          <div class="weight-card__meta"><strong>ExtraBold</strong><span>800</span></div>
+        </div>
+        <div class="weight-card">
+          <div class="weight-card__sample" style="font-weight:900">Aa</div>
+          <div class="weight-card__meta"><strong>Black</strong><span>900</span></div>
+        </div>
+        <div class="weight-card">
+          <div class="weight-card__sample italic" style="font-weight:500">Aa</div>
+          <div class="weight-card__meta"><strong>Medium Italic</strong><span>500i</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 · PAIRINGS -->
+    <section class="ds">
+      <div class="ds__head">
+        <span class="ds__num">(04)</span>
+        <h2 class="ds__title">Pairings &amp; usage</h2>
+        <p class="ds__desc">Common combinations of eyebrow + heading + body — pulled directly from Gamma section patterns.</p>
+      </div>
+      <div class="pairings">
+
+        <div class="pairing">
+          <span class="pairing__num">Hero block</span>
+          <h4 class="t-display-lg">Transform your business with expert consulting</h4>
+          <p class="t-body-lg muted">Maximize your business potential with Gamma's tailored consulting services.</p>
+        </div>
+
+        <div class="pairing">
+          <span class="pairing__num">Section header</span>
+          <div class="t-eyebrow">Services</div>
+          <h4 class="t-h2">Transform your financial institution with machine learning</h4>
+        </div>
+
+        <div class="pairing">
+          <span class="pairing__num">Stat block</span>
+          <h4 class="t-display-lg accent">100<span class="italic">+</span></h4>
+          <div class="t-h6">Institutions Transformed</div>
+          <p class="t-body-sm muted">Implemented our cutting-edge solutions in over 100 lending institutions worldwide.</p>
+        </div>
+
+        <div class="pairing">
+          <span class="pairing__num">Card · numbered</span>
+          <div class="t-overline accent">(01) Analysis</div>
+          <h4 class="t-h3">Predictive analytics for loan approvals</h4>
+          <p class="t-body-sm muted">Utilize advanced machine learning algorithms to predict the likelihood of loan approval.</p>
+        </div>
+
+        <div class="pairing">
+          <span class="pairing__num">Testimonial</span>
+          <p class="t-h3 italic">"Implementing Gamma's platform has revolutionized our lending process."</p>
+          <div class="t-h6">Justin Bator</div>
+          <p class="t-caption">Retail Assistant</p>
+        </div>
+
+        <div class="pairing">
+          <span class="pairing__num">Pricing</span>
+          <div class="t-h6 muted">Business plan</div>
+          <h4 class="t-h1">$40<span class="t-body muted">/mth</span></h4>
+          <p class="t-body-sm">Advanced features and reporting.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 05 · RULES -->
+    <section class="ds">
+      <div class="ds__head">
+        <span class="ds__num">(05)</span>
+        <h2 class="ds__title">Rules of thumb</h2>
+        <p class="ds__desc">Quick guidelines to keep typography consistent across the product.</p>
+      </div>
+
+      <div class="type-table">
+        <div class="type-row">
+          <div class="type-row__label"><span class="type-row__name">Base weight</span><span class="type-row__class">body</span></div>
+          <p class="type-row__sample t-body-lg">Use <strong style="font-weight:500">500 Medium</strong> for body text — it gives the interface presence without feeling heavy on dark backgrounds.</p>
+          <div class="type-row__spec"><span>500</span><span>not 400</span></div>
+        </div>
+
+        <div class="type-row">
+          <div class="type-row__label"><span class="type-row__name">Display tracking</span><span class="type-row__class">headings</span></div>
+          <p class="type-row__sample t-body-lg">All sizes 28px and above get <strong style="font-weight:600">-0.015em</strong> letter-spacing. Body and below stay at <strong style="font-weight:600">0em</strong>.</p>
+          <div class="type-row__spec"><span>-0.015em</span><span>≥ 28px</span></div>
+        </div>
+
+        <div class="type-row">
+          <div class="type-row__label"><span class="type-row__name">Italic accent</span><span class="type-row__class">decorative</span></div>
+          <p class="type-row__sample t-body-lg">Use <em style="color:var(--color-accent)">italic</em> sparingly to highlight one or two words inside large headlines — never for body or emphasis in running text.</p>
+          <div class="type-row__spec"><span>italic</span><span>+ accent color</span></div>
+        </div>
+
+        <div class="type-row">
+          <div class="type-row__label"><span class="type-row__name">Eyebrows</span><span class="type-row__class">labels</span></div>
+          <p class="type-row__sample t-body-lg">Eyebrow labels always go in <strong style="font-weight:600">UPPER</strong> with <strong style="font-weight:600">0.1em</strong> tracking. They sit above headings, never alone.</p>
+          <div class="type-row__spec"><span>UPPER</span><span>+0.1em</span></div>
+        </div>
+
+        <div class="type-row">
+          <div class="type-row__label"><span class="type-row__name">Line height</span><span class="type-row__class">vertical rhythm</span></div>
+          <p class="type-row__sample t-body-lg">Body uses <strong style="font-weight:600">160%</strong> (Gamma default). Headlines drop to <strong style="font-weight:600">102 – 110%</strong> for compact display.</p>
+          <div class="type-row__spec"><span>body: 160%</span><span>display: 102%</span></div>
+        </div>
+
+        <div class="type-row">
+          <div class="type-row__label"><span class="type-row__name">Color hierarchy</span><span class="type-row__class">contrast</span></div>
+          <p class="type-row__sample t-body-lg">Primary text in <strong style="color:#fff">white</strong>, secondary text in <strong style="color:var(--color-muted)">muted #949a9a</strong>, never both at the same weight.</p>
+          <div class="type-row__spec"><span>#FFF / #949A9A</span><span>2-level only</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="ds-footer">
+      <span>Gamma Typography System · Barlow — reconstructed from <a href="https://gamma-template.framer.website/" target="_blank" rel="noopener">gamma-template.framer.website</a></span>
+      <span>v1.0 · 2026</span>
+    </footer>
+
+  </main>
+</body>
+</html>
