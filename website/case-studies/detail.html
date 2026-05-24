@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -30,8 +30,8 @@
       <li class="nav-item">
         <a href="#" class="nav-link">Services <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <div class="mega-menu">
-          <a href="../services/web-mobile.html">Web & Mobile Dev</a>
-          <a href="../services/qa-testing.html">QA & Testing</a>
+          <a href="../services/web-mobile.html">Web &amp; Mobile Dev</a>
+          <a href="../services/qa-testing.html">QA &amp; Testing</a>
           <a href="../services/it-consulting.html">IT Consulting</a>
         </div>
       </li>
@@ -49,8 +49,8 @@
   <div class="mobile-nav-links">
     <button class="mobile-accordion-toggle" id="mobileServicesToggle">Services <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
     <div class="mobile-accordion-body" id="mobileServicesBody">
-      <a href="../services/web-mobile.html" class="mobile-service-link">Web & Mobile Dev</a>
-      <a href="../services/qa-testing.html" class="mobile-service-link">QA & Testing</a>
+      <a href="../services/web-mobile.html" class="mobile-service-link">Web &amp; Mobile Dev</a>
+      <a href="../services/qa-testing.html" class="mobile-service-link">QA &amp; Testing</a>
       <a href="../services/it-consulting.html" class="mobile-service-link">IT Consulting</a>
     </div>
     <a href="../industries.html" class="mobile-nav-link">Industries</a>
@@ -60,163 +60,101 @@
   <div class="mobile-nav-footer"><a href="../contact.html" class="btn btn-primary" style="width:100%;justify-content:center;">Get in touch</a></div>
 </div>
 
-<!-- ── BACK LINK ─────────────────────────────────────────────── -->
-<div style="padding:24px 0 0; position:relative; z-index:1;">
-  <div class="container">
-    <a href="../case-studies.html" style="display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--text-tertiary);transition:color 0.2s;" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--text-tertiary)'">
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 7H3M7 3l-4 4 4 4"/></svg>
-      All case studies
-    </a>
+<!-- ── HERO ──────────────────────────────────────────────────── -->
+<section class="cd-hero">
+  <div class="cd-hero__bg">
+    <img src="../../6.%20assets/images/1.jpg" alt="" aria-hidden="true">
   </div>
-</div>
-
-<!-- ── DETAIL HEADER ─────────────────────────────────────────── -->
-<div class="detail-header">
-  <div class="container">
-    <div class="detail-meta">
-      <span class="tag tag-blue">Finance & Fintech</span>
-      <span class="tag tag-cyan">Web Development</span>
-      <span class="tag tag-neutral">2025</span>
-    </div>
-    <h1 class="detail-title">Payment platform rebuilt —<br>3× faster transaction processing</h1>
-    <p class="detail-intro">A high-volume fintech company's legacy payment system was causing cart abandonment at checkout. We redesigned the architecture and rebuilt the frontend, cutting transaction latency from 4.2 s to 1.1 s.</p>
-  </div>
-</div>
-
-<!-- ── HERO IMAGE ────────────────────────────────────────────── -->
-<div style="position:relative;z-index:1;padding:0;">
-  <div class="container">
-    <img src="https://placehold.co/1200x500/2e2f2f/ee4e34?text=Payment+Platform+Interface" alt="Payment platform interface" style="width:100%;border-radius:20px;border:1px solid var(--border);filter:saturate(0.7);" loading="lazy">
-  </div>
-</div>
-
-<!-- ── DETAIL CONTENT ────────────────────────────────────────── -->
-<div class="container">
-  <div class="detail-content">
-    <!-- Main body -->
-    <div class="detail-body">
-      <section>
-        <h2>The challenge</h2>
-        <p>FinCore, a B2B fintech platform processing over $200M in annual transactions, was losing customers at checkout. Their legacy payment stack — built over five years with multiple vendor additions — had accumulated enough latency that transaction completion times regularly exceeded 4 seconds.</p>
-        <p>The business had tried optimizing the existing system twice and hit a ceiling. The architecture was the problem. At 4.2 s average completion time, cart abandonment on their checkout page had reached 38% — double the industry baseline.</p>
-        <p>They needed a rebuild, not another patch. The constraint: their largest client contract required zero downtime during migration.</p>
-      </section>
-
-      <section>
-        <h2>Our approach</h2>
-        <p>We started with a three-week discovery and architecture review. The core problem was sequential processing — seven vendor API calls made in series, any one of which could timeout and cascade. We proposed a parallel processing architecture with local result caching for idempotent lookups.</p>
-        <p>The migration used a strangler-fig pattern: new flows ran alongside the existing system in shadow mode for four weeks, with real traffic replayed against both. When the error rates matched and latency was confirmed to be below our target, we switched over — with the existing system on standby for 48 hours.</p>
-      </section>
-
-      <section>
-        <h2>What we built</h2>
-        <p>A parallelized payment processing service in Node.js, replacing sequential vendor calls with concurrent execution and a local caching layer for static data lookups. The new frontend checkout flow — built in React — was redesigned around the new latency profile, with optimistic UI patterns that felt instant to the end user even before the server responded.</p>
-        <p>We also delivered a real-time monitoring dashboard that gave FinCore's engineering team visibility into per-step latency breakdowns across their entire payment flow — something they hadn't had before.</p>
-      </section>
-
-      <section>
-        <h2>Technology used</h2>
-        <div class="tech-grid" style="margin-top:8px;">
-          <span class="tech-pill"><span class="tech-dot"></span>React</span>
-          <span class="tech-pill"><span class="tech-dot"></span>TypeScript</span>
-          <span class="tech-pill"><span class="tech-dot" style="background:var(--accent-cyan)"></span>Node.js</span>
-          <span class="tech-pill"><span class="tech-dot" style="background:var(--accent-cyan)"></span>Redis</span>
-          <span class="tech-pill"><span class="tech-dot" style="background:var(--accent-cyan)"></span>PostgreSQL</span>
-          <span class="tech-pill"><span class="tech-dot" style="background:#64748B"></span>AWS</span>
-          <span class="tech-pill"><span class="tech-dot" style="background:#64748B"></span>Docker</span>
-        </div>
-      </section>
-    </div>
-
-    <!-- Sidebar -->
-    <div class="detail-sidebar">
-      <div class="detail-sidebar-card">
-        <h4>Results</h4>
-        <div class="result-item">
-          <div>
-            <div class="result-value">1.1 s</div>
-            <div style="font-size:12px;color:var(--text-tertiary);">Transaction latency (from 4.2 s)</div>
-          </div>
-        </div>
-        <div class="result-item">
-          <div>
-            <div class="result-value">73%</div>
-            <div style="font-size:12px;color:var(--text-tertiary);">Reduction in latency</div>
-          </div>
-        </div>
-        <div class="result-item">
-          <div>
-            <div class="result-value">38%→9%</div>
-            <div style="font-size:12px;color:var(--text-tertiary);">Cart abandonment rate</div>
-          </div>
-        </div>
-        <div class="result-item">
-          <div>
-            <div class="result-value">0</div>
-            <div style="font-size:12px;color:var(--text-tertiary);">Downtime during migration</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="detail-sidebar-card" style="position:static;">
-        <h4>Services delivered</h4>
-        <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px;">
-          <a href="../services/web-mobile.html" class="tag tag-blue" style="width:fit-content;">Web Development</a>
-          <a href="../services/it-consulting.html" class="tag tag-cyan" style="width:fit-content;">Architecture consulting</a>
-        </div>
-      </div>
-
-      <div class="detail-sidebar-card" style="position:static;">
-        <h4>Industry</h4>
-        <a href="../industries.html#finance" class="tag tag-blue" style="margin-top:8px;width:fit-content;display:inline-flex;">Finance & Fintech</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ── RELATED CASE STUDIES ──────────────────────────────────── -->
-<section class="section" style="border-top:1px solid var(--border-soft);">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-eyebrow">More work</span>
-      <h2 class="section-title">Related case studies</h2>
-    </div>
-    <div class="cards-grid-2">
-      <div class="cs-card">
-        <div class="cs-card-img">
-          <img src="https://placehold.co/720x405/2e2f2f/ff6b52?text=Gaming+QA" alt="Gaming QA project" loading="lazy">
-        </div>
-        <div class="cs-card-body">
-          <div class="cs-tags"><span class="tag tag-cyan">Gaming</span><span class="tag tag-neutral">QA & Testing</span></div>
-          <h3>Zero critical bugs at launch — 50,000 concurrent players</h3>
-          <p>Automated testing suite covering 1,400 test cases. Defect escape rate under 0.3%.</p>
-          <a href="detail.html" class="card-link">Read case study <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg></a>
-        </div>
-      </div>
-      <div class="cs-card">
-        <div class="cs-card-img">
-          <img src="https://placehold.co/720x405/2e2f2f/ee4e34?text=Fintech+Architecture" alt="Fintech architecture" loading="lazy">
-        </div>
-        <div class="cs-card-body">
-          <div class="cs-tags"><span class="tag tag-blue">Finance</span><span class="tag tag-cyan">Consulting</span></div>
-          <h3>Architecture review that prevented a $2M rewrite</h3>
-          <p>Identified the root cause of scaling failures in a growing fintech platform.</p>
-          <a href="detail.html" class="card-link">Read case study <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg></a>
-        </div>
-      </div>
+  <div class="cd-hero__overlay"></div>
+  <div class="cd-hero__content">
+    <div class="container">
+      <span class="cd-hero__eyebrow">Finance &amp; Fintech · Web Development · 2025</span>
+      <h1 class="cd-hero__title">Payment platform rebuilt —<br>3× faster transaction processing</h1>
+      <p class="cd-hero__subtitle">A high-volume fintech company's legacy payment system was causing cart abandonment at checkout. We redesigned the architecture and rebuilt the frontend, cutting transaction latency from 4.2 s to 1.1 s.</p>
     </div>
   </div>
 </section>
 
-<!-- ── FINAL CTA ─────────────────────────────────────────────── -->
-<section class="cta-banner">
+<!-- ── STATS STRIP ────────────────────────────────────────────── -->
+<div class="cd-stats">
   <div class="container">
-    <h2>Work with us on <span class="serif">something similar</span></h2>
-    <p>Tell us about your project. We'll tell you honestly what we can deliver and on what timeline.</p>
-    <div class="cta-banner-actions">
-      <a href="../contact.html" class="btn btn-primary btn-lg">Start a project</a>
-      <a href="../case-studies.html" class="btn btn-secondary btn-lg">See all work</a>
+    <div class="cd-stats__grid">
+      <div class="cd-stats__item">
+        <div class="cd-stats__label">Average transaction time</div>
+        <div class="cd-stats__value">1.1 s</div>
+      </div>
+      <div class="cd-stats__item">
+        <div class="cd-stats__label">Reduction in latency</div>
+        <div class="cd-stats__value">73%</div>
+      </div>
+      <div class="cd-stats__item">
+        <div class="cd-stats__label">Downtime during migration</div>
+        <div class="cd-stats__value">0</div>
+      </div>
     </div>
+  </div>
+</div>
+
+<!-- ── BODY ──────────────────────────────────────────────────── -->
+<section class="cd-body">
+  <div class="container">
+    <div class="cd-body__grid">
+
+      <!-- Left: text content -->
+      <div class="cd-body__left">
+        <h2 class="cd-body__title">Rebuilding FinCore's Payment Platform</h2>
+        <div class="cd-body__meta">
+          <div><strong>Client:</strong> FinCore — B2B fintech platform</div>
+          <div><strong>Timeline:</strong> 6 months</div>
+          <div><strong>Services:</strong> Web Development, Architecture Consulting</div>
+        </div>
+        <div class="cd-body__content">
+          <p>FinCore, a B2B fintech platform processing over $200M in annual transactions, was losing customers at checkout. Their legacy payment stack — built over five years with multiple vendor additions — had accumulated enough latency that transaction completion times regularly exceeded 4 seconds.</p>
+          <p>The business had tried optimizing the existing system twice and hit a ceiling. The architecture was the problem. At 4.2 s average completion time, cart abandonment on their checkout page had reached 38% — double the industry baseline.</p>
+          <p>They needed a rebuild, not another patch. The constraint: their largest client contract required zero downtime during migration.</p>
+
+          <h3>Our approach</h3>
+          <p>We started with a three-week discovery and architecture review. The core problem was sequential processing — seven vendor API calls made in series, any one of which could timeout and cascade. We proposed a parallel processing architecture with local result caching for idempotent lookups.</p>
+          <p>The migration used a strangler-fig pattern: new flows ran alongside the existing system in shadow mode for four weeks, with real traffic replayed against both. When the error rates matched and latency was confirmed to be below our target, we switched over — with the existing system on standby for 48 hours.</p>
+
+          <h3>What we built</h3>
+          <p>A parallelized payment processing service in Node.js, replacing sequential vendor calls with concurrent execution and a local caching layer for static data lookups. The new frontend checkout flow — built in React — was redesigned around the new latency profile, with optimistic UI patterns that felt instant to the end user even before the server responded.</p>
+          <p>We also delivered a real-time monitoring dashboard that gave FinCore's engineering team visibility into per-step latency breakdowns across their entire payment flow — something they hadn't had before.</p>
+
+          <h3>Technology used</h3>
+          <div class="tech-grid" style="margin-top:8px;">
+            <span class="tech-pill"><span class="tech-dot"></span>React</span>
+            <span class="tech-pill"><span class="tech-dot"></span>TypeScript</span>
+            <span class="tech-pill"><span class="tech-dot" style="background:var(--accent-cyan)"></span>Node.js</span>
+            <span class="tech-pill"><span class="tech-dot" style="background:var(--accent-cyan)"></span>Redis</span>
+            <span class="tech-pill"><span class="tech-dot" style="background:var(--accent-cyan)"></span>PostgreSQL</span>
+            <span class="tech-pill"><span class="tech-dot" style="background:#64748B"></span>AWS</span>
+            <span class="tech-pill"><span class="tech-dot" style="background:#64748B"></span>Docker</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: photos -->
+      <div class="cd-body__photos">
+        <img src="../../6.%20assets/images/card/payment1.jpg" alt="Contactless payment in action" loading="lazy">
+        <img src="../../6.%20assets/images/card/payment%202.jpg" alt="Mobile payment interface" loading="lazy">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── RESULTS ────────────────────────────────────────────────── -->
+<section class="cd-results">
+  <div class="container">
+    <h2>Results:</h2>
+    <ul>
+      <li><strong>Transaction latency</strong> dropped from 4.2 s to 1.1 s — a 73% improvement that eliminated the primary driver of checkout abandonment.</li>
+      <li><strong>Cart abandonment</strong> fell from 38% to 9%, directly recovering revenue that had been lost to slow page loads.</li>
+      <li><strong>Zero downtime</strong> during the full migration, satisfying the contractual requirement with FinCore's largest enterprise client.</li>
+      <li><strong>Real-time observability</strong> into payment flow latency, giving FinCore's engineering team the tooling to maintain performance gains independently.</li>
+    </ul>
+    <p>SoftFlex's parallel processing architecture didn't just speed up the checkout — it gave FinCore a foundation to scale. The strangler-fig migration approach preserved business continuity while entirely replacing the underlying system. This engagement demonstrates what's possible when architecture review and delivery are owned by one team with end-to-end accountability.</p>
   </div>
 </section>
 

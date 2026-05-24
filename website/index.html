@@ -93,7 +93,7 @@
 <header class="hero">
   <div class="container">
     <h1 class="hero-title">
-      Software built to scale <span class="serif">growing businesses</span>
+      We build software<br>that scales with<br><span class="serif">your business</span>
     </h1>
     <p class="hero-subtitle">
       Development, QA, and IT consulting — SoftFlex delivers enterprise results to growing companies without the overhead.
@@ -104,34 +104,71 @@
   </div>
 </header>
 
-<!-- ── CORE SERVICES ─────────────────────────────────────────── -->
-<section class="section bg-surface">
-  <div class="container">
-    <div class="cards-grid-3">
-      <div class="service-card">
-        <h4>Web & Mobile App Development</h4>
-        <p>Full-cycle development for web apps, mobile apps, SaaS platforms, and APIs. From discovery to deployment — one team owns the outcome.</p>
-        <a href="services/web-mobile.html" class="card-link">
-          Learn more
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg>
-        </a>
+<!-- ── SERVICES SHOWCASE ──────────────────────────────────────── -->
+<section class="svc-showcase">
+  <div class="svc-showcase__bg">
+    <img src="../6.%20assets/images/1.jpg" alt="" aria-hidden="true">
+  </div>
+  <div class="svc-showcase__inner">
+
+    <!-- Left: label + heading + CTA -->
+    <div class="svc-showcase__left">
+      <span class="svc-showcase__label">Services</span>
+      <h2 class="svc-showcase__heading">Full-cycle software delivery for teams built to grow</h2>
+      <a href="services/web-mobile.html" class="btn btn-secondary">All Services</a>
+    </div>
+
+    <!-- Right: sliding card -->
+    <div class="svc-showcase__card">
+
+      <div class="svc-slide active">
+        <div class="svc-slide__col-a">
+          <span class="svc-slide__counter">01/03</span>
+          <div class="svc-slide__body">
+            <h3>Web &amp; Mobile App Development</h3>
+            <p>Full-cycle development for web apps, mobile apps, SaaS platforms, and APIs. From discovery to deployment — one team owns the outcome.</p>
+          </div>
+        </div>
+        <div class="svc-slide__col-b">
+          <img src="../6.%20assets/images/card/card%201.jpg" alt="Web &amp; Mobile development">
+        </div>
       </div>
-      <div class="service-card">
-        <h4>Quality Control & Software Testing</h4>
-        <p>Functional, performance, security, and automated testing. We verify your software works before your users find out it doesn't.</p>
-        <a href="services/qa-testing.html" class="card-link">
-          Learn more
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg>
-        </a>
+
+      <div class="svc-slide">
+        <div class="svc-slide__col-a">
+          <span class="svc-slide__counter">02/03</span>
+          <div class="svc-slide__body">
+            <h3>Quality Control &amp; Software Testing</h3>
+            <p>Functional, performance, security, and automated testing. We verify your software works before your users find out it doesn't.</p>
+          </div>
+        </div>
+        <div class="svc-slide__col-b">
+          <img src="../6.%20assets/images/card/card%202.jpg" alt="QA &amp; Testing">
+        </div>
       </div>
-      <div class="service-card">
-        <h4>IT Consulting</h4>
-        <p>Strategic technology advisory: architecture review, stack selection, vendor evaluation, and digital transformation planning. We help you make decisions that age well.</p>
-        <a href="services/it-consulting.html" class="card-link">
-          Learn more
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg>
-        </a>
+
+      <div class="svc-slide">
+        <div class="svc-slide__col-a">
+          <span class="svc-slide__counter">03/03</span>
+          <div class="svc-slide__body">
+            <h3>IT Consulting</h3>
+            <p>Strategic technology advisory: architecture review, stack selection, vendor evaluation, and digital transformation planning. We help you make decisions that age well.</p>
+          </div>
+        </div>
+        <div class="svc-slide__col-b">
+          <img src="../6.%20assets/images/card/card%203.jpg" alt="IT Consulting">
+        </div>
       </div>
+
+      <div class="svc-showcase__nav">
+        <button class="svc-nav-btn" id="svcPrev" aria-label="Previous service">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="svc-nav-btn" id="svcNext" aria-label="Next service">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+
     </div>
   </div>
 </section>
@@ -571,6 +608,23 @@
       if (!wasOpen) item.classList.add('open');
     });
   });
+
+  // Services showcase slider
+  (function () {
+    const slides = document.querySelectorAll('.svc-slide');
+    let cur = 0;
+    function goTo(idx) {
+      slides[cur].classList.remove('active');
+      cur = (idx + slides.length) % slides.length;
+      slides[cur].classList.add('active');
+    }
+    const svcPrev = document.getElementById('svcPrev');
+    const svcNext = document.getElementById('svcNext');
+    if (svcPrev && svcNext) {
+      svcPrev.addEventListener('click', () => goTo(cur - 1));
+      svcNext.addEventListener('click', () => goTo(cur + 1));
+    }
+  })();
 
   // Why choose us carousel
   const whyCardsEl = document.getElementById('whyCards');

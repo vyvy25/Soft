@@ -62,127 +62,195 @@
   <div class="mobile-nav-footer"><a href="contact.html" class="btn btn-primary" style="width:100%;justify-content:center;">Get in touch</a></div>
 </div>
 
-<!-- ── HERO ──────────────────────────────────────────────────── -->
-<header class="hero" style="padding-bottom:72px;">
+<!-- ── CONTACT HERO + FORM ────────────────────────────────────── -->
+<section class="section contact-centered">
   <div class="container">
-    <span class="hero-eyebrow"><span class="dot"></span>We respond within one business day</span>
-    <h1 class="hero-title" style="max-width:640px;">Let's talk about<br><span class="serif">your project</span></h1>
-    <p class="hero-subtitle">Tell us what you're building, what's not working, or what you're trying to decide. We'll come back with honest, direct input — not a sales pitch.</p>
+    <h1 class="contact-heading">Start Your Project with Us</h1>
+    <p class="contact-subheading">Share your idea and we'll respond within one business day<br>with a clear, no-obligation next step.</p>
+
+    <div class="contact-form-center">
+      <form id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <input class="form-input" type="text" id="firstName" name="firstName" placeholder="First Name" required autocomplete="given-name">
+          </div>
+          <div class="form-group">
+            <input class="form-input" type="text" id="lastName" name="lastName" placeholder="Last Name" required autocomplete="family-name">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <input class="form-input" type="tel" id="phone" name="phone" placeholder="Phone Number" autocomplete="tel">
+          </div>
+          <div class="form-group">
+            <input class="form-input" type="email" id="email" name="email" placeholder="Email" required autocomplete="email">
+          </div>
+        </div>
+        <div class="form-group">
+          <textarea class="form-textarea" id="message" name="message" placeholder="Leave your message..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg" style="width:100%;justify-content:center;">Submit</button>
+      </form>
+
+      <div id="formSuccess" style="display:none; margin-top:24px; padding:24px; background:rgba(238,78,52,0.07); border:1px solid rgba(238,78,52,0.2); border-radius:16px; text-align:center;">
+        <p style="font-size:20px; font-weight:600; margin-bottom:8px;">Message sent.</p>
+        <p style="font-size:16px; color:var(--text-secondary);">We'll get back to you within one business day.</p>
+      </div>
+    </div>
   </div>
-</header>
+</section>
 
-<!-- ── CONTACT SECTION ───────────────────────────────────────── -->
-<section class="section" style="padding-top:0;">
-  <div class="container">
-    <div class="contact-grid">
-      <!-- Form -->
-      <div>
-        <div class="response-note">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          We respond within one business day.
-        </div>
-        <form id="contactForm" novalidate>
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label" for="name">Name</label>
-              <input class="form-input" type="text" id="name" name="name" placeholder="Your full name" required autocomplete="name">
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="company">Company</label>
-              <input class="form-input" type="text" id="company" name="company" placeholder="Company name" autocomplete="organization">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label" for="email">Work email</label>
-              <input class="form-input" type="email" id="email" name="email" placeholder="you@company.com" required autocomplete="email">
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="country">Country</label>
-              <input class="form-input" type="text" id="country" name="country" placeholder="United States" autocomplete="country-name">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="service">Service interest</label>
-            <select class="form-select" id="service" name="service">
-              <option value="" disabled selected>Select a service</option>
-              <option value="web-mobile">Web & Mobile Development</option>
-              <option value="qa">QA & Software Testing</option>
-              <option value="consulting">IT Consulting</option>
-              <option value="unsure">Not sure yet</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="message">Project description</label>
-            <textarea class="form-textarea" id="message" name="message" placeholder="Tell us about your project — what you're building, the challenges you're facing, and what success looks like." required></textarea>
-          </div>
-          <div style="margin-top:4px;">
-            <button type="submit" class="btn btn-primary btn-lg" style="width:100%;justify-content:center;">
-              Send message
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-            </button>
-          </div>
-        </form>
+<!-- ── TESTIMONIALS ──────────────────────────────────────────── -->
+<section class="section" style="padding-top:0; padding-bottom:96px; overflow:hidden;">
+  <div class="testimonial-marquee">
+    <div class="testimonial-track">
 
-        <!-- Success message (hidden) -->
-        <div id="formSuccess" style="display:none; margin-top:24px; padding:24px; background:rgba(79,140,255,0.07); border:1px solid rgba(79,140,255,0.2); border-radius:16px; text-align:center;">
-          <p style="font-size:20px; font-weight:600; margin-bottom:8px;">Message sent.</p>
-          <p style="font-size:14px; color:var(--text-secondary);">We'll get back to you within one business day.</p>
+      <!-- Card 1 -->
+      <div class="testimonial-card">
+        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         </div>
+        <p class="testimonial-quote">"Working with SoftFlex has been transformative. Their expertise and innovative solutions significantly improved our operations and drove remarkable growth. We highly recommend their development services."</p>
+        <p class="testimonial-author">Lisa Thompson <span style="font-weight:400;color:var(--text-secondary);">— VP Operations, FinCore</span></p>
       </div>
 
-      <!-- Info -->
-      <div>
-        <div class="contact-info">
-          <h3 style="font-size:17px; font-weight:600; margin-bottom:4px;">Contact information</h3>
-          <p style="font-size:13px; color:var(--text-tertiary); margin-bottom:24px;">Multiple ways to reach us. We prefer email for project enquiries.</p>
-
-          <div class="contact-info-item">
-            <div class="contact-info-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            </div>
-            <div>
-              <h4>Email</h4>
-              <p><a href="mailto:hello@softflex.com">hello@softflex.com</a></p>
-            </div>
-          </div>
-
-          <div class="contact-info-item">
-            <div class="contact-info-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            </div>
-            <div>
-              <h4>Registered address</h4>
-              <p>MarketGrid LLC<br>Delaware, United States</p>
-            </div>
-          </div>
-
-          <div class="contact-info-item">
-            <div class="contact-info-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            </div>
-            <div>
-              <h4>Response time</h4>
-              <p>Within one business day</p>
-            </div>
-          </div>
+      <!-- Card 2 -->
+      <div class="testimonial-card">
+        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         </div>
-
-        <!-- Social -->
-        <div style="margin-top:24px; padding:28px; background:var(--bg-secondary); border:1px solid var(--border); border-radius:20px;">
-          <p style="font-size:13px; font-family:var(--font-mono); text-transform:uppercase; letter-spacing:0.08em; color:var(--text-tertiary); margin-bottom:16px;">Follow us</p>
-          <div style="display:flex;flex-direction:column;gap:10px;">
-            <a href="#" style="display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;border:1px solid var(--border);color:var(--text-secondary);font-size:14px;transition:border-color 0.2s,color 0.2s;" onmouseover="this.style.borderColor='rgba(79,140,255,0.3)';this.style.color='var(--text-primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--text-secondary)'">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2" fill="currentColor"/></svg>
-              LinkedIn — SoftFlex
-            </a>
-            <a href="#" style="display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;border:1px solid var(--border);color:var(--text-secondary);font-size:14px;transition:border-color 0.2s,color 0.2s;" onmouseover="this.style.borderColor='rgba(79,140,255,0.3)';this.style.color='var(--text-primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--text-secondary)'">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
-              GitHub — SoftFlex
-            </a>
-          </div>
-        </div>
+        <p class="testimonial-quote">"SoftFlex's consulting was instrumental in our success. Their data-driven insights and technical depth streamlined our operations and boosted efficiency in ways we didn't think possible this quickly."</p>
+        <p class="testimonial-author">Marcus Chen <span style="font-weight:400;color:var(--text-secondary);">— CTO, DataPulse</span></p>
       </div>
+
+      <!-- Card 3 -->
+      <div class="testimonial-card">
+        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="testimonial-quote">"SoftFlex was a game-changer for our platform. Their tailored approach and expert guidance improved our decision-making processes in measurable ways. Their engineering quality is genuinely unmatched."</p>
+        <p class="testimonial-author">Sarah Williams <span style="font-weight:400;color:var(--text-secondary);">— Product Lead, Vantage Labs</span></p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="testimonial-card">
+        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="testimonial-quote">"We hired SoftFlex to rebuild our core platform from scratch. They delivered on time, communicated clearly throughout, and the code quality exceeded what our internal team was producing. Outstanding execution."</p>
+        <p class="testimonial-author">James Patel <span style="font-weight:400;color:var(--text-secondary);">— CEO, NovaTech Solutions</span></p>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="testimonial-card">
+        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="testimonial-quote">"SoftFlex integrated seamlessly with our engineering team. Their QA process caught issues we'd been living with for months. Releases became something we looked forward to rather than dreaded. Real difference-makers."</p>
+        <p class="testimonial-author">Emma Rodriguez <span style="font-weight:400;color:var(--text-secondary);">— Head of Engineering, CloudBridge</span></p>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="testimonial-card">
+        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="testimonial-quote">"The IT architecture review SoftFlex delivered saved us from a costly rewrite. They identified the real bottlenecks, gave us a phased roadmap, and stayed hands-on through the first milestone. Exactly what we needed."</p>
+        <p class="testimonial-author">David Kim <span style="font-weight:400;color:var(--text-secondary);">— Co-founder, Streamline AI</span></p>
+      </div>
+
+      <!-- Duplicate set for seamless loop -->
+      <div class="testimonial-card">
+        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="testimonial-quote">"Working with SoftFlex has been transformative. Their expertise and innovative solutions significantly improved our operations and drove remarkable growth. We highly recommend their development services."</p>
+        <p class="testimonial-author">Lisa Thompson <span style="font-weight:400;color:var(--text-secondary);">— VP Operations, FinCore</span></p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="testimonial-quote">"SoftFlex's consulting was instrumental in our success. Their data-driven insights and technical depth streamlined our operations and boosted efficiency in ways we didn't think possible this quickly."</p>
+        <p class="testimonial-author">Marcus Chen <span style="font-weight:400;color:var(--text-secondary);">— CTO, DataPulse</span></p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="testimonial-quote">"SoftFlex was a game-changer for our platform. Their tailored approach and expert guidance improved our decision-making processes in measurable ways. Their engineering quality is genuinely unmatched."</p>
+        <p class="testimonial-author">Sarah Williams <span style="font-weight:400;color:var(--text-secondary);">— Product Lead, Vantage Labs</span></p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="testimonial-quote">"We hired SoftFlex to rebuild our core platform from scratch. They delivered on time, communicated clearly throughout, and the code quality exceeded what our internal team was producing. Outstanding execution."</p>
+        <p class="testimonial-author">James Patel <span style="font-weight:400;color:var(--text-secondary);">— CEO, NovaTech Solutions</span></p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="testimonial-quote">"SoftFlex integrated seamlessly with our engineering team. Their QA process caught issues we'd been living with for months. Releases became something we looked forward to rather than dreaded. Real difference-makers."</p>
+        <p class="testimonial-author">Emma Rodriguez <span style="font-weight:400;color:var(--text-secondary);">— Head of Engineering, CloudBridge</span></p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="testimonial-quote">"The IT architecture review SoftFlex delivered saved us from a costly rewrite. They identified the real bottlenecks, gave us a phased roadmap, and stayed hands-on through the first milestone. Exactly what we needed."</p>
+        <p class="testimonial-author">David Kim <span style="font-weight:400;color:var(--text-secondary);">— Co-founder, Streamline AI</span></p>
+      </div>
+
     </div>
   </div>
 </section>
@@ -203,7 +271,7 @@
           </span>
           <span class="sf-logo__name">Soft<em>Flex</em></span>
         </a>
-        <p class="sf-footer__tagline">End-to-end software development<br>for growth-stage companies.</p>
+        <p class="sf-footer__tagline">We build software<br>to scale your business.</p>
       </div>
       <div>
         <h4 class="sf-footer__col-title">Legal</h4>
