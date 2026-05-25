@@ -900,6 +900,10 @@ input, textarea, select { font-family: inherit; }
   border-left: 1px solid var(--color-border);
   color: inherit;
   transition: opacity 0.2s;
+  height: 184px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .ind-item:first-child { border-left: none; padding-left: 0; }
 .ind-item:last-child { padding-right: 0; }
@@ -911,7 +915,6 @@ input, textarea, select { font-family: inherit; }
   color: var(--color-accent);
   letter-spacing: -0.02em;
   line-height: 1.2;
-  margin-bottom: 16px;
 }
 
 .ind-item p {
