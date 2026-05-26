@@ -24,9 +24,11 @@
       <li class="nav-item">
         <a href="#" class="nav-link active">Services <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <div class="mega-menu">
-          <a href="web-mobile.html">Web & Mobile Dev</a>
-          <a href="qa-testing.html">QA & Testing</a>
-          <a href="it-consulting.html" class="active">IT Consulting</a>
+          <div class="mega-menu-inner">
+            <a href="web-mobile.html">Web & Mobile Dev</a>
+            <a href="qa-testing.html">QA & Testing</a>
+            <a href="it-consulting.html" class="active">IT Consulting</a>
+          </div>
         </div>
       </li>
       <li><a href="../industries.html" class="nav-link">Industries</a></li>
@@ -61,8 +63,7 @@
     <h1 class="hero-title">Technology decisions<br>that <span class="serif">age well</span></h1>
     <p class="hero-subtitle">Strategy before execution. We help you assess your current stack, evaluate your options, and make architecture decisions you won't regret two years from now.</p>
     <div class="hero-actions">
-      <a href="../contact.html" class="btn btn-primary btn-lg">Start a conversation</a>
-      <a href="../case-studies.html" class="btn btn-secondary btn-lg">See our work</a>
+      <a href="../contact.html" class="btn btn-primary btn-lg">Start a project</a>
     </div>
   </div>
 </header>
@@ -296,6 +297,16 @@
   hamburger.addEventListener('click', () => { const open = mobileNav.classList.toggle('open'); hamburger.classList.toggle('open', open); document.body.style.overflow = open ? 'hidden' : ''; });
   document.getElementById('mobileServicesToggle').addEventListener('click', function() { document.getElementById('mobileServicesBody').classList.toggle('open'); this.classList.toggle('open'); });
   document.querySelectorAll('.faq-question').forEach(btn => { btn.addEventListener('click', () => { const item = btn.closest('.faq-item'); const wasOpen = item.classList.contains('open'); document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open')); if (!wasOpen) item.classList.add('open'); }); });
+  (function () {
+    var heroCta = document.querySelector('.hero-actions');
+    var navBtn  = document.querySelector('.nav-cta .btn');
+    if (!heroCta || !navBtn) return;
+    new IntersectionObserver(function (entries) {
+      var visible = entries[0].isIntersecting;
+      navBtn.classList.toggle('btn-secondary', visible);
+      navBtn.classList.toggle('btn-primary',   !visible);
+    }, { threshold: 0 }).observe(heroCta);
+  })();
 </script>
 </body>
 </html>
