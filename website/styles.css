@@ -1718,7 +1718,7 @@ input, textarea, select { font-family: inherit; }
 .industry-hero-row > .section-title,
 .industry-hero-row > .section-subtitle,
 .industry-hero-row > .industry-pain-list { grid-column: 1; }
-.industry-hero-row > .industry-img-col { grid-column: 2; grid-row: 1 / -1; }
+.industry-hero-row > .industry-img-col { grid-column: 2; grid-row: 1 / span 4; }
 .industry-pain-list {
   display: flex;
   flex-direction: column;
