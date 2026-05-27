@@ -1324,9 +1324,9 @@ input, textarea, select { font-family: inherit; }
 .flow-row::before {
   content: '';
   position: absolute;
-  left: calc(100% / 8);
-  right: calc(100% / 8);
-  top: 35px;
+  left: calc(100% / 6);
+  right: calc(100% / 6);
+  top: 26px;
   height: 1.5px;
   background: rgba(255, 75, 46, 0.35);
 }
@@ -1336,13 +1336,13 @@ input, textarea, select { font-family: inherit; }
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 0 20px 48px;
+  padding: 0 20px 0;
   position: relative;
   z-index: 1;
 }
 .flow-node {
-  width: 70px;
-  height: 70px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   border: 1.5px solid rgba(255, 75, 46, 0.45);
   background: var(--bg-primary);
@@ -1355,8 +1355,8 @@ input, textarea, select { font-family: inherit; }
   transition: border-color 0.2s, background 0.2s;
 }
 .flow-node svg {
-  width: 26px;
-  height: 26px;
+  width: 20px;
+  height: 20px;
   stroke-width: 1.5;
 }
 .flow-step:hover .flow-node {
@@ -1384,30 +1384,8 @@ input, textarea, select { font-family: inherit; }
 }
 .flow-curve {
   position: relative;
-  height: 60px;
+  height: 80px;
   flex-shrink: 0;
-}
-.flow-curve--right::before {
-  content: '';
-  position: absolute;
-  right: calc(100% / 8 - 35px);
-  top: 0;
-  width: 70px;
-  height: 100%;
-  border-right: 1.5px solid rgba(255, 75, 46, 0.35);
-  border-bottom: 1.5px solid rgba(255, 75, 46, 0.35);
-  border-bottom-right-radius: 35px;
-}
-.flow-curve--left::before {
-  content: '';
-  position: absolute;
-  left: calc(100% / 8 - 35px);
-  top: 0;
-  width: 70px;
-  height: 100%;
-  border-left: 1.5px solid rgba(255, 75, 46, 0.35);
-  border-bottom: 1.5px solid rgba(255, 75, 46, 0.35);
-  border-bottom-left-radius: 35px;
 }
 
 @media (max-width: 768px) {

@@ -11,18 +11,11 @@
   <link rel="stylesheet" href="../styles.css">
   <style>
     .hero {
-      background-image: url('../6-assets/img/card/room.jpg');
-      background-size: 140%;
-      background-position: 55% 52%;
       min-height: 0;
       margin-top: calc(-1 * var(--nav-h));
       padding-top: calc(120px + var(--nav-h));
     }
     .hero-subtitle { margin-bottom: 0; }
-    .hero::before {
-      background:
-        linear-gradient(to right, rgba(8, 8, 15, 0.95) 0%, rgba(8, 8, 15, 0.82) 50%, rgba(8, 8, 15, 0.68) 100%);
-    }
   </style>
 </head>
 <body class="page-glow">
@@ -83,18 +76,19 @@
 <!-- ── WHAT WE BUILD ─────────────────────────────────────────── -->
 <section class="ind-section">
   <div class="ind-bg">
-    <img src="../6-assets/img/card/teamwork.jpg" alt="" aria-hidden="true">
+    <img src="../6-assets/img/card/team-work1.jpg" alt="" aria-hidden="true" style="object-position:center 35%;">
     <div class="ind-overlay"></div>
   </div>
-  <div class="container ind-inner">
-    <div class="ind-header">
+  <div class="container ind-inner" style="display:flex;flex-direction:column;gap:48px;">
+    <div class="ind-header" style="align-items:center;text-align:center;width:100%;">
       <span class="section-eyebrow">What we build</span>
       <h2 class="ind-heading">If your product lives on a screen, we build it</h2>
+      <p class="section-subtitle" style="text-align:center;margin:0 auto;">We work across the full range of digital product types — from consumer apps to enterprise platforms.</p>
     </div>
-    <div class="ind-grid" style="grid-template-columns:repeat(3,1fr);">
+    <div class="ind-grid" style="grid-template-columns:repeat(3,1fr);width:100%;gap:20px;">
       <div class="ind-card">
         <h3 class="ind-card__title">Consumer web apps</h3>
-        <p class="ind-card__desc">React, Next.js, Vue. Performance-optimized, accessible, and built to handle real traffic.</p>
+        <p class="ind-card__desc">React, Next.js, and Vue. Performance-optimized, accessible interfaces built to handle real user traffic.</p>
       </div>
       <div class="ind-card">
         <h3 class="ind-card__title">Mobile apps (iOS & Android)</h3>
@@ -102,7 +96,7 @@
       </div>
       <div class="ind-card">
         <h3 class="ind-card__title">SaaS platforms</h3>
-        <p class="ind-card__desc">Multi-tenant architecture, subscription flows, role-based access, and usage dashboards.</p>
+        <p class="ind-card__desc">Multi-tenant architecture, subscription flows, role-based access control, and usage analytics dashboards.</p>
       </div>
       <div class="ind-card">
         <h3 class="ind-card__title">Internal tools</h3>
@@ -125,7 +119,7 @@
   <div class="container">
     <div class="section-header" style="text-align:center;display:flex;flex-direction:column;align-items:center;">
       <span class="section-eyebrow">How we work</span>
-      <h2 class="section-title" style="max-width:560px;">A process built for accountability, not meetings</h2>
+      <h2 class="section-title" style="max-width:860px;">A process built for accountability, not meetings</h2>
     </div>
     <div class="flow">
       <!-- Row 1: LTR -->
@@ -136,7 +130,7 @@
           </div>
           <div class="flow-label">
             <h4>Discovery</h4>
-            <p>We scope requirements, map technical constraints, and define success metrics before a line of code is written.</p>
+            <p>We scope requirements, map constraints, and define success metrics before the first line of code.</p>
           </div>
         </div>
         <div class="flow-step">
@@ -145,7 +139,7 @@
           </div>
           <div class="flow-label">
             <h4>Architecture</h4>
-            <p>System design, data models, API contracts, and infrastructure plan — documented so your team inherits something maintainable.</p>
+            <p>System design, API contracts, and infrastructure plan — documented so your team can own and maintain it.</p>
           </div>
         </div>
         <div class="flow-step">
@@ -154,7 +148,7 @@
           </div>
           <div class="flow-label">
             <h4>Design</h4>
-            <p>UI/UX design aligned to your product goals. Prototype-first — you approve flows before development begins.</p>
+            <p>Prototype-first — you see and approve every flow before development begins.</p>
           </div>
         </div>
       </div>
@@ -168,7 +162,7 @@
           </div>
           <div class="flow-label">
             <h4>Development</h4>
-            <p>Iterative sprints with weekly demos. You always know what's been built and what's next — no black-box delivery.</p>
+            <p>Iterative sprints with weekly demos — you always know what's built and what's next.</p>
           </div>
         </div>
         <div class="flow-step">
@@ -177,7 +171,7 @@
           </div>
           <div class="flow-label">
             <h4>QA</h4>
-            <p>Testing runs in parallel with development. Functional, regression, performance, and security checks before every release.</p>
+            <p>Functional, regression, and performance checks — run in parallel with development, not after.</p>
           </div>
         </div>
         <div class="flow-step">
@@ -186,7 +180,7 @@
           </div>
           <div class="flow-label">
             <h4>Launch &amp; Support</h4>
-            <p>Deployment, handoff documentation, and ongoing support as your product scales and requirements evolve.</p>
+            <p>Deployment, documentation, and ongoing support as your product scales and requirements change.</p>
           </div>
         </div>
       </div>
