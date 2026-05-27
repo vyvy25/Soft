@@ -59,7 +59,7 @@
 <!-- ── HERO ──────────────────────────────────────────────────── -->
 <header class="hero">
   <div class="container">
-    <span class="hero-eyebrow"><span class="dot"></span>Quality Control & Software Testing</span>
+    <span class="hero-eyebrow">Quality Control & Software Testing</span>
     <h1 class="hero-title">Ship software that <span class="serif">works</span> —<br>every time</h1>
     <p class="hero-subtitle">We find the bugs your users would find — before they do. End-to-end QA and testing that covers functional, performance, security, and automation across web and mobile.</p>
     <div class="hero-actions">
@@ -67,37 +67,6 @@
     </div>
   </div>
 </header>
-
-<!-- ── COST OF POOR QA ───────────────────────────────────────── -->
-<section class="section" style="background:var(--bg-secondary);border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft);">
-  <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
-      <div>
-        <span class="section-eyebrow">The cost of skipping QA</span>
-        <h2 class="section-title">Production bugs cost more than the QA you skipped</h2>
-        <p class="section-subtitle">A bug found in development costs minutes to fix. The same bug in production costs hours of engineering time, customer support load, potential data issues, and lost user trust — often permanently.</p>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-        <div style="padding:24px;background:var(--bg-elevated);border:1px solid var(--border);border-radius:12px;text-align:center;">
-          <div class="stat-value" style="font-size:36px;">15×</div>
-          <div class="stat-label">more expensive to fix bugs post-launch vs. in development</div>
-        </div>
-        <div style="padding:24px;background:var(--bg-elevated);border:1px solid var(--border);border-radius:12px;text-align:center;">
-          <div class="stat-value" style="font-size:36px;">88%</div>
-          <div class="stat-label">of users abandon apps after two bad experiences</div>
-        </div>
-        <div style="padding:24px;background:var(--bg-elevated);border:1px solid var(--border);border-radius:12px;text-align:center;">
-          <div class="stat-value" style="font-size:36px;">$2.4T</div>
-          <div class="stat-label">annual cost of poor software quality in the US (CISQ 2022)</div>
-        </div>
-        <div style="padding:24px;background:var(--bg-elevated);border:1px solid var(--border);border-radius:12px;text-align:center;">
-          <div class="stat-value" style="font-size:36px;">1 hr</div>
-          <div class="stat-label">average downtime cost for enterprise: $300K+</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ── TESTING SERVICES ──────────────────────────────────────── -->
 <section class="section">
@@ -143,17 +112,33 @@
 </section>
 
 <!-- ── QA PROCESS ────────────────────────────────────────────── -->
-<section class="section">
+<section class="section bg-surface">
   <div class="container">
     <div class="section-header" style="text-align:center;display:flex;flex-direction:column;align-items:center;">
       <span class="section-eyebrow">Our process</span>
       <h2 class="section-title" style="max-width:520px;">Rigorous QA from plan to report</h2>
     </div>
-    <div class="process-steps">
-      <div class="process-step"><div class="step-number">01</div><h4>Test planning</h4><p>Define scope, test objectives, risk areas, and entry/exit criteria before any testing begins.</p></div>
-      <div class="process-step"><div class="step-number">02</div><h4>Test case design</h4><p>Write test cases mapped to requirements. Every acceptance criterion has a corresponding test.</p></div>
-      <div class="process-step"><div class="step-number">03</div><h4>Execution</h4><p>Manual and automated test runs with detailed logging of environment, steps, and results.</p></div>
-      <div class="process-step"><div class="step-number">04</div><h4>Defect tracking & reporting</h4><p>Every defect is logged with severity, reproduction steps, and supporting evidence. Weekly status reports included.</p></div>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;">
+      <div class="service-card">
+        <div style="font-family:var(--font-mono);font-size:11px;color:var(--accent);margin-bottom:16px;">01</div>
+        <h3>Test planning</h3>
+        <p>Define scope, test objectives, risk areas, and entry/exit criteria before any testing begins.</p>
+      </div>
+      <div class="service-card">
+        <div style="font-family:var(--font-mono);font-size:11px;color:var(--accent);margin-bottom:16px;">02</div>
+        <h3>Test case design</h3>
+        <p>Write test cases mapped to requirements. Every acceptance criterion has a corresponding test.</p>
+      </div>
+      <div class="service-card">
+        <div style="font-family:var(--font-mono);font-size:11px;color:var(--accent);margin-bottom:16px;">03</div>
+        <h3>Execution</h3>
+        <p>Manual and automated test runs with detailed logging of environment, steps, and results.</p>
+      </div>
+      <div class="service-card">
+        <div style="font-family:var(--font-mono);font-size:11px;color:var(--accent);margin-bottom:16px;">04</div>
+        <h3>Defect tracking & reporting</h3>
+        <p>Every defect is logged with severity, reproduction steps, and supporting evidence. Weekly status reports included.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -183,58 +168,27 @@
 </section>
 
 <!-- ── ENGAGEMENT MODELS ─────────────────────────────────────── -->
-<section class="section">
+<section class="section bg-surface">
   <div class="container">
     <div class="section-header">
       <span class="section-eyebrow">Engagement models</span>
       <h2 class="section-title">Three ways to work with us on QA</h2>
     </div>
-    <div class="cards-grid-3">
-      <div class="service-card">
-        <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
-        <h3>Embedded QA team</h3>
+    <div class="capabilities-grid">
+      <div class="capability-item">
+        <div class="cap-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <h4>Embedded QA team</h4>
         <p>Our testers join your sprint cycles and work alongside your developers. Testing is continuous, not a phase at the end.</p>
-        <span class="tag tag-blue" style="margin-top:auto;">Ongoing engagement</span>
       </div>
-      <div class="service-card">
-        <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-        <h3>Project-based testing</h3>
+      <div class="capability-item">
+        <div class="cap-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+        <h4>Project-based testing</h4>
         <p>We test a specific release, feature set, or milestone. Defined scope, clear deliverables, fixed timeline.</p>
-        <span class="tag tag-cyan" style="margin-top:auto;">Fixed scope</span>
       </div>
-      <div class="service-card">
-        <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-        <h3>QA-as-a-service retainer</h3>
+      <div class="capability-item">
+        <div class="cap-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <h4>QA-as-a-service retainer</h4>
         <p>Monthly testing capacity on standby. Good for teams with regular releases who need consistent QA coverage without hiring.</p>
-        <span class="tag tag-neutral" style="margin-top:auto;">Monthly retainer</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── FAQ ───────────────────────────────────────────────────── -->
-<section class="section">
-  <div class="container">
-    <div class="section-header" style="max-width:640px;">
-      <span class="section-eyebrow">Questions</span>
-      <h2 class="section-title">Common questions about our QA service</h2>
-    </div>
-    <div class="faq-list" style="max-width:760px;">
-      <div class="faq-item">
-        <button class="faq-question">Do you support CI/CD pipelines? <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">Yes. We integrate automated test suites directly into your CI/CD pipeline — GitHub Actions, GitLab CI, CircleCI, and others. Tests run on every pull request and before every deployment, with results piped back into your existing developer workflow.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">Can you test existing mobile apps? <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">Yes. We test both iOS and Android across real devices and simulators. We cover platform-specific edge cases: permissions, offline behavior, background/foreground transitions, push notifications, and deep link handling. We can work with your existing app regardless of how it was built.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">Do you write test documentation? <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">All engagements include a test plan, test cases (in your preferred format — Jira, TestRail, spreadsheet, or Notion), defect reports, and a final testing summary. Documentation is a deliverable, not an afterthought. Your team inherits a usable QA asset, not just a report.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">How do you handle security testing? <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">We cover OWASP Top 10 as a baseline for all web and API security assessments. For regulated industries (fintech, healthcare), we can scope a full penetration test as a standalone engagement or alongside functional testing. All findings are documented with CVSS severity ratings and remediation guidance.</div></div>
       </div>
     </div>
   </div>
@@ -245,9 +199,11 @@
   <div class="container">
     <h2>Stop finding out about bugs <span class="serif">from your users</span></h2>
     <p>Tell us about your product and your release timeline. We'll tell you what testing coverage you actually need.</p>
+    <div class="cta-banner-img">
+      <img src="../6-assets/img/card/white-black.jpg" alt="QA team testing software" loading="lazy" style="filter:grayscale(100%)">
+    </div>
     <div class="cta-banner-actions">
-      <a href="../contact.html" class="btn btn-primary btn-sm">Talk to us</a>
-      <a href="../case-studies.html" class="btn btn-secondary btn-sm">See our work</a>
+      <a href="../contact.html" class="btn btn-primary btn-sm">Start a project</a>
     </div>
   </div>
 </section>

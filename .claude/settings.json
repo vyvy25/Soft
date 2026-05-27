@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e \"const p = require\\('./node_modules/puppeteer'\\); console.log\\(p.executablePath\\(\\)\\)\")",
+      "Bash(node -e \"import\\('./node_modules/puppeteer/lib/esm/puppeteer/node/PuppeteerNode.js'\\).then\\(m => console.log\\('ok'\\)\\).catch\\(e => console.log\\(e.message\\)\\)\")"
+    ]
+  }
+}

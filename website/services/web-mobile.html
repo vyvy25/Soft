@@ -12,14 +12,16 @@
   <style>
     .hero {
       background-image: url('../6-assets/img/card/room.jpg');
-      background-size: cover;
-      background-position: 55% 50%;
+      background-size: 140%;
+      background-position: 55% 52%;
       min-height: 0;
+      margin-top: calc(-1 * var(--nav-h));
+      padding-top: calc(120px + var(--nav-h));
     }
     .hero-subtitle { margin-bottom: 0; }
     .hero::before {
       background:
-        linear-gradient(to right, rgba(8, 8, 15, 0.92) 0%, rgba(8, 8, 15, 0.72) 50%, rgba(8, 8, 15, 0.50) 100%);
+        linear-gradient(to right, rgba(8, 8, 15, 0.95) 0%, rgba(8, 8, 15, 0.82) 50%, rgba(8, 8, 15, 0.68) 100%);
     }
   </style>
 </head>
@@ -72,8 +74,8 @@
 <!-- ── HERO ──────────────────────────────────────────────────── -->
 <header class="hero">
   <div class="container">
-    <span class="hero-eyebrow"><span class="dot"></span>Web & Mobile App Development</span>
-    <h1 class="hero-title">Full-cycle development,<br>from <span class="serif">idea to deployment</span></h1>
+    <span class="hero-eyebrow">Web & Mobile App Development</span>
+    <h1 class="hero-title">We build it end-to-end.<br><span style="color:var(--color-accent);">You get a product that works.</span></h1>
     <p class="hero-subtitle">We own the entire build lifecycle — discovery, architecture, design, development, QA, and launch. You get a working product, not a handoff problem.</p>
   </div>
 </header>
@@ -122,7 +124,7 @@
 </section>
 
 <!-- ── DEVELOPMENT PROCESS ───────────────────────────────────── -->
-<section class="section">
+<section class="section bg-surface">
   <div class="container">
     <div class="section-header" style="text-align:center;display:flex;flex-direction:column;align-items:center;">
       <span class="section-eyebrow">How we work</span>
@@ -192,27 +194,8 @@
   </div>
 </section>
 
-<!-- ── INDUSTRIES ────────────────────────────────────────────── -->
-<section class="section">
-  <div class="container">
-    <div class="section-header-row">
-      <div>
-        <span class="section-eyebrow">Industries</span>
-        <h2 class="section-title">We know your sector's constraints</h2>
-      </div>
-      <a href="../industries.html" class="btn btn-secondary btn-sm">View all industries <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg></a>
-    </div>
-    <div class="cards-grid-2">
-      <a href="../industries.html#finance" class="industry-card"><div class="industry-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-4 0v2M12 12v4"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg></div><div class="industry-card-body"><h4>Finance & Fintech</h4><p>Secure, compliant, high-performance platforms for financial products.</p></div></a>
-      <a href="../industries.html#gaming" class="industry-card"><div class="industry-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div><div class="industry-card-body"><h4>Gaming & Entertainment</h4><p>High-concurrency platforms, cross-platform apps, and real-money flows.</p></div></a>
-      <a href="../industries.html#ecommerce" class="industry-card"><div class="industry-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div><div class="industry-card-body"><h4>eCommerce</h4><p>Commerce infrastructure that scales with your business and peak traffic.</p></div></a>
-      <a href="../industries.html#enterprise" class="industry-card"><div class="industry-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div class="industry-card-body"><h4>Enterprise</h4><p>Custom internal tools, legacy modernization, and complex systems integration.</p></div></a>
-    </div>
-  </div>
-</section>
-
 <!-- ── CASE STUDY HIGHLIGHTS ─────────────────────────────────── -->
-<section class="section">
+<section class="section bg-surface">
   <div class="container">
     <div class="section-header-row">
       <div>
@@ -221,52 +204,30 @@
       </div>
       <a href="../case-studies.html" class="btn btn-secondary btn-sm">See all work <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg></a>
     </div>
-    <div class="cards-grid-2">
+    <div class="cards-grid-3">
       <div class="cs-card">
-        <div class="cs-card-img"><img src="https://placehold.co/720x405/2e2f2f/FF4B2E?text=FinCore+Payment+Platform" alt="FinCore payment platform" loading="lazy"></div>
+        <div class="cs-card-img"><img src="../6-assets/img/card/payment-4.jpg" alt="Fintech payment platform rebuild" loading="lazy"></div>
         <div class="cs-card-body">
-          <div class="cs-tags"><span class="tag tag-blue">Finance</span><span class="tag tag-cyan">Web Dev</span></div>
-          <h3>Payment platform rebuilt — 3× faster transaction processing</h3>
-          <p>Reduced transaction latency from 4.2 s to 1.1 s. Cart abandonment dropped from 38% to 9%.</p>
-          <a href="../case-studies/detail.html" class="card-link">Read case study <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg></a>
+          <h3>Fintech payment platform rebuilt — 3× faster</h3>
+          <p>A fintech startup's slow checkout was driving abandonment. We rebuilt the payment architecture and cut transaction latency from 4.2 s to 1.1 s.</p>
+          <a href="../case-studies/detail.html" class="btn btn-secondary btn-sm" style="width:100%;justify-content:center;margin-top:auto;">Learn More</a>
         </div>
       </div>
       <div class="cs-card">
-        <div class="cs-card-img"><img src="https://placehold.co/720x405/2e2f2f/ff6b52?text=Cross-Platform+App" alt="Cross-platform gaming app" loading="lazy"></div>
+        <div class="cs-card-img"><img src="../6-assets/img/card/game.jpg" alt="Cross-platform mobile gaming app" loading="lazy"></div>
         <div class="cs-card-body">
-          <div class="cs-tags"><span class="tag tag-cyan">Gaming</span><span class="tag tag-neutral">Mobile Dev</span></div>
           <h3>Cross-platform mobile app on iOS and Android in 14 weeks</h3>
           <p>Flutter-based gaming app with real-time multiplayer and in-app purchases. Launched simultaneously on both platforms.</p>
-          <a href="../case-studies/detail.html" class="card-link">Read case study <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg></a>
+          <a href="../case-studies/detail.html" class="btn btn-secondary btn-sm" style="width:100%;justify-content:center;margin-top:auto;">Learn More</a>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── FAQ ───────────────────────────────────────────────────── -->
-<section class="section">
-  <div class="container">
-    <div class="section-header" style="max-width:640px;">
-      <span class="section-eyebrow">Questions</span>
-      <h2 class="section-title">Common questions about working with us</h2>
-    </div>
-    <div class="faq-list" style="max-width:760px;">
-      <div class="faq-item">
-        <button class="faq-question">What's your engagement model? <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">We work on fixed-scope or time-and-materials engagements, depending on how well-defined your requirements are at the start. Fixed scope works well when the product is clearly specced; time-and-materials suits exploratory builds where requirements evolve. We'll recommend the right model after an initial scoping conversation.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">Do you work on existing codebases? <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">Yes. A significant portion of our work is extending or improving existing systems rather than greenfield builds. We start with a codebase review to understand what we're working with, then propose a realistic plan. We won't inherit a codebase without understanding its state first.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">What time zones do you cover? <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">Our teams are distributed across multiple time zones, giving us coverage from UTC-5 to UTC+8. In practice, we schedule overlap hours with your team during the working hours that matter most to you — typically a 3–4 hour daily sync window, with async communication filling the rest.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">How do you handle IP ownership? <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">All IP produced under a client engagement transfers to the client upon final payment. This is standard in our contracts. We retain no rights to your product, code, or data. NDAs are standard and available before any scoping work begins.</div></div>
+      <div class="cs-card">
+        <div class="cs-card-img"><img src="../6-assets/img/card/card-1.jpg" alt="SaaS operations dashboard" loading="lazy"></div>
+        <div class="cs-card-body">
+          <h3>SaaS operations dashboard shipped in 8 weeks</h3>
+          <p>An operations team managing workflows in spreadsheets needed a real tool. We built a custom dashboard that cut manual work by 60%.</p>
+          <a href="../case-studies/detail.html" class="btn btn-secondary btn-sm" style="width:100%;justify-content:center;margin-top:auto;">Learn More</a>
+        </div>
       </div>
     </div>
   </div>
@@ -277,9 +238,11 @@
   <div class="container">
     <h2>Tell us about <span class="serif">your project</span></h2>
     <p>We'll come back with an honest assessment of scope, timeline, and fit — within one business day.</p>
+    <div class="cta-banner-img">
+      <img src="../6-assets/img/card/white-black.jpg" alt="Team collaborating on a project" loading="lazy" style="filter:grayscale(100%)">
+    </div>
     <div class="cta-banner-actions">
       <a href="../contact.html" class="btn btn-primary btn-sm">Start a project</a>
-      <a href="../case-studies.html" class="btn btn-secondary btn-sm">See our work</a>
     </div>
   </div>
 </section>
