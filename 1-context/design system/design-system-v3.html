@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MarketGrid · Design System v3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet" />
+<style>
+  /* ==========================================================
+     MARKETGRID DESIGN SYSTEM v3
+     Source: softflex.vercel.app · DevTools computed
+     Key changes from v2:
+       · accent #FF4B2E (was #EE4E34)
+       · heading weight 500 (was 700)
+       · body/desc weight 400 (was 500)
+     ========================================================== */
+  :root {
+    /* COLOR */
+    --color-white:   #ffffff;
+    --color-bg:      #1a1a1a;
+    --color-accent:  #FF4B2E;
+    --color-muted:   #949a9a;
+    --color-surface: #2e2f2f;
+    --color-border:  #3a3b3b;
+
+    --bg-primary:    #1a1a1a;
+    --bg-card:       #2e2f2f;
+    --text-primary:  #ffffff;
+    --text-muted:    #949a9a;
+    --border-soft:   rgba(58,59,59,0.5);
+
+    /* TYPOGRAPHY */
+    --font-sans: 'Barlow', -apple-system, BlinkMacSystemFont, sans-serif;
+    --fw-regular:  400;
+    --fw-medium:   500;
+
+    /* SPACING */
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+    --space-7: 48px;
+    --space-8: 64px;
+    --space-9: 96px;
+    --space-10: 128px;
+
+    /* RADIUS */
+    --r-default: 12px;
+    --r-pill:    100px;
+
+    /* MOTION */
+    --ease-smooth: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+    /* LAYOUT */
+    --max-w: 1280px;
+    --pad-x: 48px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    font-weight: var(--fw-regular);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  a { color: inherit; text-decoration: none; }
+  button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+  /* DOCS UI */
+  .docs { max-width: var(--max-w); margin: 0 auto; padding: var(--space-9) var(--pad-x); }
+  .docs__title {
+    font-size: clamp(40px, 5vw, 64px);
+    font-weight: var(--fw-medium);
+    letter-spacing: -1.2px;
+    line-height: 1.1;
+  }
+  .docs__title em { color: var(--color-accent); font-style: italic; font-weight: var(--fw-medium); }
+  .docs__intro {
+    color: var(--text-muted);
+    font-size: 20px;
+    max-width: 720px;
+    margin: var(--space-4) 0 var(--space-9);
+    line-height: 1.65;
+  }
+  .docs-section { padding: var(--space-9) 0; border-top: 1px solid var(--border-soft); }
+  .docs-section__eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 13px; text-transform: uppercase; letter-spacing: 0.12em;
+    color: var(--text-muted); margin-bottom: var(--space-3); font-weight: var(--fw-medium);
+  }
+  .docs-section__eyebrow::before {
+    content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--color-accent);
+  }
+  .docs-section__title {
+    font-size: 48px; font-weight: var(--fw-medium);
+    letter-spacing: -1.2px; line-height: 1.1; margin-bottom: var(--space-4);
+  }
+  .docs-section__desc { color: var(--text-muted); max-width: 640px; margin-bottom: var(--space-7); }
+  .docs-row {
+    display: flex; align-items: baseline; gap: var(--space-5);
+    padding: var(--space-4) 0; border-bottom: 1px solid var(--border-soft);
+  }
+  .docs-row__label {
+    flex-shrink: 0; width: 280px;
+    color: var(--text-muted); font-size: 13px;
+    font-family: ui-monospace, monospace; line-height: 1.5;
+  }
+  .docs-row__sample { flex: 1; }
+  .docs-stage {
+    background: var(--bg-card); border: 1px solid var(--border-soft);
+    border-radius: var(--r-default); padding: var(--space-7); margin-bottom: var(--space-4);
+  }
+  .docs-spec {
+    background: #121212; border: 1px solid var(--border-soft);
+    border-radius: var(--r-default); padding: var(--space-5); margin-top: var(--space-4);
+    font-family: ui-monospace, monospace; font-size: 13px;
+    color: var(--text-muted); line-height: 1.7;
+  }
+  .docs-spec b { color: var(--text-primary); font-family: var(--font-sans); font-weight: var(--fw-medium); }
+  .docs-spec .v { color: var(--color-accent); }
+
+  /* ============ BUTTONS ============ */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    gap: 8px;
+    font-family: var(--font-sans);
+    font-weight: var(--fw-medium);
+    letter-spacing: 0.01em;
+    border-radius: var(--r-pill);
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.15s, color 0.2s, transform 0.2s var(--ease-smooth);
+    white-space: nowrap;
+    text-decoration: none;
+    height: 40px;
+    padding: 0 22px;
+    font-size: 17px;
+  }
+  .btn-primary {
+    background: var(--color-accent);
+    color: #ffffff;
+    border-color: var(--color-accent);
+    font-size: 17px;
+  }
+  .btn-primary:hover { background: #e6432a; border-color: #e6432a; }
+
+  .btn-secondary {
+    background: transparent;
+    color: #ffffff;
+    border-color: var(--color-accent);
+    font-size: 15px;
+  }
+  .btn-secondary:hover { background: rgba(255,75,46,0.1); }
+
+  .btn-lg { height: 52px; padding: 0 32px; font-size: 17px; }
+  .btn-sm { height: 36px; padding: 0 18px; font-size: 15px; }
+
+  /* ============ CHIP ============ */
+  .chip {
+    display: inline-flex; align-items: center;
+    height: 28px; padding: 0 12px;
+    border-radius: var(--r-pill);
+    background: var(--color-surface);
+    color: var(--text-primary);
+    font-size: 13px; font-weight: var(--fw-medium);
+    letter-spacing: 0.06em; text-transform: uppercase;
+  }
+
+  /* ============ EYEBROW ============ */
+  .section-eyebrow {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: var(--fw-medium);
+    line-height: 1.6;
+    letter-spacing: 0.6px;
+    color: var(--color-accent);
+    text-transform: uppercase;
+  }
+
+  /* ============ TYPOGRAPHY classes (from live site) ============ */
+  .who-heading { font-size: 48px; font-weight: var(--fw-medium); line-height: 1.1; letter-spacing: -1.2px; color: var(--text-primary); }
+  .who-sub { font-size: 16px; font-weight: var(--fw-regular); line-height: 1.65; color: var(--text-muted); }
+  .who-card-title { font-size: 22px; font-weight: var(--fw-medium); line-height: 1.2; letter-spacing: -0.22px; color: var(--text-primary); }
+  .who-card-desc { font-size: 15px; font-weight: var(--fw-regular); line-height: 1.65; color: var(--text-primary); }
+  .hero-subtitle { font-size: 20px; font-weight: var(--fw-regular); line-height: 1.65; color: var(--text-primary); }
+  .testi-quote { font-size: 24px; font-weight: var(--fw-medium); line-height: 1.55; color: var(--text-primary); }
+
+  /* ============ CARDS · all radius 12 ============ */
+  .svc-card {
+    background: var(--bg-card); border-radius: var(--r-default);
+    overflow: hidden; display: flex; flex-direction: column;
+  }
+  .svc-card__media { aspect-ratio: 16 / 10; background: var(--color-surface); }
+  .svc-card__body { padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-4); }
+  .svc-card__title { font-size: 28px; font-weight: var(--fw-medium); line-height: 1.2; letter-spacing: -0.56px; }
+  .svc-card__desc { font-size: 16px; font-weight: var(--fw-regular); line-height: 1.6; }
+  .svc-card__list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .svc-card__list li {
+    position: relative; padding-left: 18px;
+    font-size: 15px; font-weight: var(--fw-medium); line-height: 1.4;
+  }
+  .svc-card__list li::before {
+    content: ""; position: absolute; left: 0; top: 9px;
+    width: 6px; height: 6px; border-radius: 50%; background: var(--color-accent);
+  }
+
+  .who-card {
+    background: var(--bg-card); border-radius: var(--r-default);
+    padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-3);
+  }
+  .who-card__num {
+    font-family: ui-monospace, monospace; font-size: 13px;
+    color: var(--color-accent); font-weight: var(--fw-medium); letter-spacing: 0.12em;
+  }
+</style>
+</head>
+<body>
+
+<main class="docs">
+
+  <header style="margin-bottom: var(--space-10)">
+    <span class="section-eyebrow">V3 · CALIBRATED FROM DEVTOOLS</span>
+    <h1 class="docs__title" style="margin-top: var(--space-3)">MARKET<span style="color:var(--color-accent)">·</span>GRID</h1>
+    <p class="docs__intro">
+      Typography và buttons đo trực tiếp từ DevTools của softflex.vercel.app.
+      Ba điểm sửa lớn: accent là <b style="color:#fff">#FF4B2E</b>, heading weight là
+      <b style="color:#fff">500</b> (không phải 700), body weight là <b style="color:#fff">400</b>.
+    </p>
+  </header>
+
+  <!-- ========== 01 · TYPOGRAPHY ========== -->
+  <section class="docs-section">
+    <div class="docs-section__eyebrow">01 · Typography · measured from devtools</div>
+    <h2 class="docs-section__title">Type scale</h2>
+    <p class="docs-section__desc">
+      Mỗi row map trực tiếp với computed style trên live site. Class name giống live site.
+    </p>
+
+    <div class="docs-row">
+      <span class="docs-row__label">.who-heading · h2<br>48 / 500 / lh 1.1 / ls -1.2px</span>
+      <span class="docs-row__sample"><span class="who-heading">Here is why clients <em style="color:var(--color-accent);font-style:italic;font-weight:500">stay</em> with us</span></span>
+    </div>
+
+    <div class="docs-row">
+      <span class="docs-row__label">.svc-card__title · h3<br>28 / 500 / lh 1.2 / ls -0.56px</span>
+      <span class="docs-row__sample"><span class="svc-card__title">Web &amp; Mobile App Development</span></span>
+    </div>
+
+    <div class="docs-row">
+      <span class="docs-row__label">.testi-quote<br>24 / 500 / lh 1.55<br>(clamp 17px → 24px)</span>
+      <span class="docs-row__sample"><span class="testi-quote">"MarketGrid delivered our platform ahead of schedule"</span></span>
+    </div>
+
+    <div class="docs-row">
+      <span class="docs-row__label">.who-card-title · h3<br>22 / 500 / lh 1.2 / ls -0.22px</span>
+      <span class="docs-row__sample"><span class="who-card-title">Long-term partnership</span></span>
+    </div>
+
+    <div class="docs-row">
+      <span class="docs-row__label">.hero-subtitle<br>20 / 400 / lh 1.65</span>
+      <span class="docs-row__sample"><span class="hero-subtitle">From initial build to production-ready software</span></span>
+    </div>
+
+    <div class="docs-row">
+      <span class="docs-row__label">.svc-card__desc · body<br>16 / 400 / lh 1.6</span>
+      <span class="docs-row__sample"><span class="svc-card__desc">Full-cycle development for web apps, mobile apps, and APIs.</span></span>
+    </div>
+
+    <div class="docs-row">
+      <span class="docs-row__label">.who-sub<br>16 / 400 / lh 1.65 / muted</span>
+      <span class="docs-row__sample"><span class="who-sub">We combine US-standard engineering quality with a distributed delivery model.</span></span>
+    </div>
+
+    <div class="docs-row">
+      <span class="docs-row__label">.svc-card__list li<br>15 / 500 / lh 1.4</span>
+      <span class="docs-row__sample"><span style="font-size:15px;font-weight:500;line-height:1.4">Full-stack web &amp; API development</span></span>
+    </div>
+
+    <div class="docs-row">
+      <span class="docs-row__label">.who-card-desc<br>15 / 400 / lh 1.65</span>
+      <span class="docs-row__sample"><span class="who-card-desc">We embed in your roadmap, not just your sprint.</span></span>
+    </div>
+
+    <div class="docs-row">
+      <span class="docs-row__label">.section-eyebrow<br>15 / 500 / lh 1.6 / ls 0.6px / uppercase</span>
+      <span class="docs-row__sample"><span class="section-eyebrow">WHO WE ARE</span></span>
+    </div>
+  </section>
+
+  <!-- ========== 02 · COLOR ========== -->
+  <section class="docs-section">
+    <div class="docs-section__eyebrow">02 · Color · accent updated</div>
+    <h2 class="docs-section__title">Color tokens</h2>
+    <p class="docs-section__desc">Accent đổi từ #EE4E34 sang #FF4B2E (đỏ tươi hơn).</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:var(--space-4)">
+      <div style="border-radius:var(--r-default);overflow:hidden;border:1px solid var(--border-soft);background:var(--bg-card)">
+        <div style="height:92px;background:#FF4B2E"></div>
+        <div style="padding:12px 16px;font-family:ui-monospace,monospace;font-size:13px">
+          <div style="color:#fff;font-weight:500;margin-bottom:2px;font-family:var(--font-sans)">accent</div>
+          <div style="color:var(--text-muted)">#FF4B2E</div>
+        </div>
+      </div>
+      <div style="border-radius:var(--r-default);overflow:hidden;border:1px solid var(--border-soft);background:var(--bg-card)">
+        <div style="height:92px;background:#1a1a1a;border-bottom:1px solid var(--border-soft)"></div>
+        <div style="padding:12px 16px;font-family:ui-monospace,monospace;font-size:13px">
+          <div style="color:#fff;font-weight:500;margin-bottom:2px;font-family:var(--font-sans)">bg-primary</div>
+          <div style="color:var(--text-muted)">#1A1A1A</div>
+        </div>
+      </div>
+      <div style="border-radius:var(--r-default);overflow:hidden;border:1px solid var(--border-soft);background:var(--bg-card)">
+        <div style="height:92px;background:#2e2f2f;border-bottom:1px solid var(--border-soft)"></div>
+        <div style="padding:12px 16px;font-family:ui-monospace,monospace;font-size:13px">
+          <div style="color:#fff;font-weight:500;margin-bottom:2px;font-family:var(--font-sans)">bg-card</div>
+          <div style="color:var(--text-muted)">#2E2F2F</div>
+        </div>
+      </div>
+      <div style="border-radius:var(--r-default);overflow:hidden;border:1px solid var(--border-soft);background:var(--bg-card)">
+        <div style="height:92px;background:#3a3b3b;border-bottom:1px solid var(--border-soft)"></div>
+        <div style="padding:12px 16px;font-family:ui-monospace,monospace;font-size:13px">
+          <div style="color:#fff;font-weight:500;margin-bottom:2px;font-family:var(--font-sans)">border</div>
+          <div style="color:var(--text-muted)">#3A3B3B</div>
+        </div>
+      </div>
+      <div style="border-radius:var(--r-default);overflow:hidden;border:1px solid var(--border-soft);background:var(--bg-card)">
+        <div style="height:92px;background:#949a9a"></div>
+        <div style="padding:12px 16px;font-family:ui-monospace,monospace;font-size:13px">
+          <div style="color:#fff;font-weight:500;margin-bottom:2px;font-family:var(--font-sans)">muted</div>
+          <div style="color:var(--text-muted)">#949A9A</div>
+        </div>
+      </div>
+      <div style="border-radius:var(--r-default);overflow:hidden;border:1px solid var(--border-soft);background:var(--bg-card)">
+        <div style="height:92px;background:#ffffff"></div>
+        <div style="padding:12px 16px;font-family:ui-monospace,monospace;font-size:13px">
+          <div style="color:#fff;font-weight:500;margin-bottom:2px;font-family:var(--font-sans)">white</div>
+          <div style="color:var(--text-muted)">#FFFFFF</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 03 · BUTTONS ========== -->
+  <section class="docs-section">
+    <div class="docs-section__eyebrow">03 · Components · Buttons · from live code</div>
+    <h2 class="docs-section__title">Buttons</h2>
+    <p class="docs-section__desc">
+      Hai variants: <b style="color:#fff">primary</b> (filled) và <b style="color:#fff">secondary</b> (outline accent).
+      Ba sizes: <b style="color:#fff">lg</b>, default, <b style="color:#fff">sm</b>.
+      Tất cả pill (radius 100px), weight 500, letter-spacing 0.01em.
+    </p>
+
+    <h3 style="font-size:18px;color:var(--text-muted);margin:var(--space-7) 0 var(--space-4);font-weight:500">Primary · filled accent</h3>
+    <div class="docs-stage">
+      <div style="display:flex;gap:var(--space-4);align-items:center;flex-wrap:wrap">
+        <a href="#" class="btn btn-primary btn-lg">Start a project</a>
+        <a href="#" class="btn btn-primary">Default primary</a>
+        <a href="#" class="btn btn-primary btn-sm">Get in touch</a>
+      </div>
+      <div class="docs-spec">
+        <b>Large</b> · height <span class="v">52px</span> · padding <span class="v">0 32px</span> · font <span class="v">17px / 500</span><br>
+        <b>Default</b> · height <span class="v">40px</span> · padding <span class="v">0 22px</span> · font <span class="v">17px / 500</span><br>
+        <b>Small</b> · height <span class="v">36px</span> · padding <span class="v">0 18px</span> · font <span class="v">15px / 500</span><br>
+        <b>Common</b> · bg <span class="v">#FF4B2E</span> · radius <span class="v">100px</span> · border <span class="v">1px</span> · letter-spacing <span class="v">0.01em</span>
+      </div>
+    </div>
+
+    <h3 style="font-size:18px;color:var(--text-muted);margin:var(--space-7) 0 var(--space-4);font-weight:500">Secondary · outline accent</h3>
+    <div class="docs-stage">
+      <div style="display:flex;gap:var(--space-4);align-items:center;flex-wrap:wrap">
+        <a href="#" class="btn btn-secondary btn-lg">View all industries</a>
+        <a href="#" class="btn btn-secondary">Learn More</a>
+        <a href="#" class="btn btn-secondary btn-sm">Nav CTA</a>
+      </div>
+      <div class="docs-spec">
+        <b>Large</b> · height <span class="v">52px</span> · padding <span class="v">0 32px</span> · font <span class="v">17px / 500</span><br>
+        <b>Default</b> · height <span class="v">40px</span> · padding <span class="v">0 22px</span> · font <span class="v">15px / 500</span><br>
+        <b>Small</b> · height <span class="v">36px</span> · padding <span class="v">0 18px</span> · font <span class="v">15px / 500</span><br>
+        <b>Common</b> · bg <span class="v">transparent</span> · border <span class="v">1px #FF4B2E</span> · color <span class="v">#FFFFFF</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 04 · RADIUS ========== -->
+  <section class="docs-section">
+    <div class="docs-section__eyebrow">04 · Radius</div>
+    <h2 class="docs-section__title">Two radii only</h2>
+    <p class="docs-section__desc">12px cho mọi thứ, 100px cho buttons và chips.</p>
+
+    <div style="display:flex;gap:var(--space-7);flex-wrap:wrap;align-items:flex-end">
+      <div>
+        <div style="width:160px;height:160px;background:var(--color-surface);border-radius:12px;display:grid;place-items:center;color:var(--text-muted);font-family:ui-monospace,monospace;font-size:13px">12px</div>
+        <div class="docs-spec">--r-default · cards, images, surfaces</div>
+      </div>
+      <div>
+        <div style="width:200px;height:40px;background:var(--color-accent);border-radius:100px;display:grid;place-items:center;color:#fff;font-family:ui-monospace,monospace;font-size:13px">100px</div>
+        <div class="docs-spec">--r-pill · buttons + chips only</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 05 · CARDS ========== -->
+  <section class="docs-section">
+    <div class="docs-section__eyebrow">05 · Components · Cards</div>
+    <h2 class="docs-section__title">Cards</h2>
+
+    <h3 style="font-size:18px;color:var(--text-muted);margin:var(--space-7) 0 var(--space-4);font-weight:500">Service card</h3>
+    <div class="docs-stage" style="background:var(--bg-primary)">
+      <div style="max-width:380px">
+        <article class="svc-card">
+          <div class="svc-card__media" style="background:linear-gradient(135deg,#3a3b3b,#1a1a1a)"></div>
+          <div class="svc-card__body">
+            <h3 class="svc-card__title">Web &amp; Mobile App Development</h3>
+            <p class="svc-card__desc">Full-cycle development for web apps, mobile apps, and APIs. From discovery to deployment.</p>
+            <ul class="svc-card__list">
+              <li>Full-stack web &amp; API development</li>
+              <li>iOS &amp; Android mobile apps</li>
+              <li>SaaS platforms &amp; system integration</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+      <div class="docs-spec">
+        <b>Title</b> <span class="v">28 / 500 / lh 1.2 / ls -0.56px</span><br>
+        <b>Desc</b> <span class="v">16 / 400 / lh 1.6</span><br>
+        <b>List item</b> <span class="v">15 / 500 / lh 1.4</span><br>
+        <b>Body padding</b> <span class="v">32px</span> · <b>gap</b> <span class="v">16px</span> · <b>list gap</b> <span class="v">10px</span>
+      </div>
+    </div>
+
+    <h3 style="font-size:18px;color:var(--text-muted);margin:var(--space-7) 0 var(--space-4);font-weight:500">Why-us card · numbered</h3>
+    <div class="docs-stage" style="background:var(--bg-primary)">
+      <div style="max-width:280px">
+        <article class="who-card">
+          <span class="who-card__num">(01)</span>
+          <h3 class="who-card-title">Long-term partnership</h3>
+          <p class="who-card-desc">We embed in your roadmap, not just your sprint. We build relationships that outlast any single project.</p>
+        </article>
+      </div>
+      <div class="docs-spec">
+        <b>Title</b> <span class="v">22 / 500 / lh 1.2 / ls -0.22px</span><br>
+        <b>Desc</b> <span class="v">15 / 400 / lh 1.65</span><br>
+        <b>Padding</b> <span class="v">32px</span> · <b>gap</b> <span class="v">12px</span>
+      </div>
+    </div>
+  </section>
+
+  <footer style="margin-top: var(--space-10); padding-top: var(--space-7); border-top: 1px solid var(--border-soft); color: var(--text-muted); font-size: 13px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:var(--space-3)">
+    <span>MarketGrid Design System · v3.0 · DevTools calibrated</span>
+    <span>Source: softflex.vercel.app</span>
+  </footer>
+
+</main>
+
+</body>
+</html>

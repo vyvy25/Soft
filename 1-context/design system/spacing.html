@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MarketGrid · Spacing Reference</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;1,500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --color-white:   #ffffff;
+    --color-bg:      #1a1a1a;
+    --color-accent:  #FF4B2E;
+    --color-muted:   #949a9a;
+    --color-surface: #2e2f2f;
+    --color-border:  #3a3b3b;
+    --border-soft:   rgba(58,59,59,0.5);
+
+    --font-sans: 'Barlow', -apple-system, BlinkMacSystemFont, sans-serif;
+    --fw-regular: 400;
+    --fw-medium:  500;
+
+    --max-w: 1280px;
+    --pad-x: 48px;
+
+    /* Spacing palette used in this doc */
+    --gap-16: 16px;
+    --gap-20: 20px;
+    --gap-24: 24px;
+    --gap-32: 32px;
+    --gap-40: 40px;
+    --gap-56: 56px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--color-bg);
+    color: var(--color-white);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    font-weight: var(--fw-regular);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ============ DOCS UI ============ */
+  .docs { max-width: var(--max-w); margin: 0 auto; padding: 96px var(--pad-x); }
+  .docs__title {
+    font-size: clamp(40px, 5vw, 64px);
+    font-weight: var(--fw-medium);
+    letter-spacing: -1.2px;
+    line-height: 1.1;
+  }
+  .docs__title em { color: var(--color-accent); font-style: italic; font-weight: var(--fw-medium); }
+  .docs__intro {
+    color: var(--color-muted);
+    font-size: 20px;
+    max-width: 720px;
+    margin: 16px 0 96px;
+    line-height: 1.65;
+  }
+
+  .ref-section { padding: 80px 0; border-top: 1px solid var(--border-soft); }
+  .ref-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 15px; font-weight: var(--fw-medium);
+    line-height: 1.6; letter-spacing: 0.6px;
+    color: var(--color-accent); text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .ref-title {
+    font-size: 48px; font-weight: var(--fw-medium);
+    letter-spacing: -1.2px; line-height: 1.1; margin-bottom: 16px;
+  }
+  .ref-desc { color: var(--color-muted); max-width: 640px; margin-bottom: 48px; }
+
+  /* Spec box */
+  .spec {
+    background: #121212;
+    border: 1px solid var(--border-soft);
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 16px;
+    font-family: ui-monospace, monospace;
+    font-size: 13px;
+    color: var(--color-muted);
+    line-height: 1.7;
+  }
+  .spec b { color: #fff; font-family: var(--font-sans); font-weight: var(--fw-medium); }
+  .spec .v { color: var(--color-accent); }
+
+  /* ============ Visual demo helpers ============ */
+  .demo {
+    background: var(--color-bg);
+    border: 1px solid var(--border-soft);
+    border-radius: 12px;
+    padding: 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .placeholder {
+    background: rgba(255,75,46,0.06);
+    border: 1px dashed rgba(255,75,46,0.5);
+    border-radius: 12px;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.6);
+    font-size: 13px;
+    font-family: ui-monospace, monospace;
+  }
+  .placeholder--tall { min-height: 160px; }
+  .placeholder--card {
+    flex-direction: column; gap: 12px;
+    padding: 24px; text-align: left; align-items: stretch;
+  }
+  .ph-title {
+    font-size: 18px; font-weight: var(--fw-medium);
+    color: #fff; letter-spacing: -0.22px;
+  }
+  .ph-text {
+    font-size: 13px; color: var(--color-muted);
+    line-height: 1.6; font-family: var(--font-sans);
+  }
+  .ph-eyebrow {
+    font-family: ui-monospace, monospace;
+    font-size: 12px; color: var(--color-accent);
+    letter-spacing: 0.12em;
+  }
+
+  /* Gap label · pinned between items */
+  .gap-label {
+    position: absolute;
+    background: var(--color-bg);
+    color: var(--color-accent);
+    font-family: ui-monospace, monospace;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border: 1px solid var(--color-accent);
+    border-radius: 4px;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  /* Grid demos */
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); }
+
+  /* Centered stack */
+  .stack-center {
+    display: flex; flex-direction: column;
+    align-items: center; text-align: center;
+  }
+
+  /* Vertical stack header */
+  .header-vertical {
+    display: flex; flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Header row: title left, button right */
+  .header-row {
+    display: flex; justify-content: space-between;
+    align-items: flex-end;
+  }
+</style>
+</head>
+<body>
+
+<main class="docs">
+
+  <header style="margin-bottom: 128px">
+    <span class="ref-eyebrow">SPACING REFERENCE</span>
+    <h1 class="docs__title">Section <em>spacing</em></h1>
+    <p class="docs__intro">
+      Đo trực tiếp từ DevTools của softflex.vercel.app.
+      Bao gồm gaps trong grid, gap giữa section header và grid, gap trong stack title block.
+    </p>
+  </header>
+
+  <!-- =================================================
+       01 · TITLE BLOCK · vertical stack (eyebrow + title + sub)
+       ================================================= -->
+  <section class="ref-section">
+    <span class="ref-eyebrow">01 · Title block</span>
+    <h2 class="ref-title">Eyebrow → title → sub · gap 16</h2>
+    <p class="ref-desc">
+      Khối tiêu đề section (eyebrow trên cùng, title giữa, sub dưới).
+      Có 2 variant: <b style="color:#fff">centered</b> (who-header) và
+      <b style="color:#fff">left aligned</b> (ind-header).
+    </p>
+
+    <h3 style="font-size:18px;color:var(--color-muted);font-weight:500;margin:24px 0 16px">Centered variant · .who-header</h3>
+    <div class="demo">
+      <div class="stack-center" style="gap: 16px">
+        <span class="ph-eyebrow">WHO WE ARE</span>
+        <div class="ph-title" style="font-size:48px;letter-spacing:-1.2px;line-height:1.1">Here is why clients stay with us</div>
+        <p class="ph-text" style="max-width:560px">We combine US-standard engineering quality with a distributed delivery model.</p>
+      </div>
+    </div>
+    <div class="spec">
+      <b>Display</b> <span class="v">flex column</span> · <b>align-items</b> <span class="v">center</span> · <b>text-align</b> <span class="v">center</span><br>
+      <b>row-gap</b> <span class="v">16px</span><br>
+      <b>margin-bottom (xuống cards grid)</b> <span class="v">56px</span>
+    </div>
+
+    <h3 style="font-size:18px;color:var(--color-muted);font-weight:500;margin:48px 0 16px">Left aligned variant · .ind-header</h3>
+    <div class="demo">
+      <div class="header-vertical" style="gap: 16px; max-width: 420px">
+        <span class="ph-eyebrow">INDUSTRIES</span>
+        <div class="ph-title" style="font-size:48px;letter-spacing:-1.2px;line-height:1.1">Built for the sectors that demand more</div>
+        <div class="placeholder" style="height:40px;width:160px;background:transparent;border:1px solid var(--color-accent);border-radius:100px;color:#fff">View all industries</div>
+      </div>
+    </div>
+    <div class="spec">
+      <b>Display</b> <span class="v">flex column</span> · <b>align-items</b> <span class="v">flex-start</span><br>
+      <b>row-gap</b> <span class="v">16px</span>
+    </div>
+  </section>
+
+  <!-- =================================================
+       02 · SECTION HEADER ROW (left title · right button)
+       ================================================= -->
+  <section class="ref-section">
+    <span class="ref-eyebrow">02 · Section header row</span>
+    <h2 class="ref-title">Title left · button right</h2>
+    <p class="ref-desc">
+      Dùng cho "Results that speak for clients" hoặc các section có 1 CTA bên phải tiêu đề.
+    </p>
+
+    <div class="demo">
+      <div class="header-row" style="gap: 32px; margin-bottom: 56px">
+        <div class="header-vertical" style="gap: 16px">
+          <span class="ph-eyebrow">OUR WORK</span>
+          <div class="ph-title" style="font-size:48px;letter-spacing:-1.2px;line-height:1.1">Results that speak for clients</div>
+        </div>
+        <div class="placeholder" style="height:40px;padding:0 22px;background:transparent;border:1px solid var(--color-accent);border-radius:100px;color:#fff;min-height:0;flex-shrink:0">View all</div>
+      </div>
+
+      <!-- Faux grid below to show margin-bottom 56px relation -->
+      <div class="grid-3" style="gap:20px">
+        <div class="placeholder placeholder--tall">card</div>
+        <div class="placeholder placeholder--tall">card</div>
+        <div class="placeholder placeholder--tall">card</div>
+      </div>
+    </div>
+    <div class="spec">
+      <b>Display</b> <span class="v">flex</span> · <b>justify-content</b> <span class="v">space-between</span> · <b>align-items</b> <span class="v">flex-end</span><br>
+      <b>column-gap</b> <span class="v">32px</span> · <b>row-gap</b> <span class="v">32px</span><br>
+      <b>margin-bottom (xuống cards grid)</b> <span class="v">56px</span>
+    </div>
+  </section>
+
+  <!-- =================================================
+       03 · GRID GAPS · 4 patterns
+       ================================================= -->
+  <section class="ref-section">
+    <span class="ref-eyebrow">03 · Grid gaps · 4 patterns</span>
+    <h2 class="ref-title">Cards grid spacing</h2>
+    <p class="ref-desc">
+      Mỗi grid có gap riêng tuỳ theo số cột và độ "đậm" của card.
+      Card càng to và càng ít cột → gap càng lớn. Card càng nhiều và càng nhỏ → gap càng nhỏ.
+    </p>
+
+    <!-- 03a · Services 3-col · gap 40 -->
+    <h3 style="font-size:18px;color:var(--color-muted);font-weight:500;margin:32px 0 16px">A · Services grid · 3 cột · gap 40</h3>
+    <div class="demo">
+      <div class="grid-3" style="gap: 40px">
+        <div class="placeholder placeholder--card">
+          <div class="ph-title">Web &amp; Mobile</div>
+          <p class="ph-text">Full-cycle development for web apps and APIs.</p>
+        </div>
+        <div class="placeholder placeholder--card">
+          <div class="ph-title">QA &amp; Testing</div>
+          <p class="ph-text">Functional, performance, security testing.</p>
+        </div>
+        <div class="placeholder placeholder--card">
+          <div class="ph-title">IT Consulting</div>
+          <p class="ph-text">Architecture review and stack selection.</p>
+        </div>
+      </div>
+    </div>
+    <div class="spec">
+      <b>Class</b> <span class="v">.benefits-grid</span><br>
+      <b>grid-template</b> <span class="v">repeat(3, 1fr)</span> → 368px × 3<br>
+      <b>column-gap</b> <span class="v">40px</span> · <b>row-gap</b> <span class="v">40px</span><br>
+      <b>Use case</b> Services section · 3 services lớn, mỗi card có ảnh + body
+    </div>
+
+    <!-- 03b · Why-us 4-col · gap 20 -->
+    <h3 style="font-size:18px;color:var(--color-muted);font-weight:500;margin:48px 0 16px">B · Why-us grid · 4 cột · gap 20</h3>
+    <div class="demo">
+      <div class="grid-4" style="gap: 20px">
+        <div class="placeholder placeholder--card">
+          <span class="ph-eyebrow">(01)</span>
+          <div class="ph-title">Long-term partnership</div>
+          <p class="ph-text">We embed in your roadmap.</p>
+        </div>
+        <div class="placeholder placeholder--card">
+          <span class="ph-eyebrow">(02)</span>
+          <div class="ph-title">Trusted by corporations</div>
+          <p class="ph-text">Fintech, gaming, eCommerce.</p>
+        </div>
+        <div class="placeholder placeholder--card">
+          <span class="ph-eyebrow">(03)</span>
+          <div class="ph-title">Quality and fast delivery</div>
+          <p class="ph-text">ISO-aligned processes.</p>
+        </div>
+        <div class="placeholder placeholder--card">
+          <span class="ph-eyebrow">(04)</span>
+          <div class="ph-title">Competitive total cost</div>
+          <p class="ph-text">No surprises at invoice.</p>
+        </div>
+      </div>
+    </div>
+    <div class="spec">
+      <b>Class</b> <span class="v">.who-cards</span><br>
+      <b>grid-template</b> <span class="v">repeat(4, 1fr)</span> → 281px × 4<br>
+      <b>column-gap</b> <span class="v">20px</span> · <b>row-gap</b> <span class="v">20px</span><br>
+      <b>Use case</b> Why-us section · 4 value props, card text-only
+    </div>
+
+    <!-- 03c · Industries 2-col · gap 16 -->
+    <h3 style="font-size:18px;color:var(--color-muted);font-weight:500;margin:48px 0 16px">C · Industries grid · 2 cột · gap 16</h3>
+    <div class="demo">
+      <div class="grid-2" style="gap: 16px">
+        <div class="placeholder placeholder--card">
+          <div class="ph-title">Finance &amp; Fintech</div>
+          <p class="ph-text">Secure platforms, compliance-aligned architecture.</p>
+        </div>
+        <div class="placeholder placeholder--card">
+          <div class="ph-title">Gaming &amp; Entertainment</div>
+          <p class="ph-text">High-concurrency platforms, cross-platform.</p>
+        </div>
+        <div class="placeholder placeholder--card">
+          <div class="ph-title">eCommerce</div>
+          <p class="ph-text">Commerce infrastructure that scales.</p>
+        </div>
+        <div class="placeholder placeholder--card">
+          <div class="ph-title">Enterprise</div>
+          <p class="ph-text">Legacy modernization, internal tooling.</p>
+        </div>
+      </div>
+    </div>
+    <div class="spec">
+      <b>Class</b> <span class="v">.ind-grid</span><br>
+      <b>grid-template</b> <span class="v">repeat(2, 1fr)</span> → 334px × 2<br>
+      <b>column-gap</b> <span class="v">16px</span> · <b>row-gap</b> <span class="v">16px</span><br>
+      <b>Use case</b> Industries section · overlay trên ảnh, card nhỏ gọn
+    </div>
+
+    <!-- 03d · Case studies 3-col · gap 20 -->
+    <h3 style="font-size:18px;color:var(--color-muted);font-weight:500;margin:48px 0 16px">D · Case studies grid · 3 cột · gap 20</h3>
+    <div class="demo">
+      <div class="grid-3" style="gap: 20px">
+        <div class="placeholder placeholder--card" style="min-height:240px">
+          <div class="ph-title">Fintech payment platform · 3× faster</div>
+          <p class="ph-text">Rebuilt the payment architecture.</p>
+        </div>
+        <div class="placeholder placeholder--card" style="min-height:240px">
+          <div class="ph-title">Zero critical bugs · 50K players</div>
+          <p class="ph-text">1,400-case automated test suite.</p>
+        </div>
+        <div class="placeholder placeholder--card" style="min-height:240px">
+          <div class="ph-title">eCommerce stack · checkout 60% faster</div>
+          <p class="ph-text">Replatformed and connected 12 services.</p>
+        </div>
+      </div>
+    </div>
+    <div class="spec">
+      <b>Class</b> <span class="v">.cards-grid-3</span><br>
+      <b>grid-template</b> <span class="v">repeat(3, 1fr)</span> → 381px × 3<br>
+      <b>column-gap</b> <span class="v">20px</span> · <b>row-gap</b> <span class="v">20px</span><br>
+      <b>Use case</b> Case studies · 6 cards (2 rows × 3 cols), card có ảnh + body + button
+    </div>
+  </section>
+
+  <!-- =================================================
+       04 · BOTTOM CTA · centered stack
+       ================================================= -->
+  <section class="ref-section">
+    <span class="ref-eyebrow">04 · Bottom CTA</span>
+    <h2 class="ref-title">Centered stack · gap 24</h2>
+    <p class="ref-desc">
+      Block CTA cuối trang. Khác với title block ở chỗ gap to hơn (24 thay vì 16)
+      và có button cuối thay vì sub text.
+    </p>
+
+    <div class="demo">
+      <div class="stack-center" style="gap: 24px; max-width: 680px; margin: 0 auto">
+        <div class="ph-title" style="font-size:48px;letter-spacing:-1.2px;line-height:1.1;text-align:center">Build software that grows with your business</div>
+        <p class="ph-text" style="text-align:center">From first sprint to full scale, MarketGrid delivers the engineering quality your product deserves.</p>
+        <div class="placeholder" style="height:40px;padding:0 22px;background:var(--color-accent);border:1px solid var(--color-accent);border-radius:100px;color:#fff;min-height:0;flex-shrink:0">Start a project</div>
+      </div>
+    </div>
+    <div class="spec">
+      <b>Class</b> <span class="v">.bottom-cta-inner</span><br>
+      <b>Display</b> <span class="v">flex column</span> · <b>align-items</b> <span class="v">center</span> · <b>text-align</b> <span class="v">center</span><br>
+      <b>row-gap</b> <span class="v">24px</span> · <b>max-width</b> <span class="v">680px</span><br>
+      <b>margin</b> <span class="v">0 auto</span>
+    </div>
+  </section>
+
+  <!-- =================================================
+       05 · SUMMARY TABLE
+       ================================================= -->
+  <section class="ref-section">
+    <span class="ref-eyebrow">05 · Summary</span>
+    <h2 class="ref-title">All gaps at a glance</h2>
+
+    <div class="demo" style="padding:0;overflow:hidden">
+      <table style="width:100%;border-collapse:collapse;font-size:14px">
+        <thead>
+          <tr style="background:var(--color-surface);text-align:left">
+            <th style="padding:16px 24px;font-weight:500;color:#fff">Element</th>
+            <th style="padding:16px 24px;font-weight:500;color:#fff">Class</th>
+            <th style="padding:16px 24px;font-weight:500;color:#fff">Layout</th>
+            <th style="padding:16px 24px;font-weight:500;color:#fff;color:var(--color-accent);font-family:ui-monospace,monospace">Gap</th>
+            <th style="padding:16px 24px;font-weight:500;color:#fff;color:var(--color-accent);font-family:ui-monospace,monospace">Margin-bottom</th>
+          </tr>
+        </thead>
+        <tbody style="color:var(--color-muted)">
+          <tr style="border-top:1px solid var(--border-soft)"><td style="padding:14px 24px">Title block (centered)</td><td style="padding:14px 24px;font-family:ui-monospace,monospace;font-size:13px">.who-header</td><td style="padding:14px 24px">flex column center</td><td style="padding:14px 24px;font-family:ui-monospace,monospace;color:var(--color-accent)">16</td><td style="padding:14px 24px;font-family:ui-monospace,monospace;color:var(--color-accent)">56</td></tr>
+          <tr style="border-top:1px solid var(--border-soft)"><td style="padding:14px 24px">Title block (left)</td><td style="padding:14px 24px;font-family:ui-monospace,monospace;font-size:13px">.ind-header</td><td style="padding:14px 24px">flex column start</td><td style="padding:14px 24px;font-family:ui-monospace,monospace;color:var(--color-accent)">16</td><td style="padding:14px 24px;color:var(--color-muted)">—</td></tr>
+          <tr style="border-top:1px solid var(--border-soft)"><td style="padding:14px 24px">Header row (title + btn)</td><td style="padding:14px 24px;font-family:ui-monospace,monospace;font-size:13px">.section-header-row</td><td style="padding:14px 24px">flex space-between</td><td style="padding:14px 24px;font-family:ui-monospace,monospace;color:var(--color-accent)">32</td><td style="padding:14px 24px;font-family:ui-monospace,monospace;color:var(--color-accent)">56</td></tr>
+          <tr style="border-top:1px solid var(--border-soft)"><td style="padding:14px 24px">Services grid</td><td style="padding:14px 24px;font-family:ui-monospace,monospace;font-size:13px">.benefits-grid</td><td style="padding:14px 24px">grid · 3 cols</td><td style="padding:14px 24px;font-family:ui-monospace,monospace;color:var(--color-accent)">40</td><td style="padding:14px 24px;color:var(--color-muted)">—</td></tr>
+          <tr style="border-top:1px solid var(--border-soft)"><td style="padding:14px 24px">Why-us grid</td><td style="padding:14px 24px;font-family:ui-monospace,monospace;font-size:13px">.who-cards</td><td style="padding:14px 24px">grid · 4 cols</td><td style="padding:14px 24px;font-family:ui-monospace,monospace;color:var(--color-accent)">20</td><td style="padding:14px 24px;color:var(--color-muted)">—</td></tr>
+          <tr style="border-top:1px solid var(--border-soft)"><td style="padding:14px 24px">Industries grid</td><td style="padding:14px 24px;font-family:ui-monospace,monospace;font-size:13px">.ind-grid</td><td style="padding:14px 24px">grid · 2 cols</td><td style="padding:14px 24px;font-family:ui-monospace,monospace;color:var(--color-accent)">16</td><td style="padding:14px 24px;color:var(--color-muted)">—</td></tr>
+          <tr style="border-top:1px solid var(--border-soft)"><td style="padding:14px 24px">Case studies grid</td><td style="padding:14px 24px;font-family:ui-monospace,monospace;font-size:13px">.cards-grid-3</td><td style="padding:14px 24px">grid · 3 cols</td><td style="padding:14px 24px;font-family:ui-monospace,monospace;color:var(--color-accent)">20</td><td style="padding:14px 24px;color:var(--color-muted)">—</td></tr>
+          <tr style="border-top:1px solid var(--border-soft)"><td style="padding:14px 24px">Bottom CTA stack</td><td style="padding:14px 24px;font-family:ui-monospace,monospace;font-size:13px">.bottom-cta-inner</td><td style="padding:14px 24px">flex column center</td><td style="padding:14px 24px;font-family:ui-monospace,monospace;color:var(--color-accent)">24</td><td style="padding:14px 24px;color:var(--color-muted)">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="spec" style="margin-top:32px">
+      <b>Rule of thumb</b> <span class="v">— mật độ card càng cao, gap càng nhỏ</span><br>
+      <b>3 cột nhẹ (Services)</b> <span class="v">→ 40</span><br>
+      <b>3 cột đầy (Case)</b> <span class="v">→ 20</span><br>
+      <b>4 cột (Why)</b> <span class="v">→ 20</span><br>
+      <b>2 cột overlay (Industries)</b> <span class="v">→ 16</span><br>
+      <b>Header → grid</b> <span class="v">→ 56</span>
+    </div>
+  </section>
+
+  <footer style="margin-top: 128px; padding-top: 48px; border-top: 1px solid var(--border-soft); color: var(--color-muted); font-size: 13px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px">
+    <span>MarketGrid Spacing Reference · v1.0</span>
+    <span>Source: softflex.vercel.app · DevTools</span>
+  </footer>
+
+</main>
+
+</body>
+</html>
