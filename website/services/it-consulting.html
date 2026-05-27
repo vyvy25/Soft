@@ -9,6 +9,54 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
+  <style>
+    .hero {
+      min-height: 0;
+      margin-top: calc(-1 * var(--nav-h));
+      padding-top: calc(120px + var(--nav-h));
+    }
+    .hero-subtitle { margin-bottom: 0; }
+    .tech-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .tech-panel {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      height: 500px;
+      overflow: hidden;
+      mask-image: linear-gradient(to bottom, transparent 0%, black 14%, black 86%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 14%, black 86%, transparent 100%);
+    }
+    .tech-col-track {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      animation: tech-scroll 16s linear infinite;
+    }
+    .tech-col-track:nth-child(2) { animation-duration: 12s; animation-delay: -5s; animation-direction: reverse; }
+    .tech-col-track:nth-child(3) { animation-duration: 20s; animation-delay: -9s; }
+    .tech-col-track:nth-child(4) { animation-duration: 14s; animation-delay: -3s; animation-direction: reverse; }
+    .tech-icon-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      flex-shrink: 0;
+      aspect-ratio: 1;
+    }
+    .tech-icon-card img { width: 100%; height: 100%; object-fit: contain; display: block; }
+    @keyframes tech-scroll {
+      from { transform: translateY(0); }
+      to   { transform: translateY(-50%); }
+    }
+  </style>
 </head>
 <body class="page-glow">
 
@@ -60,78 +108,68 @@
 <header class="hero">
   <div class="container">
     <span class="hero-eyebrow">IT Consulting</span>
-    <h1 class="hero-title">Technology decisions<br>that <span class="serif">age well</span></h1>
-    <p class="hero-subtitle">Strategy before execution. We help you assess your current stack, evaluate your options, and make architecture decisions you won't regret two years from now.</p>
-    <div class="hero-actions">
-      <a href="../contact.html" class="btn btn-primary btn-lg">Start a project</a>
+    <h1 class="hero-title">Technology decisions<br><span style="color:var(--color-accent);">that age well.</span></h1>
+    <div class="ind-grid" style="margin-top:120px;grid-template-columns:repeat(3,1fr);width:100%;gap:20px;text-align:left;">
+      <div class="ind-card">
+        <h3 class="ind-card__title">Starting a new product</h3>
+        <p class="ind-card__desc">Stack decision and architecture blueprint before the first line of code. We help you choose well and avoid early lock-in.</p>
+      </div>
+      <div class="ind-card">
+        <h3 class="ind-card__title">Evaluating a rewrite</h3>
+        <p class="ind-card__desc">Your team says the codebase needs to be rebuilt. We give you an independent assessment of whether that's true and what it really costs.</p>
+      </div>
+      <div class="ind-card">
+        <h3 class="ind-card__title">Scaling infrastructure</h3>
+        <p class="ind-card__desc">Growing faster than your architecture was designed for. We identify the bottlenecks and the right path to scale without a full rewrite.</p>
+      </div>
+      <div class="ind-card">
+        <h3 class="ind-card__title">Vendor or platform selection</h3>
+        <p class="ind-card__desc">Three vendors shortlisted and you need an independent technical evaluation. We've done this comparison in your industry before.</p>
+      </div>
+      <div class="ind-card">
+        <h3 class="ind-card__title">Digital transformation</h3>
+        <p class="ind-card__desc">A phased roadmap for modernizing your technology operations — prioritized by business value, not what's technically interesting.</p>
+      </div>
+      <div class="ind-card">
+        <h3 class="ind-card__title">Post-merger integration</h3>
+        <p class="ind-card__desc">Two technology stacks that need to coexist or consolidate. We assess compatibility and design a pragmatic integration roadmap.</p>
+      </div>
     </div>
   </div>
 </header>
 
-<!-- ── WHEN YOU NEED IT ──────────────────────────────────────── -->
-<section class="ind-section">
-  <div class="ind-bg">
-    <img src="../6-assets/img/card/whoweare.jpg" alt="" aria-hidden="true">
-    <div class="ind-overlay"></div>
-  </div>
-  <div class="container ind-inner">
-    <div class="ind-header">
-      <span class="section-eyebrow">When it applies</span>
-      <h2 class="ind-heading">Companies call us when the path forward isn't clear</h2>
-    </div>
-    <div class="ind-grid">
-      <div class="ind-card">
-        <h3 class="ind-card__title">Starting a new product</h3>
-        <p class="ind-card__desc">You need a stack decision and architecture blueprint before writing the first line. We'll help you choose well.</p>
-      </div>
-      <div class="ind-card">
-        <h3 class="ind-card__title">Evaluating a rewrite</h3>
-        <p class="ind-card__desc">Your team says the codebase needs to be rewritten. We'll give you an independent assessment of whether that's true and what it actually involves.</p>
-      </div>
-      <div class="ind-card">
-        <h3 class="ind-card__title">Scaling infrastructure</h3>
-        <p class="ind-card__desc">You're growing faster than your architecture was designed for. We identify the bottlenecks and the right path to scale.</p>
-      </div>
-      <div class="ind-card">
-        <h3 class="ind-card__title">Vendor or platform selection</h3>
-        <p class="ind-card__desc">You have 3 vendors shortlisted and need an independent technical evaluation. We've done this before — in your industry.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ── CONSULTING SERVICES ───────────────────────────────────── -->
 <section class="section bg-surface">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header" style="text-align:center;display:flex;flex-direction:column;align-items:center;">
       <span class="section-eyebrow">What we cover</span>
       <h2 class="section-title">Five consulting services, clearly scoped</h2>
     </div>
     <div class="capabilities-grid">
       <div class="capability-item">
         <div class="cap-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg></div>
-        <h4>Technology assessment</h4>
-        <p>A structured review of your current stack, architecture, processes, and team capabilities. Output: written findings and ranked recommendations.</p>
+        <h4>Technology audit</h4>
+        <p>We review your stack, architecture, and team capabilities — output is written findings with clear, ranked recommendations.</p>
       </div>
       <div class="capability-item">
         <div class="cap-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
         <h4>Architecture review</h4>
-        <p>We examine your system design for scalability, security, and maintainability risks. Identify problems before they become production incidents.</p>
+        <p>We examine your system design for scalability, security, and maintainability risks — before they become production incidents.</p>
       </div>
       <div class="capability-item">
         <div class="cap-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
         <h4>Stack selection</h4>
-        <p>Framework-agnostic evaluation of technology options against your specific requirements, team skill set, and long-term roadmap.</p>
+        <p>Framework-agnostic evaluation of technology options against your requirements, team skill set, and long-term product roadmap.</p>
       </div>
       <div class="capability-item">
-        <div class="cap-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3l18 18"/><path d="M7.5 7.5a2 2 0 013 2 2 2 0 012 3M8 16a2 2 0 012-2h4a2 2 0 012 2v2a2 2 0 01-2 2h-4a2 2 0 01-2-2v-2z"/></svg></div>
-        <h4>Digital transformation planning</h4>
-        <p>A phased roadmap for modernizing your technology operations — prioritized by business value, not technical preference.</p>
+        <div class="cap-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2v6h-6"/><path d="M3 12a9 9 0 0115-6.7L21 8"/><path d="M3 22v-6h6"/><path d="M21 12a9 9 0 01-15 6.7L3 16"/></svg></div>
+        <h4>Digital transformation</h4>
+        <p>A phased roadmap for modernizing your technology operations, prioritized by business value and sequenced for minimal disruption.</p>
       </div>
       <div class="capability-item">
         <div class="cap-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-4 0v2"/></svg></div>
         <h4>Vendor evaluation</h4>
-        <p>Structured comparison of vendor proposals — technical capabilities, integration effort, total cost of ownership, and lock-in risk.</p>
+        <p>Structured comparison of vendor proposals — technical fit, integration effort, total cost of ownership, and long-term lock-in risk.</p>
       </div>
     </div>
   </div>
@@ -142,36 +180,32 @@
   <div class="container">
     <div class="section-header" style="text-align:center;display:flex;flex-direction:column;align-items:center;">
       <span class="section-eyebrow">Our approach</span>
-      <h2 class="section-title" style="max-width:560px;">What you actually get from a consulting engagement</h2>
+      <h2 class="section-title">What a consulting engagement looks like</h2>
     </div>
     <div class="flow">
       <!-- Row 1: LTR -->
       <div class="flow-row">
         <div class="flow-step">
-          <div class="flow-node">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          </div>
+          <div class="flow-node">01</div>
           <div class="flow-label">
             <h4>Intake</h4>
-            <p>Structured interviews with your technical leads, product team, and stakeholders. We understand the problem before proposing anything.</p>
+            <p>Structured stakeholder interviews</p>
           </div>
         </div>
+        <div class="flow-connector"></div>
         <div class="flow-step">
-          <div class="flow-node">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-          </div>
+          <div class="flow-node">02</div>
           <div class="flow-label">
             <h4>Current State</h4>
-            <p>We map the existing architecture, surface dependencies and risks, and present a documented picture back to you for alignment.</p>
+            <p>Architecture and risks documented</p>
           </div>
         </div>
+        <div class="flow-connector"></div>
         <div class="flow-step">
-          <div class="flow-node">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h.01M7 20v-4"/><path d="M12 20v-8"/><path d="M17 20V8"/><path d="M22 4v16"/></svg>
-          </div>
+          <div class="flow-node">03</div>
           <div class="flow-label">
             <h4>Gap Analysis</h4>
-            <p>Compare current state against your goals. Identify where the gaps are, what's causing them, and what's required to close them.</p>
+            <p>Gaps against objectives identified</p>
           </div>
         </div>
       </div>
@@ -180,30 +214,26 @@
       <!-- Row 2: RTL -->
       <div class="flow-row flow-row--rtl">
         <div class="flow-step">
-          <div class="flow-node">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-          </div>
+          <div class="flow-node">04</div>
           <div class="flow-label">
             <h4>Recommendations</h4>
-            <p>Written, prioritized recommendations with clear rationale. Options-based when relevant — you make the final call with full context.</p>
+            <p>Prioritized findings, options laid out</p>
           </div>
         </div>
+        <div class="flow-connector"></div>
         <div class="flow-step">
-          <div class="flow-node">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
-          </div>
+          <div class="flow-node">05</div>
           <div class="flow-label">
             <h4>Roadmap</h4>
-            <p>A phased, prioritized plan with timelines, ownership, and success criteria — actionable from day one.</p>
+            <p>Phased plan, timelines, ownership</p>
           </div>
         </div>
+        <div class="flow-connector"></div>
         <div class="flow-step">
-          <div class="flow-node">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
-          </div>
+          <div class="flow-node">06</div>
           <div class="flow-label">
             <h4>Handoff</h4>
-            <p>We hand over documentation, decision records, and optionally carry the work forward through our development or QA services.</p>
+            <p>Docs delivered, support available</p>
           </div>
         </div>
       </div>
@@ -214,16 +244,15 @@
 <!-- ── DOMAIN EXPERTISE ──────────────────────────────────────── -->
 <section class="section bg-surface">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header" style="text-align:center;display:flex;flex-direction:column;align-items:center;">
       <span class="section-eyebrow">Domain expertise</span>
       <h2 class="section-title">Advisory informed by industry depth</h2>
-      <p class="section-subtitle">General technology advice is rarely useful. Our recommendations are informed by deep operational experience in specific industries.</p>
     </div>
     <div class="capabilities-grid">
       <div class="capability-item">
         <div class="cap-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-4 0v2M12 12v4"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg></div>
         <h4>Fintech security</h4>
-        <p>PCI-DSS compliance, fraud prevention architecture, secure payment flows, and audit-ready infrastructure. We know what regulators look for.</p>
+        <p>PCI-DSS compliance, fraud prevention architecture, secure payment flows, and audit-ready infrastructure for regulated environments.</p>
       </div>
       <div class="capability-item">
         <div class="cap-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div>
@@ -233,57 +262,125 @@
       <div class="capability-item">
         <div class="cap-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div>
         <h4>eCommerce performance</h4>
-        <p>Platform architecture for peak traffic, integration-heavy environments, and multi-channel commerce at scale.</p>
+        <p>Platform architecture for peak traffic, integration-heavy environments, and multi-channel commerce operations at scale.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TOOLS & PLATFORMS ──────────────────────────────────────── -->
+<section class="section" style="background:radial-gradient(ellipse at 65% 35%,rgba(36,150,237,0.09) 0%,transparent 55%),radial-gradient(circle,rgba(255,255,255,0.045) 1px,transparent 1px) 0 0/28px 28px,#0d1117;">
+  <div class="container">
+    <div class="tech-split">
+
+      <!-- Left: text -->
+      <div>
+        <span class="section-eyebrow">Tools & platforms</span>
+        <h2 class="section-title" style="margin-top:16px;margin-bottom:20px;">The platforms we know best</h2>
+        <p style="font-size:16px;color:var(--text-secondary);line-height:1.65;max-width:400px;">Our advisors have hands-on experience across the cloud, data, and infrastructure platforms your business actually runs on.</p>
+      </div>
+
+      <!-- Right: 4-column scrolling logo grid -->
+      <div class="tech-panel">
+
+        <!-- Col 1: Cloud -->
+        <div class="tech-col-track">
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original.svg" alt="Google Cloud"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="Azure"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/terraform/terraform-original.svg" alt="Terraform"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-original.svg" alt="Kubernetes"></div>
+          <!-- duplicate for seamless loop -->
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original.svg" alt="Google Cloud"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="Azure"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/terraform/terraform-original.svg" alt="Terraform"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-original.svg" alt="Kubernetes"></div>
+        </div>
+
+        <!-- Col 2: Data & Backend -->
+        <div class="tech-col-track">
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="PostgreSQL"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" alt="MongoDB"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg" alt="Redis"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apachekafka/apachekafka-original.svg" alt="Kafka"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/elasticsearch/elasticsearch-original.svg" alt="Elasticsearch"></div>
+          <!-- duplicate -->
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="PostgreSQL"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" alt="MongoDB"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg" alt="Redis"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apachekafka/apachekafka-original.svg" alt="Kafka"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/elasticsearch/elasticsearch-original.svg" alt="Elasticsearch"></div>
+        </div>
+
+        <!-- Col 3: Languages & Frameworks -->
+        <div class="tech-col-track">
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg" alt="Go"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node.js"></div>
+          <!-- duplicate -->
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg" alt="Go"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node.js"></div>
+        </div>
+
+        <!-- Col 4: DevOps & Observability -->
+        <div class="tech-col-track">
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg" alt="GitHub Actions"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original.svg" alt="GitLab"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grafana/grafana-original.svg" alt="Grafana"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux"></div>
+          <!-- duplicate -->
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg" alt="GitHub Actions"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original.svg" alt="GitLab"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grafana/grafana-original.svg" alt="Grafana"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux"></div>
+        </div>
+
       </div>
     </div>
   </div>
 </section>
 
 <!-- ── CASE STUDY HIGHLIGHTS ─────────────────────────────────── -->
-<section class="section">
+<section class="section" style="position:relative;overflow:hidden;background:linear-gradient(rgba(10,10,10,0.80),rgba(10,10,10,0.80)),url('../6-assets/img/card/teamwork.jpg') center/cover no-repeat;">
   <div class="container">
-    <div class="section-header-row">
-      <div>
-        <span class="section-eyebrow">Our work</span>
-        <h2 class="section-title">Consulting outcomes that mattered</h2>
-      </div>
-      <a href="../case-studies.html" class="btn btn-secondary btn-sm">See all work <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg></a>
+    <div class="section-header" style="text-align:center;align-items:center;">
+      <span class="section-eyebrow">Our work</span>
+      <h2 class="section-title">Consulting outcomes that mattered</h2>
     </div>
     <div class="cards-grid-3">
-      <div class="cs-card">
-        <div class="cs-card-img"><img src="../6-assets/img/card/payment-4.jpg" alt="Fintech architecture review" loading="lazy"></div>
-        <div class="cs-card-body">
-          <h3>Architecture review that prevented a $2M rewrite six months in</h3>
-          <p>We identified the root cause of a fintech startup's scaling failures and proposed a targeted fix — saving a full rewrite and six months of rework.</p>
-          <a href="../case-studies/detail.html" class="btn btn-secondary" style="width:100%;justify-content:center;">Learn More</a>
+      <div class="svc-card">
+        <div class="svc-card__img"><img src="../6-assets/img/card/payment-4.jpg" alt="Fintech architecture review" loading="lazy"></div>
+        <div class="svc-card__body">
+          <h3 class="svc-card__title">Architecture review that prevented a $2M rewrite</h3>
+          <p class="svc-card__desc">A fintech startup's scaling failures had the team ready to rebuild from scratch. We identified the root cause and proposed a targeted fix, saving six months of rework.</p>
+          <a href="../case-studies/detail.html" class="btn btn-secondary btn-sm" style="margin-top:20px;">Learn More</a>
         </div>
       </div>
-      <div class="cs-card">
-        <div class="cs-card-img"><img src="../6-assets/img/card/teamwork.jpg" alt="Enterprise legacy migration" loading="lazy"></div>
-        <div class="cs-card-body">
-          <h3>Legacy migration: 4 systems consolidated, 40% ops cost reduction</h3>
-          <p>Assessed and consolidated four legacy enterprise tools into a single modern platform. Delivered a phased migration plan with zero-disruption execution.</p>
-          <a href="../case-studies/detail.html" class="btn btn-secondary" style="width:100%;justify-content:center;">Learn More</a>
+      <div class="svc-card">
+        <div class="svc-card__img"><img src="../6-assets/img/card/teamwork.jpg" alt="Enterprise legacy migration" loading="lazy"></div>
+        <div class="svc-card__body">
+          <h3 class="svc-card__title">Four systems consolidated — 40% lower ops costs</h3>
+          <p class="svc-card__desc">Four siloed enterprise tools were driving up costs through data overlap and manual handoffs. We delivered a phased migration plan that reduced operational overhead by 40%.</p>
+          <a href="../case-studies/detail.html" class="btn btn-secondary btn-sm" style="margin-top:20px;">Learn More</a>
         </div>
       </div>
-      <div class="cs-card">
-        <div class="cs-card-img"><img src="../6-assets/img/card/card-1.jpg" alt="Cloud infrastructure migration" loading="lazy"></div>
-        <div class="cs-card-body">
-          <h3>Cloud migration executed with zero downtime across 14 services</h3>
-          <p>A logistics company running on aging on-premise infrastructure needed a full cloud lift. We planned and executed the migration with no outages and a 35% cost reduction.</p>
-          <a href="../case-studies/detail.html" class="btn btn-secondary" style="width:100%;justify-content:center;">Learn More</a>
+      <div class="svc-card">
+        <div class="svc-card__img"><img src="../6-assets/img/card/card-1.jpg" alt="Cloud infrastructure migration" loading="lazy"></div>
+        <div class="svc-card__body">
+          <h3 class="svc-card__title">Cloud migration — zero downtime across 14 services</h3>
+          <p class="svc-card__desc">A logistics company needed to leave aging on-premise infrastructure behind. We planned and executed the full cloud migration without a single outage, cutting costs by 35%.</p>
+          <a href="../case-studies/detail.html" class="btn btn-secondary btn-sm" style="margin-top:20px;">Learn More</a>
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ── BOTTOM CTA ────────────────────────────────────────────── -->
-<section class="bottom-cta-section">
-  <div class="bottom-cta-inner">
-    <h2 class="bottom-cta-title">The right technology decision<br>starts with the right questions.</h2>
-    <p class="bottom-cta-sub">Whether you're evaluating a rewrite, choosing a stack, or trying to make sense of a vendor proposal — share the problem and we'll give you a straight answer on what the right next step actually is.</p>
-    <a href="../contact.html" class="btn btn-primary btn-sm">Start a conversation</a>
   </div>
 </section>
 
@@ -328,17 +425,6 @@
   const mobileNav = document.getElementById('mobileNav');
   hamburger.addEventListener('click', () => { const open = mobileNav.classList.toggle('open'); hamburger.classList.toggle('open', open); document.body.style.overflow = open ? 'hidden' : ''; });
   document.getElementById('mobileServicesToggle').addEventListener('click', function() { document.getElementById('mobileServicesBody').classList.toggle('open'); this.classList.toggle('open'); });
-  document.querySelectorAll('.faq-question').forEach(btn => { btn.addEventListener('click', () => { const item = btn.closest('.faq-item'); const wasOpen = item.classList.contains('open'); document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open')); if (!wasOpen) item.classList.add('open'); }); });
-  (function () {
-    var heroCta = document.querySelector('.hero-actions');
-    var navBtn  = document.querySelector('.nav-cta .btn');
-    if (!heroCta || !navBtn) return;
-    new IntersectionObserver(function (entries) {
-      var visible = entries[0].isIntersecting;
-      navBtn.classList.toggle('btn-secondary', visible);
-      navBtn.classList.toggle('btn-primary',   !visible);
-    }, { threshold: 0 }).observe(heroCta);
-  })();
 </script>
 </body>
 </html>

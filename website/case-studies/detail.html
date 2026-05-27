@@ -3,156 +3,307 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Payment Platform Rebuild — MarketGrid Case Study</title>
-  <meta name="description" content="How MarketGrid rebuilt a fintech payment platform and reduced transaction latency from 4.2 s to 1.1 s.">
+  <title>Case Study — MarketGrid</title>
+  <meta name="description" content="MarketGrid case study.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* ── font floor ── */
+    .cd-hero__eyebrow { font-size: 17px; }
+
+    /* ── hero content aligned to article width ── */
+    .cd-hero__content .container {
+      max-width: 680px;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    /* ── article container ── */
+    .cd-article {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 72px 24px 100px;
+    }
+
+    /* ── project header ── */
+    .cd-article__title {
+      font-size: 30px;
+      font-weight: 500;
+      color: var(--text-primary);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+    .cd-article__meta {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 17px;
+      color: var(--text-secondary);
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+    .cd-article__meta strong {
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+
+    /* ── cover image ── */
+    .cd-cover {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 12px;
+      margin: 36px 0 0;
+      display: block;
+    }
+
+    /* ── stats block ── */
+    .cd-figures {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 12px;
+      overflow: hidden;
+      margin: 40px 0 48px;
+    }
+    .cd-figures__item {
+      padding: 28px 20px;
+      border-right: 1px solid rgba(255,255,255,0.12);
+      background: transparent;
+    }
+    .cd-figures__item:last-child { border-right: none; }
+    .cd-figures__value {
+      font-size: 40px;
+      font-weight: 500;
+      color: var(--text-primary);
+      line-height: 1;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+    .cd-figures__label {
+      font-size: 17px;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.4;
+    }
+
+    /* ── body text ── */
+    .cd-article h3 {
+      font-size: 28px;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin: 40px 0 14px;
+    }
+    .cd-article p {
+      font-size: 17px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin-bottom: 18px;
+    }
+    .cd-article ul {
+      list-style: disc;
+      padding-left: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+    .cd-article li {
+      font-size: 17px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+    .cd-article li strong { color: var(--text-primary); }
+
+    /* ── results heading ── */
+    .cd-results-head {
+      font-size: 28px;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin: 52px 0 20px;
+    }
+
+    /* ── tech section ── */
+    .cd-tech {
+      margin-top: 56px;
+      padding-top: 48px;
+      border-top: 1px solid var(--border);
+    }
+    .cd-tech__title {
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 28px;
+    }
+    .cd-tech-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .cd-tech-item {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 20px 16px;
+      min-width: 88px;
+      flex: 0 0 auto;
+    }
+    .cd-tech-item img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+      display: block;
+    }
+    .cd-tech-item span {
+      font-size: 17px;
+      color: var(--text-secondary);
+      text-align: center;
+      white-space: nowrap;
+      line-height: 1.2;
+    }
+    .cd-tech-item--text {
+      flex-direction: row;
+      gap: 10px;
+      padding: 14px 20px;
+    }
+    .cd-tech-item--text span { white-space: nowrap; }
+
+    /* ── nav inside hero ── */
+    .cd-hero__nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+    }
+
+    /* ── hero flex layout: back link top, content bottom ── */
+    #cdHero {
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
+      padding-top: calc(var(--nav-h) + 20px);
+    }
+    .cd-hero__back-wrap {
+      position: relative;
+      z-index: 2;
+      margin-bottom: auto;
+    }
+    .cd-hero__back-wrap .cd-back {
+      margin-bottom: 0;
+    }
+    .cd-hero__content {
+      padding-top: 80px;
+    }
+
+    /* ── back link ── */
+    .cd-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 17px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      margin-bottom: 36px;
+      transition: color 0.2s;
+    }
+    .cd-back:hover { color: var(--color-accent); }
+  </style>
 </head>
 <body class="page-glow">
 
 <div class="grid-overlay"></div>
 
-<!-- ── NAV ───────────────────────────────────────────────────── -->
-<nav class="site-nav">
-  <div class="nav-inner">
-    <a href="../index.html" class="nav-logo">
-      <img src="../6-assets/logo/logo.svg" alt="MarketGrid" height="20">
-    </a>
-    <ul class="nav-links">
-      <li class="nav-item">
-        <a href="#" class="nav-link">Services <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <div class="mega-menu">
-          <div class="mega-menu-inner">
-            <a href="../services/web-mobile.html">Web &amp; Mobile Dev</a>
-            <a href="../services/qa-testing.html">QA &amp; Testing</a>
-            <a href="../services/it-consulting.html">IT Consulting</a>
-          </div>
-        </div>
-      </li>
-      <li><a href="../industries.html" class="nav-link">Industries</a></li>
-      <li><a href="../case-studies.html" class="nav-link active">Case Studies</a></li>
-      <li><a href="../contact.html" class="nav-link">Contact</a></li>
-    </ul>
-    <div class="nav-cta"><a href="../contact.html" class="btn btn-primary btn-sm">Get in touch</a></div>
-    <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
-  </div>
-</nav>
-
-<!-- Mobile nav -->
-<div class="mobile-nav" id="mobileNav">
-  <div class="mobile-nav-links">
-    <button class="mobile-accordion-toggle" id="mobileServicesToggle">Services <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-    <div class="mobile-accordion-body" id="mobileServicesBody">
-      <a href="../services/web-mobile.html" class="mobile-service-link">Web &amp; Mobile Dev</a>
-      <a href="../services/qa-testing.html" class="mobile-service-link">QA &amp; Testing</a>
-      <a href="../services/it-consulting.html" class="mobile-service-link">IT Consulting</a>
-    </div>
-    <a href="../industries.html" class="mobile-nav-link">Industries</a>
-    <a href="../case-studies.html" class="mobile-nav-link">Case Studies</a>
-    <a href="../contact.html" class="mobile-nav-link">Contact</a>
-  </div>
-  <div class="mobile-nav-footer"><a href="../contact.html" class="btn btn-primary" style="width:100%;justify-content:center;">Get in touch</a></div>
-</div>
-
 <!-- ── HERO ──────────────────────────────────────────────────── -->
-<section class="cd-hero">
+<section class="cd-hero" id="cdHero">
+
+  <!-- NAV inside hero -->
+  <nav class="site-nav cd-hero__nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../6-assets/logo/logo.svg" alt="MarketGrid" height="20">
+      </a>
+      <ul class="nav-links">
+        <li class="nav-item">
+          <a href="#" class="nav-link">Services <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="mega-menu">
+            <div class="mega-menu-inner">
+              <a href="../services/web-mobile.html">Web &amp; Mobile Dev</a>
+              <a href="../services/qa-testing.html">QA &amp; Testing</a>
+              <a href="../services/it-consulting.html">IT Consulting</a>
+            </div>
+          </div>
+        </li>
+        <li><a href="../industries.html" class="nav-link">Industries</a></li>
+        <li><a href="../case-studies.html" class="nav-link active">Case Studies</a></li>
+        <li><a href="../contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-cta"><a href="../contact.html" class="btn btn-primary btn-sm">Get in touch</a></div>
+      <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- Mobile nav -->
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-links">
+      <button class="mobile-accordion-toggle" id="mobileServicesToggle">Services <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="mobile-accordion-body" id="mobileServicesBody">
+        <a href="../services/web-mobile.html" class="mobile-service-link">Web &amp; Mobile Dev</a>
+        <a href="../services/qa-testing.html" class="mobile-service-link">QA &amp; Testing</a>
+        <a href="../services/it-consulting.html" class="mobile-service-link">IT Consulting</a>
+      </div>
+      <a href="../industries.html" class="mobile-nav-link">Industries</a>
+      <a href="../case-studies.html" class="mobile-nav-link">Case Studies</a>
+      <a href="../contact.html" class="mobile-nav-link">Contact</a>
+    </div>
+    <div class="mobile-nav-footer"><a href="../contact.html" class="btn btn-primary" style="width:100%;justify-content:center;">Get in touch</a></div>
+  </div>
   <div class="cd-hero__bg">
-    <img src="../6-assets/img/1.jpg" alt="" aria-hidden="true">
+    <img id="heroImg" src="" alt="" aria-hidden="true">
   </div>
   <div class="cd-hero__overlay"></div>
+  <div class="cd-hero__back-wrap">
+    <div style="max-width:680px; margin:0 auto; padding:0 24px;">
+      <a href="../case-studies.html" class="cd-back">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3l-5 5 5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        All case studies
+      </a>
+    </div>
+  </div>
   <div class="cd-hero__content">
     <div class="container">
-      <span class="cd-hero__eyebrow">Finance &amp; Fintech · Web Development · 2025</span>
-      <h1 class="cd-hero__title">Payment platform rebuilt —<br>3× faster transaction processing</h1>
-      <p class="cd-hero__subtitle">A high-volume fintech company's legacy payment system was causing cart abandonment at checkout. We redesigned the architecture and rebuilt the frontend, cutting transaction latency from 4.2 s to 1.1 s.</p>
+      <span class="cd-hero__eyebrow" id="heroEyebrow"></span>
+      <h1 class="cd-hero__title" id="heroTitle"></h1>
+      <p class="cd-hero__subtitle" id="heroSubtitle"></p>
     </div>
   </div>
 </section>
 
-<!-- ── STATS STRIP ────────────────────────────────────────────── -->
-<div class="cd-stats">
-  <div class="container">
-    <div class="cd-stats__grid">
-      <div class="cd-stats__item">
-        <div class="cd-stats__label">Average transaction time</div>
-        <div class="cd-stats__value">1.1 s</div>
-      </div>
-      <div class="cd-stats__item">
-        <div class="cd-stats__label">Reduction in latency</div>
-        <div class="cd-stats__value">73%</div>
-      </div>
-      <div class="cd-stats__item">
-        <div class="cd-stats__label">Downtime during migration</div>
-        <div class="cd-stats__value">0</div>
-      </div>
-    </div>
-  </div>
-</div>
+<!-- ── ARTICLE ────────────────────────────────────────────────── -->
+<article class="cd-article" id="cdArticle">
 
-<!-- ── BODY ──────────────────────────────────────────────────── -->
-<section class="cd-body">
-  <div class="container">
-    <div class="cd-body__grid">
+  <h2 class="cd-article__title" id="bodyTitle"></h2>
+  <div class="cd-article__meta" id="bodyMeta"></div>
 
-      <!-- Left: text content -->
-      <div class="cd-body__left">
-        <h2 class="cd-body__title">Rebuilding FinCore's Payment Platform</h2>
-        <div class="cd-body__meta">
-          <div><strong>Client:</strong> FinCore — B2B fintech platform</div>
-          <div><strong>Timeline:</strong> 6 months</div>
-          <div><strong>Services:</strong> Web Development, Architecture Consulting</div>
-        </div>
-        <div class="cd-body__content">
-          <p>FinCore, a B2B fintech platform processing over $200M in annual transactions, was losing customers at checkout. Their legacy payment stack — built over five years with multiple vendor additions — had accumulated enough latency that transaction completion times regularly exceeded 4 seconds.</p>
-          <p>The business had tried optimizing the existing system twice and hit a ceiling. The architecture was the problem. At 4.2 s average completion time, cart abandonment on their checkout page had reached 38% — double the industry baseline.</p>
-          <p>They needed a rebuild, not another patch. The constraint: their largest client contract required zero downtime during migration.</p>
+  <img class="cd-cover" id="coverImg" src="" alt="" loading="lazy">
 
-          <h3>Our approach</h3>
-          <p>We started with a three-week discovery and architecture review. The core problem was sequential processing — seven vendor API calls made in series, any one of which could timeout and cascade. We proposed a parallel processing architecture with local result caching for idempotent lookups.</p>
-          <p>The migration used a strangler-fig pattern: new flows ran alongside the existing system in shadow mode for four weeks, with real traffic replayed against both. When the error rates matched and latency was confirmed to be below our target, we switched over — with the existing system on standby for 48 hours.</p>
+  <div class="cd-figures" id="statsGrid"></div>
 
-          <h3>What we built</h3>
-          <p>A parallelized payment processing service in Node.js, replacing sequential vendor calls with concurrent execution and a local caching layer for static data lookups. The new frontend checkout flow — built in React — was redesigned around the new latency profile, with optimistic UI patterns that felt instant to the end user even before the server responded.</p>
-          <p>We also delivered a real-time monitoring dashboard that gave FinCore's engineering team visibility into per-step latency breakdowns across their entire payment flow — something they hadn't had before.</p>
+  <div id="bodyContent"></div>
 
-          <h3>Technology used</h3>
-          <div class="tech-grid" style="margin-top:8px;">
-            <span class="tech-pill"><span class="tech-dot"></span>React</span>
-            <span class="tech-pill"><span class="tech-dot"></span>TypeScript</span>
-            <span class="tech-pill"><span class="tech-dot" style="background:var(--accent-cyan)"></span>Node.js</span>
-            <span class="tech-pill"><span class="tech-dot" style="background:var(--accent-cyan)"></span>Redis</span>
-            <span class="tech-pill"><span class="tech-dot" style="background:var(--accent-cyan)"></span>PostgreSQL</span>
-            <span class="tech-pill"><span class="tech-dot" style="background:#64748B"></span>AWS</span>
-            <span class="tech-pill"><span class="tech-dot" style="background:#64748B"></span>Docker</span>
-          </div>
-        </div>
-      </div>
+  <div id="resultsContainer"></div>
 
-      <!-- Right: photos -->
-      <div class="cd-body__photos">
-        <img src="../6-assets/img/card/payment-1.jpg" alt="Contactless payment in action" loading="lazy">
-        <img src="../6-assets/img/card/payment-2.jpg" alt="Mobile payment interface" loading="lazy">
-      </div>
+  <div class="cd-tech" id="techSection"></div>
 
-    </div>
-  </div>
-</section>
-
-<!-- ── RESULTS ────────────────────────────────────────────────── -->
-<section class="cd-results">
-  <div class="container">
-    <h2>Results:</h2>
-    <ul>
-      <li><strong>Transaction latency</strong> dropped from 4.2 s to 1.1 s — a 73% improvement that eliminated the primary driver of checkout abandonment.</li>
-      <li><strong>Cart abandonment</strong> fell from 38% to 9%, directly recovering revenue that had been lost to slow page loads.</li>
-      <li><strong>Zero downtime</strong> during the full migration, satisfying the contractual requirement with FinCore's largest enterprise client.</li>
-      <li><strong>Real-time observability</strong> into payment flow latency, giving FinCore's engineering team the tooling to maintain performance gains independently.</li>
-    </ul>
-    <p>MarketGrid's parallel processing architecture didn't just speed up the checkout — it gave FinCore a foundation to scale. The strangler-fig migration approach preserved business continuity while entirely replacing the underlying system. This engagement demonstrates what's possible when architecture review and delivery are owned by one team with end-to-end accountability.</p>
-  </div>
-</section>
+</article>
 
 <!-- ── FOOTER ────────────────────────────────────────────────── -->
 <footer class="sf-footer">
@@ -191,17 +342,532 @@
 </footer>
 
 <script>
-  const hamburger = document.getElementById('hamburger');
-  const mobileNav = document.getElementById('mobileNav');
-  hamburger.addEventListener('click', () => {
-    const open = mobileNav.classList.toggle('open');
-    hamburger.classList.toggle('open', open);
-    document.body.style.overflow = open ? 'hidden' : '';
-  });
-  document.getElementById('mobileServicesToggle').addEventListener('click', function() {
-    document.getElementById('mobileServicesBody').classList.toggle('open');
-    this.classList.toggle('open');
-  });
+// ── DEVICON MAP ───────────────────────────────────────────────────
+const CDN = 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/';
+const TECH_ICONS = {
+  'React':           CDN + 'react/react-original.svg',
+  'React Native':    CDN + 'react/react-original.svg',
+  'Next.js':         CDN + 'nextjs/nextjs-plain.svg',
+  'TypeScript':      CDN + 'typescript/typescript-original.svg',
+  'Node.js':         CDN + 'nodejs/nodejs-original.svg',
+  'Python':          CDN + 'python/python-original.svg',
+  'Redis':           CDN + 'redis/redis-original.svg',
+  'PostgreSQL':      CDN + 'postgresql/postgresql-original.svg',
+  'AWS':             CDN + 'amazonwebservices/amazonwebservices-plain-wordmark.svg',
+  'AWS RDS':         CDN + 'amazonwebservices/amazonwebservices-plain-wordmark.svg',
+  'AWS GovCloud':    CDN + 'amazonwebservices/amazonwebservices-plain-wordmark.svg',
+  'Docker':          CDN + 'docker/docker-original.svg',
+  'Kubernetes':      CDN + 'kubernetes/kubernetes-plain.svg',
+  'Terraform':       CDN + 'terraform/terraform-original.svg',
+  'Firebase':        CDN + 'firebase/firebase-plain.svg',
+  'Playwright':      CDN + 'playwright/playwright-original.svg',
+  'Cypress':         CDN + 'cypressio/cypressio-original.svg',
+  'Jest':            CDN + 'jest/jest-plain.svg',
+  'GitHub Actions':  CDN + 'github/github-original.svg',
+  'Postman':         CDN + 'postman/postman-original.svg',
+  'Stripe':          CDN + 'stripe/stripe-original.svg',
+  'Kafka':           CDN + 'apachekafka/apachekafka-original.svg',
+  'Grafana':         CDN + 'grafana/grafana-original.svg',
+  'Prometheus':      CDN + 'prometheus/prometheus-original.svg',
+  'Apache Airflow':  CDN + 'apacheairflow/apacheairflow-original.svg',
+  'Elasticsearch':   CDN + 'elasticsearch/elasticsearch-original.svg',
+  'Cloudflare':      CDN + 'cloudflare/cloudflare-original.svg',
+  'Auth0':           CDN + 'auth0/auth0-original.svg',
+  'Google Maps API': CDN + 'google/google-original.svg',
+};
+
+// ── DATASET ──────────────────────────────────────────────────────
+const CASE_STUDIES = {
+  1: {
+    pageTitle: 'Payment Platform Rebuild — MarketGrid Case Study',
+    eyebrow: 'Finance & Fintech · Web Development · 2025',
+    heroTitle: 'Payment platform rebuilt —\n3× faster transaction processing',
+    heroSubtitle: 'A high-volume fintech company\'s legacy payment system was causing cart abandonment at checkout. We redesigned the architecture and rebuilt the frontend, cutting transaction latency from 4.2 s to 1.1 s.',
+    heroImg: 'https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?auto=format&fit=crop&w=1920&q=80',
+    stats: [
+      { label: 'Average transaction time', value: '1.1 s' },
+      { label: 'Reduction in latency', value: '73%' },
+      { label: 'Downtime during migration', value: '0' },
+    ],
+    bodyTitle: 'Rebuilding FinCore\'s Payment Platform',
+    client: 'FinCore — B2B fintech platform',
+    timeline: '6 months',
+    services: 'Web Development, Architecture Consulting',
+    coverImg: 'https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?auto=format&fit=crop&w=1200&q=80',
+    coverAlt: 'Contactless payment in action',
+    intro: 'FinCore, a B2B fintech platform processing over $200M in annual transactions, was losing customers at checkout. Their legacy payment stack — built over five years with multiple vendor additions — had accumulated enough latency that transaction completion times regularly exceeded 4 seconds.\n\nThe business had tried optimizing the existing system twice and hit a ceiling. The architecture was the problem. At 4.2 s average completion time, cart abandonment on their checkout page had reached 38% — double the industry baseline.\n\nThey needed a rebuild, not another patch. The constraint: their largest client contract required zero downtime during migration.',
+    approach: 'We started with a three-week discovery and architecture review. The core problem was sequential processing — seven vendor API calls made in series, any one of which could timeout and cascade. We proposed a parallel processing architecture with local result caching for idempotent lookups.\n\nThe migration used a strangler-fig pattern: new flows ran alongside the existing system in shadow mode for four weeks, with real traffic replayed against both. When the error rates matched and latency was confirmed to be below our target, we switched over — with the existing system on standby for 48 hours.',
+    built: 'A parallelized payment processing service in Node.js, replacing sequential vendor calls with concurrent execution and a local caching layer for static data lookups. The new frontend checkout flow — built in React — was redesigned around the new latency profile, with optimistic UI patterns that felt instant to the end user even before the server responded.\n\nWe also delivered a real-time monitoring dashboard that gave FinCore\'s engineering team visibility into per-step latency breakdowns across their entire payment flow — something they hadn\'t had before.',
+    tech: ['React','TypeScript','Node.js','Redis','PostgreSQL','AWS','Docker'],
+    results: [
+      '<strong>Transaction latency</strong> dropped from 4.2 s to 1.1 s — a 73% improvement that eliminated the primary driver of checkout abandonment.',
+      '<strong>Cart abandonment</strong> fell from 38% to 9%, directly recovering revenue that had been lost to slow page loads.',
+      '<strong>Zero downtime</strong> during the full migration, satisfying the contractual requirement with FinCore\'s largest enterprise client.',
+      '<strong>Real-time observability</strong> into payment flow latency, giving FinCore\'s engineering team the tooling to maintain performance gains independently.',
+    ],
+    resultsSummary: 'MarketGrid\'s parallel processing architecture didn\'t just speed up the checkout — it gave FinCore a foundation to scale. The strangler-fig migration approach preserved business continuity while entirely replacing the underlying system. This engagement demonstrates what\'s possible when architecture review and delivery are owned by one team with end-to-end accountability.',
+  },
+  2: {
+    pageTitle: 'Zero Critical Bugs at Launch — MarketGrid Case Study',
+    eyebrow: 'Gaming · QA & Testing · 2025',
+    heroTitle: 'Zero critical bugs —\n50,000 players on launch day',
+    heroSubtitle: 'A gaming operator scheduled a live launch with 50,000 pre-registered players and no rollback plan. We built a 1,400-case automated test suite from scratch and drove the defect escape rate to near zero.',
+    heroImg: 'https://images.unsplash.com/photo-1600861194942-f883de0dfe96?auto=format&fit=crop&w=1920&q=80',
+    stats: [
+      { label: 'Automated test cases', value: '1,400' },
+      { label: 'Critical bugs at launch', value: '0' },
+      { label: 'Pre-registered players', value: '50K' },
+    ],
+    bodyTitle: 'Launch-Ready QA for RiftArena',
+    client: 'RiftArena — Online gaming platform',
+    timeline: '10 weeks',
+    services: 'QA & Testing, Test Automation',
+    coverImg: 'https://images.unsplash.com/photo-1600861194942-f883de0dfe96?auto=format&fit=crop&w=1200&q=80',
+    coverAlt: 'Gaming platform on screen',
+    intro: 'RiftArena was two months out from a simultaneous web and mobile launch with 50,000 pre-registered players. Their in-house QA team of two had been keeping pace with feature development but had never built structured regression coverage — every release was a manual re-check of a growing feature list.\n\nWith a firm launch date, a marketing campaign already live, and no ability to delay, they needed complete confidence in what they were shipping. A single critical bug on launch day could have ended the company\'s reputation before it started.',
+    approach: 'We embedded two senior QA engineers into the team for a ten-week engagement. The first two weeks were pure discovery — mapping every user flow, identifying the highest-risk surfaces, and auditing what test coverage existed. Coverage was sparse: heavy on happy paths, almost nothing on edge cases or concurrent user behavior.\n\nWe designed a risk-tiered test plan. Critical paths (matchmaking, payment, account creation) got 100% automated coverage with priority. Secondary flows got partial automation plus scripted manual passes. We ran load simulations in parallel to validate behavior under concurrent user volumes.',
+    built: 'A 1,400-case automated test suite covering web and mobile, integrated into the existing CI/CD pipeline. Each test mapped to a requirement so the team could see coverage gaps at a glance. We also built a launch-day war room runbook — a step-by-step monitoring guide for the internal team to follow during the first 24 hours of live traffic.\n\nWe stayed on-call through the launch weekend. The final pre-launch run returned zero critical-severity findings. Launch day passed without incident.',
+    tech: ['Playwright','Cypress','Jest','GitHub Actions','Postman'],
+    results: [
+      '<strong>Zero critical bugs</strong> at launch, across web and mobile, with 50,000 concurrent players from day one.',
+      '<strong>1,400 automated test cases</strong> integrated into CI/CD, giving the team ongoing regression confidence after MarketGrid\'s engagement ended.',
+      '<strong>Risk-tiered coverage</strong> that cut the manual QA cycle from 3 weeks to a 4-hour automated run.',
+      '<strong>Launch-day monitoring runbook</strong> left with the internal team, enabling them to triage and escalate without needing external support.',
+    ],
+    resultsSummary: 'RiftArena launched on time, at scale, and without incident. The test infrastructure we built became the foundation for their internal QA team going forward — a permanent asset, not a one-time deliverable. High-stakes launches require structured coverage and a clear escalation plan. This engagement delivered both.',
+  },
+  3: {
+    pageTitle: 'eCommerce Stack Rebuild — MarketGrid Case Study',
+    eyebrow: 'eCommerce · Web Development · 2025',
+    heroTitle: 'eCommerce stack rebuilt —\ncheckout 60% faster end-to-end',
+    heroSubtitle: 'A fragmented eCommerce platform was bleeding sales at every step of the funnel. We replatformed the entire stack and connected 12 services end-to-end, cutting checkout time from 8.1 s to 3.3 s.',
+    heroImg: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1920&q=80',
+    stats: [
+      { label: 'Checkout time reduction', value: '60%' },
+      { label: 'Services integrated', value: '12' },
+      { label: 'Revenue uplift (month 1)', value: '+22%' },
+    ],
+    bodyTitle: 'Replatforming ShopAxis\'s eCommerce Stack',
+    client: 'ShopAxis — D2C eCommerce brand',
+    timeline: '5 months',
+    services: 'Web Development, Systems Integration',
+    coverImg: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1200&q=80',
+    coverAlt: 'eCommerce product page',
+    intro: 'ShopAxis was running their eCommerce operation across a patchwork of tools that had never been designed to work together: a legacy storefront, a separate inventory system, a third-party checkout provider, and custom fulfillment logic bolted on over three years. The result was a checkout flow that averaged 8.1 seconds and dropped 31% of customers before they completed a purchase.\n\nThey had already tried patching the checkout speed with CDN changes and caching. It helped at the margins. The core issue was architecture — every checkout triggered sequential calls to four separate systems, and any one of them could add seconds to the wait.',
+    approach: 'We began with a two-week technical audit across all 12 integrated services. We mapped every API call made during a checkout session, measured p95 response times for each vendor, and identified the three bottlenecks that accounted for 70% of the total latency.\n\nRather than a full replacement, we designed a thin integration layer that sat in front of the legacy systems. This allowed us to parallelize the slow calls, add request-level caching for non-volatile data, and replace the checkout frontend without touching the backend order management logic. The migration ran over three months with feature flags controlling the rollout.',
+    built: 'A new Next.js storefront with an API integration layer that parallelized the four slowest checkout dependencies. We rebuilt the cart and checkout UI from scratch, designed for perceived performance — skeleton loaders, optimistic state updates, and pre-fetched product data on hover.\n\nThe inventory sync was moved from a polling model to a webhook-driven architecture, eliminating the 45-second inventory lag that had been causing oversell events. All 12 third-party services were connected through a unified integration hub with centralized error logging.',
+    tech: ['Next.js','React','TypeScript','Node.js','Redis','Stripe','AWS'],
+    results: [
+      '<strong>Checkout time</strong> fell from 8.1 s to 3.3 s — a 60% reduction that directly reduced the primary conversion drop-off.',
+      '<strong>Cart abandonment</strong> at the payment step dropped from 31% to 14% within 30 days of launch.',
+      '<strong>Oversell events eliminated</strong> after the inventory sync moved to a webhook model — a problem that had cost an average of $18K per month in refunds.',
+      '<strong>22% revenue uplift</strong> in the first month post-launch compared to the equivalent period the prior year.',
+    ],
+    resultsSummary: 'Replatforming is only worth doing once if it\'s done right. ShopAxis now has a checkout stack they can extend without fear — modular, observable, and fast. The integration layer approach preserved their existing operational workflows while completely replacing the customer-facing performance characteristics. Revenue recovered in the first billing cycle.',
+  },
+  4: {
+    pageTitle: 'Legacy System Consolidation — MarketGrid Case Study',
+    eyebrow: 'Enterprise · IT Consulting · 2024',
+    heroTitle: 'Four legacy systems —\nconsolidated into one platform',
+    heroSubtitle: 'A 600-person enterprise was running four separate systems that never shared data. We consolidated the stack into a single operational platform, cutting manual reconciliation work by 80% and eliminating 3 FTE of duplicate overhead.',
+    heroImg: 'https://images.unsplash.com/photo-1695668548342-c0c1ad479aee?auto=format&fit=crop&w=1920&q=80',
+    stats: [
+      { label: 'Systems consolidated', value: '4 → 1' },
+      { label: 'Manual work reduction', value: '80%' },
+      { label: 'Duplicate overhead eliminated', value: '3 FTE' },
+    ],
+    bodyTitle: 'Consolidating OperaCore\'s Legacy Stack',
+    client: 'OperaCore — Enterprise operations group',
+    timeline: '9 months',
+    services: 'IT Consulting, Web Development, Systems Integration',
+    coverImg: 'https://images.unsplash.com/photo-1695668548342-c0c1ad479aee?auto=format&fit=crop&w=1200&q=80',
+    coverAlt: 'Enterprise operations platform',
+    intro: 'OperaCore was a 600-person logistics group that had grown by acquisition. Four separate business units, each with its own operational software, were now nominally a single company — but their systems had never been connected. Every week, a team of six manually reconciled data across four systems to produce reports that were already 48 hours out of date by the time they were read.\n\nLeadership had tried to standardize on a single enterprise SaaS platform three years earlier. The migration had stalled after six months when it became clear the off-the-shelf solution couldn\'t support the group\'s operational nuances without significant customization.',
+    approach: 'We spent the first six weeks embedded with the operations team before writing a single line of code. We mapped every workflow that touched more than one system, categorized them by frequency and business impact, and identified the 20% of integrations that accounted for 80% of the manual reconciliation work.\n\nRather than a big-bang replacement, we designed a phased consolidation. We built a shared data layer first — a central API that all four legacy systems could write to — then migrated workflows onto a new unified interface one business unit at a time. Each migration was reversible for 30 days post-cutover.',
+    built: 'A unified operations platform built on a microservices architecture, with adapters for each of the four legacy systems acting as data sources. The frontend was a single React application with role-based views for each business unit — users saw only the workflows relevant to their function.\n\nThe reconciliation logic that had previously taken six people two days was fully automated. Reports that had been 48 hours old were now generated in real time. The legacy systems remained in place as read-only archives, accessible for compliance lookups.',
+    tech: ['React','TypeScript','Python','PostgreSQL','Kafka','Docker','Kubernetes'],
+    results: [
+      '<strong>Four legacy systems</strong> consolidated into a single platform accessible to all 600 employees across four business units.',
+      '<strong>Manual reconciliation work</strong> reduced by 80%, freeing three full-time staff roles for reallocation.',
+      '<strong>Reporting latency</strong> dropped from 48 hours to real-time — operational decisions are now made on current data.',
+      '<strong>Phased migration</strong> with 30-day rollback windows kept business continuity intact throughout a 9-month consolidation.',
+    ],
+    resultsSummary: 'Enterprise consolidation projects fail most often because they try to do too much at once. Our phased approach — starting with a shared data layer and migrating business units incrementally — gave OperaCore a path that was both technically sound and operationally safe. The result is a platform that matches how the business actually works, not what a SaaS vendor assumed.',
+  },
+  5: {
+    pageTitle: 'Architecture Review Saves $2M Rewrite — MarketGrid Case Study',
+    eyebrow: 'SaaS · IT Consulting · 2025',
+    heroTitle: 'Architecture review —\n$2M rewrite avoided entirely',
+    heroSubtitle: 'A SaaS startup\'s engineering team had proposed a complete backend rewrite after hitting a scalability ceiling. A three-week architecture review found a targeted solution that avoided the rewrite and shipped in six weeks.',
+    heroImg: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1920&q=80',
+    stats: [
+      { label: 'Rewrite cost avoided', value: '$2M' },
+      { label: 'Time to resolution', value: '6 wks' },
+      { label: 'Performance improvement', value: '4×' },
+    ],
+    bodyTitle: 'Rescuing Vantex\'s Scalability Crisis',
+    client: 'Vantex — B2B SaaS platform',
+    timeline: '9 weeks (3 review + 6 delivery)',
+    services: 'IT Consulting, Architecture Review',
+    coverImg: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80',
+    coverAlt: 'Architecture diagram session',
+    intro: 'Vantex was a B2B SaaS company that had grown from 50 to 800 clients in 18 months. Their backend — built in a fast-growth phase with scalability as an afterthought — was showing the strain. API response times had climbed from 200 ms to over 3 seconds at peak load. The engineering team had spent two sprints investigating and concluded that the only viable fix was a full backend rewrite, estimated at $2M and 8 months.\n\nBefore committing to the rewrite, the CTO engaged MarketGrid for an independent architecture review. We were asked to either validate the team\'s conclusion or identify an alternative.',
+    approach: 'Three weeks, focused entirely on understanding the system before recommending anything. We reviewed infrastructure configurations, database query patterns, caching behavior, and the network topology between services. We ran profiling sessions with the engineering team to capture actual bottlenecks under realistic load.\n\nThe root cause emerged in week two: a single database view, queried without pagination by three high-traffic API endpoints, was generating full table scans on a 40M-row table at every request. The fix was targeted, not architectural.',
+    built: 'We delivered an implementation plan with specific query rewrites, index definitions, and caching configuration. The Vantex engineering team implemented the changes in six weeks — no new services, no infrastructure migration, no downtime. We stayed available throughout for review and escalation.\n\nThe four changes together brought p95 API response time from 3.1 s back to 280 ms under equivalent load. The full table scan that had been running hundreds of times per minute was eliminated.',
+    tech: ['PostgreSQL','Redis','Node.js','Terraform','AWS RDS'],
+    results: [
+      '<strong>$2M backend rewrite avoided</strong> — the problem was resolved with targeted changes to existing infrastructure.',
+      '<strong>API response time</strong> dropped from 3.1 s to 280 ms at p95, restoring product performance to pre-growth levels.',
+      '<strong>Six-week delivery</strong> compared to the eight-month rewrite timeline the team had projected.',
+      '<strong>Engineering team capability</strong> increased — the profiling and diagnosis process was documented and left as an internal runbook.',
+    ],
+    resultsSummary: 'Not every scalability crisis requires a rewrite. This engagement validated an important principle: diagnosis before prescription. Three weeks of rigorous architecture review saved Vantex eight months of delivery risk and $2M in engineering cost. The fix was incremental; the impact was not.',
+  },
+  6: {
+    pageTitle: 'Cross-Platform Mobile App in 14 Weeks — MarketGrid Case Study',
+    eyebrow: 'Consumer Tech · Mobile Development · 2025',
+    heroTitle: 'Cross-platform app —\nlaunched on iOS & Android in 14 weeks',
+    heroSubtitle: 'A consumer-facing app launched simultaneously on both platforms at the cost of one, using a shared React Native codebase. The app reached 10,000 active users in its first month.',
+    heroImg: 'https://images.unsplash.com/photo-1609921141835-710b7fa6e438?auto=format&fit=crop&w=1920&q=80',
+    stats: [
+      { label: 'Time to launch', value: '14 wks' },
+      { label: 'Active users (month 1)', value: '10K' },
+      { label: 'Code shared between platforms', value: '87%' },
+    ],
+    bodyTitle: 'Building Cirql\'s Consumer Mobile App',
+    client: 'Cirql — Consumer social platform',
+    timeline: '14 weeks',
+    services: 'Mobile Development, Web Development',
+    coverImg: 'https://images.unsplash.com/photo-1609921141835-710b7fa6e438?auto=format&fit=crop&w=1200&q=80',
+    coverAlt: 'Mobile app screens',
+    intro: 'Cirql was a consumer social platform that had validated their product idea with a web prototype and needed to move to native mobile before a Series A pitch. The founding team had built the web version internally but lacked mobile expertise. Their options were hiring two separate native teams, which their runway couldn\'t support, or finding a single team that could deliver both platforms simultaneously.\n\nThey came to MarketGrid with a 14-week deadline tied to a funding milestone. Both platforms had to launch together — a staggered release would have undermined the pitch.',
+    approach: 'We assessed the product requirements and recommended React Native as the right technology choice for their constraints: a single codebase, shared business logic, and the ability to hand the code back to a small team to maintain. We scoped the feature set for v1 to what could be delivered with confidence in 14 weeks — deferring two lower-priority features to v1.1.\n\nDevelopment ran in two-week sprints with testable builds delivered to the Cirql team at the end of every cycle. We maintained a shared design system between web and mobile from the start, ensuring visual consistency without duplicating design decisions.',
+    built: 'A React Native application with an 87% shared codebase between iOS and Android, backed by a Node.js API purpose-built for the mobile client. The social feed, messaging, and notification systems were all built to handle the growth the client was projecting post-funding.\n\nWe handled the App Store and Google Play submission process, including review preparation and compliance documentation. Both apps passed review on first submission. Push notifications, deep linking, and offline-capable state management were included in v1.',
+    tech: ['React Native','TypeScript','Node.js','PostgreSQL','Firebase','AWS'],
+    results: [
+      '<strong>Launched simultaneously</strong> on iOS and Android in 14 weeks, meeting the funding milestone deadline.',
+      '<strong>10,000 active users</strong> in the first month, with the architecture handling the load without incident.',
+      '<strong>87% shared codebase</strong> between platforms, reducing ongoing maintenance cost compared to two native builds.',
+      '<strong>Both apps passed App Store and Play Store review</strong> on first submission — no back-and-forth with platform reviewers.',
+    ],
+    resultsSummary: 'Cirql closed their Series A two weeks after launch. The mobile app was a central part of the pitch — live, polished, and already showing user traction. Building for two platforms simultaneously is only viable when the technology choice and feature scoping are right. Both decisions paid off here.',
+  },
+  7: {
+    pageTitle: 'SaaS Platform Scaled to 10,000 Tenants — MarketGrid Case Study',
+    eyebrow: 'SaaS · Web Development · 2024',
+    heroTitle: 'SaaS platform —\nscaled from 500 to 10,000 tenants',
+    heroSubtitle: 'A multi-tenant SaaS product grew 20× in 18 months without changing its architecture — because we designed the tenant isolation model and data layer to handle the scale from the start.',
+    heroImg: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1920&q=80',
+    stats: [
+      { label: 'Tenant growth', value: '20×' },
+      { label: 'Query performance at 10K tenants', value: '<80 ms' },
+      { label: 'Tenant data isolation incidents', value: '0' },
+    ],
+    bodyTitle: 'Architecting Planform for Hypergrowth',
+    client: 'Planform — B2B project management SaaS',
+    timeline: '7 months',
+    services: 'Web Development, Architecture Consulting',
+    coverImg: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80',
+    coverAlt: 'SaaS dashboard interface',
+    intro: 'Planform had product-market fit and a growth trajectory that was accelerating faster than their engineering team had planned for. At 500 tenants, their multi-tenant architecture was beginning to show the first signs of strain — some query patterns that had been fine at lower scale were starting to slow under the data volume of their largest enterprise accounts.\n\nThey had a decision to make: continue adding to an architecture that was beginning to buckle, or invest in rebuilding the data and tenancy model while they still had time to do it cleanly.',
+    approach: 'We began with a thorough audit of the existing tenancy model. The primary issue was a row-level tenancy pattern that was efficient at low scale but generated table scans as tenant count and data volume grew. We evaluated three architectural options: schema-per-tenant isolation, a row-level security model with better indexing, and a hybrid approach.\n\nWe recommended and implemented the hybrid approach: separate schemas for enterprise-tier tenants above a data volume threshold, with an improved row-level model for the standard tier. The migration was designed to be transparent to the application layer — the query interface didn\'t change, only the routing.',
+    built: 'A tenant routing service that directed queries to the appropriate storage tier based on tenant classification, with automatic promotion logic when a tenant\'s data volume crossed the enterprise threshold. The existing API layer was updated to go through the router without changes to any of the application business logic.\n\nWe also delivered a tenant observability dashboard giving the Planform engineering team visibility into per-tenant query performance, storage growth, and tier classification — tooling that let them manage the scale proactively.',
+    tech: ['React','TypeScript','Node.js','PostgreSQL','Redis','AWS RDS','Terraform'],
+    results: [
+      '<strong>20× tenant growth</strong> from 500 to 10,000 accounts with no architectural changes after launch.',
+      '<strong>Query performance</strong> held below 80 ms p95 at 10,000 tenants — the same target met at 500.',
+      '<strong>Zero data isolation incidents</strong> across the entire growth period, despite the complexity of a hybrid tenancy model.',
+      '<strong>Engineering team owns the scale path</strong> — the observability tooling and tier promotion logic work automatically without manual intervention.',
+    ],
+    resultsSummary: 'Multi-tenant architecture done right is an investment that pays back on every growth milestone. Planform didn\'t need to re-architect when they hit 2,000 tenants, 5,000, or 10,000. The design we delivered at 500 held at 20×. That\'s the goal: build the foundation once, grow on top of it.',
+  },
+  8: {
+    pageTitle: 'Analytics Dashboard Replaces Excel — MarketGrid Case Study',
+    eyebrow: 'Enterprise · Web Development · 2024',
+    heroTitle: 'Internal analytics —\nreporting time from 4 hours to 3 minutes',
+    heroSubtitle: 'A 200-person operations team was spending four hours per report run in Excel. We replaced their manual reporting workflow with a real-time analytics dashboard, with role-based access and live data throughout.',
+    heroImg: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1920&q=80',
+    stats: [
+      { label: 'Report generation time', value: '3 min' },
+      { label: 'Manual hours saved per week', value: '80 hrs' },
+      { label: 'Dashboard users at launch', value: '200+' },
+    ],
+    bodyTitle: 'Replacing Meridian\'s Excel Reporting Stack',
+    client: 'Meridian Logistics — Operations group',
+    timeline: '4 months',
+    services: 'Web Development, Data Engineering',
+    coverImg: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
+    coverAlt: 'Analytics dashboard on screen',
+    intro: 'Meridian Logistics ran a 200-person operations team coordinating fleet movements across three regions. Every Monday morning, a team of four analysts spent four hours pulling data from five systems, combining it in Excel, and distributing reports via email. By the time the reports reached operations managers, the data was already hours out of date — and any follow-up question meant another manual pull.\n\nThe Excel process had been the de facto standard for six years. Everyone knew it was slow. No one had prioritized fixing it because the workaround — starting the Monday pull at 5 AM — had been accepted as normal.',
+    approach: 'We spent two weeks interviewing analysts, operations managers, and regional leads to understand what questions each role actually needed answered — not what the existing reports contained, but what decisions they were trying to make with the data.\n\nThe interviews revealed that 70% of the report content was consumed by fewer than 20% of users. Most managers needed three or four metrics; only the regional leads needed the full picture. We designed a role-based dashboard that surfaced the right data to each user by default, with drill-down access for the analysts who needed the full view.',
+    built: 'A React-based analytics dashboard connected to Meridian\'s five source systems via a lightweight ETL pipeline. Data refreshed every 15 minutes during business hours and on-demand for analysts. Role-based access control gave each of the four user tiers a tailored default view.\n\nThe Monday pull was eliminated entirely. Reports that had taken four hours to assemble now rendered in under three minutes, with data that was never more than 15 minutes old. The dashboard was self-serve — no analyst intervention required for standard reporting.',
+    tech: ['React','TypeScript','Python','PostgreSQL','Apache Airflow','AWS'],
+    results: [
+      '<strong>Report generation time</strong> dropped from 4 hours to 3 minutes — the Monday morning pull was eliminated entirely.',
+      '<strong>80 analyst-hours per week</strong> freed from manual data work, redirected to analysis and exception handling.',
+      '<strong>Data freshness</strong> improved from 48 hours to 15 minutes — operations decisions are now made on current information.',
+      '<strong>200 users onboarded</strong> within two weeks of launch, with role-appropriate views requiring no training for standard use.',
+    ],
+    resultsSummary: 'The best analytics tooling shows each user exactly what they need, without requiring them to ask for it. Meridian\'s operations team didn\'t need a more powerful Excel — they needed to stop using Excel. This engagement delivered that, and the time savings materialized within the first week of launch.',
+  },
+  9: {
+    pageTitle: 'API Gateway Consolidation — MarketGrid Case Study',
+    eyebrow: 'Enterprise · IT Consulting · 2025',
+    heroTitle: '11 internal APIs unified —\n42% faster average response time',
+    heroSubtitle: 'Eleven internal APIs with inconsistent authentication, no rate limiting, and zero centralized monitoring were consolidated under a single gateway. Response time dropped 42% and incidents requiring manual investigation fell by 65%.',
+    heroImg: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1920&q=80',
+    stats: [
+      { label: 'APIs consolidated', value: '11' },
+      { label: 'Response time improvement', value: '42%' },
+      { label: 'Incident investigation reduction', value: '65%' },
+    ],
+    bodyTitle: 'API Consolidation for Nexfield Enterprise',
+    client: 'Nexfield — Enterprise software group',
+    timeline: '5 months',
+    services: 'IT Consulting, Architecture Consulting',
+    coverImg: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80',
+    coverAlt: 'API monitoring dashboard',
+    intro: 'Nexfield had grown their internal API surface organically over eight years. Eleven separate APIs, each with different authentication schemes, logging formats, and error response patterns, were used by 14 internal applications. There was no centralized monitoring — when something broke, finding the source meant checking each API individually.\n\nA single outage event the previous quarter had taken six hours to diagnose because the failing service had been logging errors in a format that didn\'t match the monitoring tool\'s parser.',
+    approach: 'We mapped the dependency graph across all 11 APIs and 14 consuming applications before designing anything. The goal was to reduce the blast radius of any future incident — not to standardize for its own sake. We identified the four APIs responsible for 80% of request volume as the highest-priority consolidation targets.\n\nWe designed an API gateway layer that acted as a transparent proxy for existing clients — no changes required to consuming applications at cutover. Authentication, rate limiting, and request logging were handled by the gateway.',
+    built: 'A Kong-based API gateway deployed on Kubernetes, with per-API plugin configurations for authentication, rate limiting, and request transformation. All 11 APIs were routed through the gateway within three months, with the consuming applications unchanged.\n\nCentralized observability was delivered simultaneously: a Grafana dashboard showing request rates, error rates, and latency percentiles per API — the tool that would have reduced the six-hour incident to minutes.',
+    tech: ['Kubernetes','Grafana','Prometheus','Node.js','AWS','Terraform'],
+    results: [
+      '<strong>11 APIs consolidated</strong> under a single gateway with consistent authentication, rate limiting, and observability.',
+      '<strong>42% average response time improvement</strong> from connection pooling and request routing optimizations at the gateway layer.',
+      '<strong>Incident investigation time</strong> reduced by 65% — the centralized dashboard surfaces failures in seconds, not hours.',
+      '<strong>Authentication complexity eliminated</strong> — 14 consuming applications now use a single credential standard instead of 11.',
+    ],
+    resultsSummary: 'API consolidation is an infrastructure investment that pays dividends every time something breaks — and something always breaks eventually. Nexfield\'s engineering team now operates with centralized visibility and consistent tooling across their entire internal API surface. The six-hour incident that triggered this engagement would now be resolved in under 20 minutes.',
+  },
+  10: {
+    pageTitle: 'Real-Time Logistics Platform — MarketGrid Case Study',
+    eyebrow: 'Logistics · Web Development · 2025',
+    heroTitle: 'Real-time logistics platform —\n68% fewer support tickets',
+    heroSubtitle: 'A 3PL operator\'s customers couldn\'t track their shipments and were generating 400+ support tickets per week as a result. Real-time tracking across 14 carrier integrations cut that volume by 68% in the first month.',
+    heroImg: 'https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=1920&q=80',
+    stats: [
+      { label: 'Support ticket reduction', value: '68%' },
+      { label: 'Carrier integrations', value: '14' },
+      { label: 'Shipments tracked daily', value: '12K' },
+    ],
+    bodyTitle: 'Building FreightView\'s Customer Tracking Portal',
+    client: 'FreightView — Third-party logistics operator',
+    timeline: '4 months',
+    services: 'Web Development, Systems Integration',
+    coverImg: 'https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=1200&q=80',
+    coverAlt: 'Real-time shipment tracking map',
+    intro: 'FreightView managed logistics for 80 mid-market clients, coordinating shipments across 14 carrier partners. Their customers had no visibility into where their shipments were — the only update mechanism was a weekly status email compiled manually by a customer success manager.\n\nThe result was 400+ "where is my shipment?" support tickets per week, consuming the equivalent of two full-time customer success roles. More critically, it was affecting retention: two enterprise clients had flagged tracking visibility as a reason they were evaluating competitors.',
+    approach: 'We began by auditing the tracking data that was already available. Eight of the 14 carriers had real-time webhook APIs; four had polling APIs with 15-minute update intervals; two had only end-of-day EDI feeds. Rather than waiting for the two EDI carriers to upgrade, we designed the tracking model to accommodate mixed-fidelity data — surfacing real-time status where available and "last known" status with timestamps where not.\n\nThe customer portal was designed mobile-first, since 60% of FreightView\'s clients used the platform from a phone. Proactive push notifications for milestone events were included in the v1 scope.',
+    built: 'A customer-facing tracking portal with a carrier integration layer that aggregated data from all 14 partners into a normalized event model. The integration layer handled webhook subscriptions, polling schedules, and EDI parsing without exposing any carrier-specific behavior to the frontend.\n\nAdmins at FreightView could see the same real-time data their clients saw, with an additional layer showing carrier API health and data freshness per integration.',
+    tech: ['React','TypeScript','Node.js','PostgreSQL','Redis','Google Maps API','AWS'],
+    results: [
+      '<strong>68% reduction in support tickets</strong> in the first month — from 400+ per week to under 130.',
+      '<strong>14 carrier integrations</strong> normalized into a single tracking model, regardless of carrier data format or fidelity.',
+      '<strong>12,000 shipments tracked daily</strong> with real-time or near-real-time status for 85% of the volume.',
+      '<strong>Two enterprise accounts retained</strong> that had been evaluating competitors over tracking visibility.',
+    ],
+    resultsSummary: 'Customers don\'t want to file support tickets — they want answers. FreightView\'s support volume was a symptom of missing information, not missing staff. Building a tracking portal solved the root problem and recovered two enterprise relationships in the same move. The support savings alone covered the build cost within two months.',
+  },
+  11: {
+    pageTitle: 'QA Pipeline Automation — MarketGrid Case Study',
+    eyebrow: 'SaaS · QA & Testing · 2024',
+    heroTitle: 'QA pipeline automated —\nrelease cycle from 3 weeks to 4 days',
+    heroSubtitle: 'A growing SaaS company\'s three-week manual QA cycle was blocking their ability to ship. We replaced it with a fully automated CI/CD-integrated test pipeline, cutting release time by 80% and reducing regression bugs by 70%.',
+    heroImg: 'https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&w=1920&q=80',
+    stats: [
+      { label: 'Release cycle reduction', value: '80%' },
+      { label: 'Regression bug reduction', value: '70%' },
+      { label: 'Automated test coverage', value: '94%' },
+    ],
+    bodyTitle: 'Automating Stackly\'s Release Pipeline',
+    client: 'Stackly — B2B project management SaaS',
+    timeline: '8 weeks',
+    services: 'QA & Testing, Test Automation, DevOps',
+    coverImg: 'https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&w=1200&q=80',
+    coverAlt: 'QA automation dashboard',
+    intro: 'Stackly was shipping new features every two weeks — but each release required a three-week manual QA cycle before it could go to production. The result was a growing backlog: features that were code-complete sat waiting for QA to catch up, developers context-switched between old and new work, and the three-week lag between completion and production was causing friction with enterprise clients expecting faster turnaround.\n\nThe QA team of three was doing their best, but the test surface had grown faster than the team. Test plans were documented in spreadsheets and executed manually. Regression testing meant re-running the full suite after every change — a 40-hour exercise.',
+    approach: 'We started with a coverage audit: what tests existed, what flows were covered, and where the highest regression risk lay. The spreadsheet test plan had 800 test cases, of which we assessed 620 as suitable for automation based on stability and execution cost.\n\nWe prioritized by risk rather than volume — the top 200 tests covering the highest-traffic flows went into automation first, giving the team immediate regression confidence before the full suite was complete. Automation was integrated into the existing GitHub Actions CI/CD pipeline from day one.',
+    built: 'A Playwright-based test suite covering web and API surfaces, integrated into the CI/CD pipeline with per-PR execution for critical paths and nightly full-suite runs. The 94% coverage target was achieved across 8 weeks by two automation engineers.\n\nWe also delivered a test reporting dashboard showing pass rates, flaky test tracking, and coverage trends — giving the QA team full visibility into the health of the suite. The three QA engineers shifted from manual test execution to test maintenance and exploratory testing of new features.',
+    tech: ['Playwright','TypeScript','GitHub Actions','Jest','Docker'],
+    results: [
+      '<strong>Release cycle dropped from 3 weeks to 4 days</strong> — an 80% reduction that unblocked the feature backlog within the first sprint.',
+      '<strong>Regression bugs in production</strong> reduced by 70% in the six months following automation launch.',
+      '<strong>94% automated test coverage</strong> across critical paths, with CI integration running on every pull request.',
+      '<strong>QA team capacity</strong> redirected from manual execution to exploratory testing — finding higher-severity bugs earlier.',
+    ],
+    resultsSummary: 'Manual QA is a tax on shipping velocity. Stackly\'s three-week cycle wasn\'t a QA problem — it was a test infrastructure problem. Automation didn\'t replace the QA team; it gave them leverage. The team\'s output, measured by production bugs prevented, improved significantly once manual execution was off their plate.',
+  },
+  12: {
+    pageTitle: 'Custom Collaboration Tool — MarketGrid Case Study',
+    eyebrow: 'Enterprise · Web Development · 2024',
+    heroTitle: 'Custom collaboration tool —\nadopted by 400+ employees at launch',
+    heroSubtitle: 'Three separate SaaS tools replaced by one, built around how the client\'s teams actually plan and deliver work. Adoption hit 400 employees in the first two weeks without a training program.',
+    heroImg: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80',
+    stats: [
+      { label: 'Employee adoption (week 2)', value: '400+' },
+      { label: 'SaaS subscriptions replaced', value: '3' },
+      { label: 'Monthly SaaS cost eliminated', value: '$18K' },
+    ],
+    bodyTitle: 'Building Crestfield\'s Internal Work Platform',
+    client: 'Crestfield Group — Professional services firm',
+    timeline: '6 months',
+    services: 'Web Development, IT Consulting',
+    coverImg: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80',
+    coverAlt: 'Team collaboration in the office',
+    intro: 'Crestfield Group, a 400-person professional services firm, was running their project delivery operations across three separate SaaS tools: a project management platform, a time tracking system, and a client reporting tool. None of them talked to each other. Managers maintained status in three places; any cross-tool view required manual export and assembly in Excel.\n\nThey had tried connecting the tools via integrations twice. Both attempts had been abandoned when the integration complexity exceeded the value. The conclusion was that no off-the-shelf combination would fit how Crestfield actually ran projects.',
+    approach: 'Before designing anything, we spent four weeks observing how Crestfield teams actually worked — not how the existing tools suggested they should work. We ran workshops with project managers, delivery leads, and analysts in each of the three practice areas. The workflows across practices were more different than leadership had assumed.\n\nRather than designing a single universal interface, we built a shared data and permission layer with practice-specific views on top. A delivery manager in consulting saw a different default dashboard than one in implementation — but they shared the same underlying project data.',
+    built: 'A React-based internal platform with three role-tailored interfaces sharing a single PostgreSQL backend. Time tracking, project status, and client reporting were all native — no third-party dependencies. The client reporting module auto-generated weekly status reports in the firm\'s standard format, eliminating a 2-hour weekly manual task for every project manager.\n\nWe ran a phased rollout by practice area, with a "shadow period" where teams used the new tool alongside their existing tools before full cutover. The phased approach produced faster adoption and zero data loss during transition.',
+    tech: ['React','TypeScript','Node.js','PostgreSQL','Redis','AWS','Docker'],
+    results: [
+      '<strong>400+ employees adopted</strong> the platform in the first two weeks without a formal training program.',
+      '<strong>Three SaaS subscriptions eliminated</strong>, saving $18,000 per month in recurring software costs.',
+      '<strong>Client reporting time</strong> cut from 2 hours per manager per week to automatic generation — recovered time immediately.',
+      '<strong>Zero data loss</strong> during the phased migration from three legacy tools to the new platform.',
+    ],
+    resultsSummary: 'Off-the-shelf tools assume generic workflows. Professional services firms are rarely generic. Building Crestfield\'s internal platform from scratch — designed around their actual delivery model — produced adoption numbers that no SaaS rollout at this firm had ever achieved. The tool worked because it matched the work, not the other way around.',
+  },
+  13: {
+    pageTitle: 'Real Estate Listing Platform — MarketGrid Case Study',
+    eyebrow: 'Real Estate · Web Development · 2025',
+    heroTitle: 'Real estate platform —\n50,000+ listings with sub-200ms search',
+    heroSubtitle: 'A property listing and management platform built to handle 50,000 active listings with sub-200ms search response times and a mobile-first design that drove a 3× increase in mobile lead submissions.',
+    heroImg: 'https://images.unsplash.com/photo-1565402170291-8491f14678db?auto=format&fit=crop&w=1920&q=80',
+    stats: [
+      { label: 'Active listings supported', value: '50K+' },
+      { label: 'Search response time', value: '<200 ms' },
+      { label: 'Mobile lead increase', value: '3×' },
+    ],
+    bodyTitle: 'Building Propex\'s Listing Platform',
+    client: 'Propex — Regional real estate operator',
+    timeline: '7 months',
+    services: 'Web Development, Mobile Development',
+    coverImg: 'https://images.unsplash.com/photo-1565402170291-8491f14678db?auto=format&fit=crop&w=1200&q=80',
+    coverAlt: 'Property listing platform',
+    intro: 'Propex was a regional real estate operator with 50,000 active property listings across three markets. Their existing platform had been built for a fraction of that volume and was showing the limits of its original design: search queries were taking 4-8 seconds, the mobile experience was a desktop layout squeezed into a small screen, and the agent portal for managing listings required a desktop browser.\n\nLeads that came through mobile — which represented 60% of their traffic — converted at a 40% lower rate than desktop leads, almost entirely because of the poor mobile experience.',
+    approach: 'The technical challenge was primarily around search performance at volume. 50,000 listings with complex filter combinations — location radius, price range, property attributes — is a query pattern that standard relational databases handle poorly without careful index design and query optimization.\n\nWe chose Elasticsearch for the search layer, indexed against a PostgreSQL source of record. This let us optimize the search experience independently from the listing data model, and gave us the ability to implement geographic radius search and full-text search in a single query without joins.',
+    built: 'A Next.js platform with server-side rendering for listing pages (critical for SEO), an Elasticsearch-powered search experience, and a React Native mobile app for buyers and agents. The agent portal was rebuilt as a mobile-first interface — listing management, photo uploads, and price adjustments all functional from a phone.\n\nSearch results returned in under 200ms at p95 with 50,000 listings and complex multi-filter queries. The mobile buyer experience was redesigned from first principles around the search-to-lead conversion flow.',
+    tech: ['Next.js','React Native','TypeScript','Elasticsearch','PostgreSQL','AWS','Cloudflare'],
+    results: [
+      '<strong>Sub-200ms search</strong> at p95 across 50,000 active listings with complex multi-filter queries.',
+      '<strong>3× increase in mobile lead submissions</strong> in the first 60 days after the new mobile experience launched.',
+      '<strong>Agent portal usable from mobile</strong> for the first time — listing management no longer required a desktop.',
+      '<strong>SEO-optimized listing pages</strong> with server-side rendering improved organic search traffic by 45% within 90 days.',
+    ],
+    resultsSummary: 'Real estate search is a technically demanding problem that requires the right data layer, not just a faster server. The Elasticsearch investment paid back immediately in search performance and continued to pay back as listing volume grew. The mobile conversion improvement alone justified the entire engagement cost in the first quarter.',
+  },
+  14: {
+    pageTitle: 'HIPAA-Compliant Patient Portal — MarketGrid Case Study',
+    eyebrow: 'Healthcare · Web Development · 2025',
+    heroTitle: 'HIPAA-compliant patient portal —\nbuilt for 12,000 users from day one',
+    heroSubtitle: 'A regional healthcare provider needed a secure patient portal connecting 12,000 patients with their providers and health records. We delivered a fully HIPAA-compliant system that passed compliance review on first submission.',
+    heroImg: 'https://images.unsplash.com/photo-1504439468489-c8920d796a29?auto=format&fit=crop&w=1920&q=80',
+    stats: [
+      { label: 'Patients at launch', value: '12,000' },
+      { label: 'Compliance review result', value: 'Pass' },
+      { label: 'Appointment scheduling adoption', value: '78%' },
+    ],
+    bodyTitle: 'Building MedBridge\'s Patient Portal',
+    client: 'MedBridge Health — Regional healthcare provider',
+    timeline: '8 months',
+    services: 'Web Development, IT Consulting, Security Review',
+    coverImg: 'https://images.unsplash.com/photo-1504439468489-c8920d796a29?auto=format&fit=crop&w=1200&q=80',
+    coverAlt: 'Healthcare team in discussion',
+    intro: 'MedBridge Health was running a regional network of 18 clinics and 12,000 patients. Their patient communication was entirely phone-based: appointment booking, prescription refill requests, and test result delivery all happened through a call center. Patient satisfaction scores on access and communication had been declining for two years as patients compared the experience to consumer apps they used daily.\n\nMedBridge needed a patient portal. The hard part wasn\'t the product design — it was the compliance requirement. Any system handling patient health information is subject to HIPAA, and MedBridge\'s compliance officer had seen enough botched healthcare software implementations to require a compliance review before launch.',
+    approach: 'We began the engagement with a compliance architecture session rather than a product design session. Understanding the HIPAA technical safeguards — encryption at rest and in transit, access logging, automatic session timeout, role-based information access — before writing code meant those requirements were built into the architecture from the start, not retrofitted.\n\nWe involved MedBridge\'s compliance officer and their EHR vendor at the outset. The portal needed to integrate with their existing Electronic Health Records system, and the EHR vendor\'s API had specific constraints around data residency and access patterns that shaped our architecture.',
+    built: 'A React-based patient portal with end-to-end encryption for all health data, role-based access control separating patient, provider, and administrative views, and a full audit log of all data access and modifications. Integration with the EHR system was handled through the vendor\'s FHIR-compliant API.\n\nAppointment scheduling, prescription refill requests, secure messaging with providers, and test result delivery were all included in v1. All health data was stored in HIPAA Business Associate Agreement-covered AWS infrastructure, with automatic session timeout and MFA enforced for provider access.',
+    tech: ['React','TypeScript','Node.js','PostgreSQL','AWS GovCloud','Auth0'],
+    results: [
+      '<strong>HIPAA compliance review passed on first submission</strong> — no findings, no remediation required before launch.',
+      '<strong>12,000 patients onboarded</strong> in the first 30 days, with 78% using online appointment scheduling by the end of month two.',
+      '<strong>Call center volume</strong> for appointment booking dropped 55% within 60 days, reducing operational cost and wait times.',
+      '<strong>Patient satisfaction scores</strong> on access and communication increased from 3.1 to 4.4 out of 5 in the first quarterly survey.',
+    ],
+    resultsSummary: 'Healthcare software built right requires treating compliance as an architecture decision, not a checklist. MedBridge\'s patient portal passed review on first submission because the technical safeguards were designed in — not added later. The product outcomes followed naturally: when patients trust a system, they use it.',
+  },
+};
+
+// ── RENDER ────────────────────────────────────────────────────────
+function renderDetail(id) {
+  const d = CASE_STUDIES[id];
+  if (!d) {
+    document.getElementById('cdHero').innerHTML = '<div class="container" style="padding:120px 0;text-align:center;"><h1>Case study not found.</h1><p><a href="../case-studies.html">← Back to all case studies</a></p></div>';
+    document.getElementById('cdArticle').style.display = 'none';
+    return;
+  }
+
+  document.title = d.pageTitle;
+  document.querySelector('meta[name="description"]').content = d.heroSubtitle.substring(0, 160);
+
+  // Hero
+  document.getElementById('heroImg').src = d.heroImg;
+  document.getElementById('heroImg').alt = d.heroTitle.replace(/\n/g, ' ');
+  document.getElementById('heroEyebrow').textContent = d.eyebrow;
+  document.getElementById('heroTitle').innerHTML = d.heroTitle.replace(/\n/g, '<br>');
+  document.getElementById('heroSubtitle').textContent = d.heroSubtitle;
+
+  // Cover image
+  document.getElementById('coverImg').src = d.coverImg;
+  document.getElementById('coverImg').alt = d.coverAlt;
+
+  // Stats block
+  document.getElementById('statsGrid').innerHTML = d.stats.map(s => `
+    <div class="cd-figures__item">
+      <div class="cd-figures__value">${s.value}</div>
+      <div class="cd-figures__label">${s.label}</div>
+    </div>`).join('');
+
+  // Body title + meta
+  document.getElementById('bodyTitle').textContent = d.bodyTitle;
+  document.getElementById('bodyMeta').innerHTML = `
+    <div><strong>Client:</strong> ${d.client}</div>
+    <div><strong>Timeline:</strong> ${d.timeline}</div>
+    <div><strong>Services:</strong> ${d.services}</div>`;
+
+  // Body content (no tech section here — moved to end)
+  document.getElementById('bodyContent').innerHTML =
+    d.intro.split('\n\n').map(p => `<p>${p}</p>`).join('') +
+    '<h3>Our approach</h3>' +
+    d.approach.split('\n\n').map(p => `<p>${p}</p>`).join('') +
+    '<h3>What we built</h3>' +
+    d.built.split('\n\n').map(p => `<p>${p}</p>`).join('');
+
+  // Results
+  const bullets = d.results.map(r => `<li>${r}</li>`).join('');
+  document.getElementById('resultsContainer').innerHTML =
+    `<h3 class="cd-results-head">Results</h3><ul>${bullets}</ul><p>${d.resultsSummary}</p>`;
+
+  // Tech section with devicon logos
+  const techHTML = d.tech.map(name => {
+    const url = TECH_ICONS[name];
+    if (url) {
+      return `<div class="cd-tech-item">
+        <img src="${url}" alt="${name}" loading="lazy">
+        <span>${name}</span>
+      </div>`;
+    }
+    return `<div class="cd-tech-item cd-tech-item--text"><span>${name}</span></div>`;
+  }).join('');
+
+  document.getElementById('techSection').innerHTML =
+    `<h3 class="cd-tech__title">Technology used</h3>
+     <div class="cd-tech-grid">${techHTML}</div>`;
+}
+
+const id = parseInt(new URLSearchParams(window.location.search).get('id'), 10);
+renderDetail(id);
+
+// ── NAV ───────────────────────────────────────────────────────────
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobileNav');
+hamburger.addEventListener('click', () => {
+  const open = mobileNav.classList.toggle('open');
+  hamburger.classList.toggle('open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+document.getElementById('mobileServicesToggle').addEventListener('click', function() {
+  document.getElementById('mobileServicesBody').classList.toggle('open');
+  this.classList.toggle('open');
+});
 </script>
 </body>
 </html>

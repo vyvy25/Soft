@@ -3,12 +3,60 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>QA & Software Testing — MarketGrid</title>
+  <title>Quality Control & Software Testing — MarketGrid</title>
   <meta name="description" content="End-to-end QA and software testing services. Functional, performance, security, and automated testing to ship software that works.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
+  <style>
+    .hero {
+      min-height: 0;
+      margin-top: calc(-1 * var(--nav-h));
+      padding-top: calc(120px + var(--nav-h));
+    }
+    .hero-subtitle { margin-bottom: 0; }
+    .tech-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .tech-panel {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      height: 500px;
+      overflow: hidden;
+      mask-image: linear-gradient(to bottom, transparent 0%, black 14%, black 86%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 14%, black 86%, transparent 100%);
+    }
+    .tech-col-track {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      animation: tech-scroll 16s linear infinite;
+    }
+    .tech-col-track:nth-child(2) { animation-duration: 12s; animation-delay: -5s; animation-direction: reverse; }
+    .tech-col-track:nth-child(3) { animation-duration: 20s; animation-delay: -9s; }
+    .tech-col-track:nth-child(4) { animation-duration: 14s; animation-delay: -3s; animation-direction: reverse; }
+    .tech-icon-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      flex-shrink: 0;
+      aspect-ratio: 1;
+    }
+    .tech-icon-card img { width: 100%; height: 100%; object-fit: contain; display: block; }
+    @keyframes tech-scroll {
+      from { transform: translateY(0); }
+      to   { transform: translateY(-50%); }
+    }
+  </style>
 </head>
 <body class="page-glow">
 
@@ -60,89 +108,67 @@
 <header class="hero">
   <div class="container">
     <span class="hero-eyebrow">Quality Control & Software Testing</span>
-    <h1 class="hero-title">Ship software that <span class="serif">works</span> —<br>every time</h1>
-    <p class="hero-subtitle">We find the bugs your users would find — before they do. End-to-end QA and testing that covers functional, performance, security, and automation across web and mobile.</p>
-    <div class="hero-actions">
-      <a href="../contact.html" class="btn btn-primary btn-lg">Start a project</a>
-    </div>
-  </div>
-</header>
-
-<!-- ── TESTING SERVICES ──────────────────────────────────────── -->
-<section class="ind-section">
-  <div class="ind-bg">
-    <img src="../6-assets/img/card/card-2.jpg" alt="" aria-hidden="true">
-    <div class="ind-overlay"></div>
-  </div>
-  <div class="container ind-inner">
-    <div class="ind-header">
-      <span class="section-eyebrow">Testing services</span>
-      <h2 class="ind-heading">Complete QA coverage, not just manual testing</h2>
-    </div>
-    <div class="ind-grid" style="grid-template-columns:repeat(3,1fr);">
+    <h1 class="hero-title">We find the bugs<br><span style="color:var(--color-accent);">before your users do.</span></h1>
+    <div class="ind-grid" style="margin-top:120px;grid-template-columns:repeat(3,1fr);width:100%;gap:20px;text-align:left;">
       <div class="ind-card">
         <h3 class="ind-card__title">Functional testing</h3>
-        <p class="ind-card__desc">Verify every feature works as specified. Manual and scripted test cases covering happy paths and edge cases.</p>
+        <p class="ind-card__desc">Manual and scripted cases verifying every feature against its specification — happy paths and edge cases included.</p>
       </div>
       <div class="ind-card">
         <h3 class="ind-card__title">Regression testing</h3>
-        <p class="ind-card__desc">Automated regression suites that run on every code change. Catch regressions before they reach users.</p>
+        <p class="ind-card__desc">Automated regression suites that run on every code push, catching regressions before they slow down your releases.</p>
       </div>
       <div class="ind-card">
         <h3 class="ind-card__title">Performance testing</h3>
-        <p class="ind-card__desc">Load, stress, and soak testing. Verify your system holds up under concurrent users and peak traffic scenarios.</p>
+        <p class="ind-card__desc">Load, stress, and soak tests that verify your system holds up under concurrent users and peak traffic conditions.</p>
       </div>
       <div class="ind-card">
         <h3 class="ind-card__title">Security testing</h3>
-        <p class="ind-card__desc">OWASP Top 10 coverage, penetration testing, and vulnerability scanning. Critical for fintech and healthcare products.</p>
+        <p class="ind-card__desc">OWASP Top 10, penetration testing, and vulnerability scanning — especially critical for fintech and healthcare products.</p>
       </div>
       <div class="ind-card">
         <h3 class="ind-card__title">Automated testing</h3>
-        <p class="ind-card__desc">Cypress, Selenium, Appium, and Playwright — automated test suites integrated into your CI/CD pipeline.</p>
+        <p class="ind-card__desc">Cypress, Selenium, Appium, and Playwright integrated directly into your CI/CD pipeline for continuous test coverage.</p>
       </div>
       <div class="ind-card">
         <h3 class="ind-card__title">Mobile QA</h3>
-        <p class="ind-card__desc">iOS and Android testing across real devices and simulators. Covers gestures, offline behavior, and platform-specific edge cases.</p>
+        <p class="ind-card__desc">iOS and Android testing across real devices and simulators, covering gestures, offline behavior, and platform edge cases.</p>
       </div>
     </div>
   </div>
-</section>
+</header>
 
 <!-- ── QA PROCESS ────────────────────────────────────────────── -->
 <section class="section bg-surface">
   <div class="container">
     <div class="section-header" style="text-align:center;display:flex;flex-direction:column;align-items:center;">
       <span class="section-eyebrow">Our process</span>
-      <h2 class="section-title" style="max-width:520px;">Rigorous QA from plan to report</h2>
+      <h2 class="section-title" style="max-width:520px;">Rigorous QA from plan to sign-off</h2>
     </div>
     <div class="flow">
       <!-- Row 1: LTR -->
       <div class="flow-row">
         <div class="flow-step">
-          <div class="flow-node">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-          </div>
+          <div class="flow-node">01</div>
           <div class="flow-label">
             <h4>Test Planning</h4>
-            <p>Define scope, objectives, risk areas, and entry/exit criteria before any testing begins.</p>
+            <p>Scope, risk areas, exit criteria set</p>
           </div>
         </div>
+        <div class="flow-connector"></div>
         <div class="flow-step">
-          <div class="flow-node">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
-          </div>
+          <div class="flow-node">02</div>
           <div class="flow-label">
             <h4>Test Case Design</h4>
-            <p>Write test cases mapped to requirements. Every acceptance criterion has a corresponding test.</p>
+            <p>Each acceptance criterion mapped</p>
           </div>
         </div>
+        <div class="flow-connector"></div>
         <div class="flow-step">
-          <div class="flow-node">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-          </div>
+          <div class="flow-node">03</div>
           <div class="flow-label">
             <h4>Automation Setup</h4>
-            <p>Configure automated test suites for regression and smoke testing — reducing manual overhead on every release.</p>
+            <p>Regression and smoke in CI/CD</p>
           </div>
         </div>
       </div>
@@ -151,30 +177,26 @@
       <!-- Row 2: RTL -->
       <div class="flow-row flow-row--rtl">
         <div class="flow-step">
-          <div class="flow-node">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          </div>
+          <div class="flow-node">04</div>
           <div class="flow-label">
             <h4>Execution</h4>
-            <p>Manual and automated test runs with detailed logging of environment, steps, and results for each cycle.</p>
+            <p>Manual and automated runs logged</p>
           </div>
         </div>
+        <div class="flow-connector"></div>
         <div class="flow-step">
-          <div class="flow-node">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-          </div>
+          <div class="flow-node">05</div>
           <div class="flow-label">
             <h4>Defect Tracking</h4>
-            <p>Every defect is logged with severity, reproduction steps, and supporting evidence. Weekly status reports included.</p>
+            <p>Bugs ranked and logged with repro steps</p>
           </div>
         </div>
+        <div class="flow-connector"></div>
         <div class="flow-step">
-          <div class="flow-node">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          </div>
+          <div class="flow-node">06</div>
           <div class="flow-label">
             <h4>Sign-off &amp; Report</h4>
-            <p>Final test summary with pass/fail metrics, coverage stats, and a clear go/no-go recommendation for release.</p>
+            <p>Coverage stats, go/no-go decision</p>
           </div>
         </div>
       </div>
@@ -182,25 +204,81 @@
   </div>
 </section>
 
-<!-- ── TOOLS ─────────────────────────────────────────────────── -->
-<section class="section">
+<!-- ── TOOLS & FRAMEWORKS ─────────────────────────────────────── -->
+<section class="section" style="background:radial-gradient(ellipse at 65% 35%,rgba(36,150,237,0.09) 0%,transparent 55%),radial-gradient(circle,rgba(255,255,255,0.045) 1px,transparent 1px) 0 0/28px 28px,#0d1117;">
   <div class="container">
-    <div class="section-header">
-      <span class="section-eyebrow">Tools & frameworks</span>
-      <h2 class="section-title">The tools your engineers already know</h2>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
-      <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;padding:24px;">
-        <p style="font-size:12px;font-family:var(--font-mono);color:var(--text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:14px;">Web automation</p>
-        <div class="tech-grid"><span class="tech-pill"><span class="tech-dot"></span>Cypress</span><span class="tech-pill"><span class="tech-dot"></span>Playwright</span><span class="tech-pill"><span class="tech-dot"></span>Selenium</span></div>
+    <div class="tech-split">
+
+      <!-- Left: text -->
+      <div>
+        <span class="section-eyebrow">Tools & frameworks</span>
+        <h2 class="section-title" style="margin-top:16px;margin-bottom:20px;">Tools your engineers already know</h2>
+        <p style="font-size:16px;color:var(--text-secondary);line-height:1.65;max-width:400px;">Standard testing frameworks, no proprietary lock-in. Everything we use is documented and transferable to your team.</p>
       </div>
-      <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;padding:24px;">
-        <p style="font-size:12px;font-family:var(--font-mono);color:var(--text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:14px;">Mobile testing</p>
-        <div class="tech-grid"><span class="tech-pill"><span class="tech-dot" style="background:var(--accent-cyan)"></span>Appium</span><span class="tech-pill"><span class="tech-dot" style="background:var(--accent-cyan)"></span>XCTest</span><span class="tech-pill"><span class="tech-dot" style="background:var(--accent-cyan)"></span>Espresso</span></div>
-      </div>
-      <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;padding:24px;">
-        <p style="font-size:12px;font-family:var(--font-mono);color:var(--text-tertiary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:14px;">Performance & API</p>
-        <div class="tech-grid"><span class="tech-pill"><span class="tech-dot" style="background:var(--accent-glow)"></span>JMeter</span><span class="tech-pill"><span class="tech-dot" style="background:var(--accent-glow)"></span>k6</span><span class="tech-pill"><span class="tech-dot" style="background:var(--accent-glow)"></span>Postman</span></div>
+
+      <!-- Right: 4-column scrolling logo grid -->
+      <div class="tech-panel">
+
+        <!-- Col 1: Web automation -->
+        <div class="tech-col-track">
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/selenium/selenium-original.svg" alt="Selenium"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jest/jest-plain.svg" alt="Jest"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript"></div>
+          <!-- duplicate for seamless loop -->
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/selenium/selenium-original.svg" alt="Selenium"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jest/jest-plain.svg" alt="Jest"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript"></div>
+        </div>
+
+        <!-- Col 2: API & Performance -->
+        <div class="tech-col-track">
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" alt="Postman"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node.js"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg" alt="Go"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mocha/mocha-original.svg" alt="Mocha"></div>
+          <!-- duplicate -->
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" alt="Postman"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node.js"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg" alt="Go"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mocha/mocha-original.svg" alt="Mocha"></div>
+        </div>
+
+        <!-- Col 3: Mobile -->
+        <div class="tech-col-track">
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/android/android-original.svg" alt="Android"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kotlin/kotlin-original.svg" alt="Kotlin"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swift/swift-original.svg" alt="Swift"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg" alt="Flutter"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dart/dart-original.svg" alt="Dart"></div>
+          <!-- duplicate -->
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/android/android-original.svg" alt="Android"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kotlin/kotlin-original.svg" alt="Kotlin"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swift/swift-original.svg" alt="Swift"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg" alt="Flutter"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dart/dart-original.svg" alt="Dart"></div>
+        </div>
+
+        <!-- Col 4: CI/DevOps -->
+        <div class="tech-col-track">
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg" alt="GitHub Actions"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original.svg" alt="GitLab"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg" alt="Jenkins"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux"></div>
+          <!-- duplicate -->
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg" alt="GitHub Actions"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original.svg" alt="GitLab"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg" alt="Jenkins"></div>
+          <div class="tech-icon-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux"></div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -209,7 +287,7 @@
 <!-- ── ENGAGEMENT MODELS ─────────────────────────────────────── -->
 <section class="section bg-surface">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header" style="text-align:center;display:flex;flex-direction:column;align-items:center;">
       <span class="section-eyebrow">Engagement models</span>
       <h2 class="section-title">Three ways to work with us on QA</h2>
     </div>
@@ -217,67 +295,55 @@
       <div class="capability-item">
         <div class="cap-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
         <h4>Embedded QA team</h4>
-        <p>Our testers join your sprint cycles and work alongside your developers. Testing is continuous, not a phase at the end.</p>
+        <p>Our testers join your sprint cycles and work alongside your developers. Testing is continuous — not a phase bolted on at the end.</p>
       </div>
       <div class="capability-item">
         <div class="cap-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
         <h4>Project-based testing</h4>
-        <p>We test a specific release, feature set, or milestone. Defined scope, clear deliverables, fixed timeline.</p>
+        <p>We test a specific release, feature set, or milestone. Defined scope, clear deliverables, and a fixed timeline from day one.</p>
       </div>
       <div class="capability-item">
         <div class="cap-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
         <h4>QA-as-a-service retainer</h4>
-        <p>Monthly testing capacity on standby. Good for teams with regular releases who need consistent QA coverage without hiring.</p>
+        <p>Monthly testing capacity on standby for teams with regular releases who need consistent QA coverage without the cost of a full hire.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ── CASE STUDY HIGHLIGHTS ─────────────────────────────────── -->
-<section class="section bg-surface">
+<section class="section" style="position:relative;overflow:hidden;background:linear-gradient(rgba(10,10,10,0.80),rgba(10,10,10,0.80)),url('../6-assets/img/card/card-2.jpg') center/cover no-repeat;">
   <div class="container">
-    <div class="section-header-row">
-      <div>
-        <span class="section-eyebrow">Our work</span>
-        <h2 class="section-title">QA outcomes that mattered</h2>
-      </div>
-      <a href="../case-studies.html" class="btn btn-secondary btn-sm">See all work <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg></a>
+    <div class="section-header" style="text-align:center;align-items:center;">
+      <span class="section-eyebrow">Our work</span>
+      <h2 class="section-title">QA outcomes that mattered</h2>
     </div>
     <div class="cards-grid-3">
-      <div class="cs-card">
-        <div class="cs-card-img"><img src="../6-assets/img/card/game.jpg" alt="Gaming app QA" loading="lazy"></div>
-        <div class="cs-card-body">
-          <h3>Zero critical bugs — 50,000 players at launch</h3>
-          <p>A gaming operator needed certainty before launch. We built a 1,400-case automated test suite and cut the defect escape rate to under 0.3%.</p>
-          <a href="../case-studies/detail.html" class="btn btn-secondary" style="width:100%;justify-content:center;">Learn More</a>
+      <div class="svc-card">
+        <div class="svc-card__img"><img src="../6-assets/img/card/game.jpg" alt="Gaming app QA" loading="lazy"></div>
+        <div class="svc-card__body">
+          <h3 class="svc-card__title">Zero critical bugs — 50,000 players at launch</h3>
+          <p class="svc-card__desc">A gaming operator needed certainty before a 50,000-player launch. We built a 1,400-case automated test suite and drove the defect escape rate to under 0.3%.</p>
+          <a href="../case-studies/detail.html" class="btn btn-secondary btn-sm" style="margin-top:20px;">Learn More</a>
         </div>
       </div>
-      <div class="cs-card">
-        <div class="cs-card-img"><img src="../6-assets/img/card/payment-4.jpg" alt="Fintech payment QA" loading="lazy"></div>
-        <div class="cs-card-body">
-          <h3>Payment flow rebuilt after failed QA — zero bugs at release</h3>
-          <p>A fintech's previous vendor missed critical edge cases in payment flows. We rebuilt the test plan from scratch and delivered a zero-bug production release.</p>
-          <a href="../case-studies/detail.html" class="btn btn-secondary" style="width:100%;justify-content:center;">Learn More</a>
+      <div class="svc-card">
+        <div class="svc-card__img"><img src="../6-assets/img/card/payment-4.jpg" alt="Fintech payment QA" loading="lazy"></div>
+        <div class="svc-card__body">
+          <h3 class="svc-card__title">Payment flow rebuilt — zero bugs at production release</h3>
+          <p class="svc-card__desc">A fintech's previous vendor missed critical edge cases in payment flows. We rebuilt the test plan from scratch and delivered a clean, zero-defect production release.</p>
+          <a href="../case-studies/detail.html" class="btn btn-secondary btn-sm" style="margin-top:20px;">Learn More</a>
         </div>
       </div>
-      <div class="cs-card">
-        <div class="cs-card-img"><img src="../6-assets/img/card/card-2.jpg" alt="Mobile regression automation" loading="lazy"></div>
-        <div class="cs-card-body">
-          <h3>Mobile regression automated — release cycle cut from 4 hrs to 40 min</h3>
-          <p>We automated a 200-case manual regression suite for a B2B SaaS mobile app, cutting release validation time by 85% and eliminating deployment blockers.</p>
-          <a href="../case-studies/detail.html" class="btn btn-secondary" style="width:100%;justify-content:center;">Learn More</a>
+      <div class="svc-card">
+        <div class="svc-card__img"><img src="../6-assets/img/card/card-2.jpg" alt="Mobile regression automation" loading="lazy"></div>
+        <div class="svc-card__body">
+          <h3 class="svc-card__title">Mobile regression automated — 85% faster release cycle</h3>
+          <p class="svc-card__desc">A B2B SaaS team spent four hours validating every mobile release manually. We automated 200 test cases and cut validation time from four hours to under 40 minutes.</p>
+          <a href="../case-studies/detail.html" class="btn btn-secondary btn-sm" style="margin-top:20px;">Learn More</a>
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ── BOTTOM CTA ────────────────────────────────────────────── -->
-<section class="bottom-cta-section">
-  <div class="bottom-cta-inner">
-    <h2 class="bottom-cta-title">Stop finding out about bugs<br>from your users</h2>
-    <p class="bottom-cta-sub">Tell us about your product and your release timeline. We'll tell you what testing coverage you actually need.</p>
-    <a href="../contact.html" class="btn btn-primary btn-sm">Talk to us</a>
   </div>
 </section>
 
@@ -322,17 +388,6 @@
   const mobileNav = document.getElementById('mobileNav');
   hamburger.addEventListener('click', () => { const open = mobileNav.classList.toggle('open'); hamburger.classList.toggle('open', open); document.body.style.overflow = open ? 'hidden' : ''; });
   document.getElementById('mobileServicesToggle').addEventListener('click', function() { document.getElementById('mobileServicesBody').classList.toggle('open'); this.classList.toggle('open'); });
-  document.querySelectorAll('.faq-question').forEach(btn => { btn.addEventListener('click', () => { const item = btn.closest('.faq-item'); const wasOpen = item.classList.contains('open'); document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open')); if (!wasOpen) item.classList.add('open'); }); });
-  (function () {
-    var heroCta = document.querySelector('.hero-actions');
-    var navBtn  = document.querySelector('.nav-cta .btn');
-    if (!heroCta || !navBtn) return;
-    new IntersectionObserver(function (entries) {
-      var visible = entries[0].isIntersecting;
-      navBtn.classList.toggle('btn-secondary', visible);
-      navBtn.classList.toggle('btn-primary',   !visible);
-    }, { threshold: 0 }).observe(heroCta);
-  })();
 </script>
 </body>
 </html>
