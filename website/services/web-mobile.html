@@ -9,6 +9,19 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
+  <style>
+    .hero {
+      background-image: url('../6-assets/img/card/room.jpg');
+      background-size: cover;
+      background-position: 55% 50%;
+      min-height: 0;
+    }
+    .hero-subtitle { margin-bottom: 0; }
+    .hero::before {
+      background:
+        linear-gradient(to right, rgba(8, 8, 15, 0.92) 0%, rgba(8, 8, 15, 0.72) 50%, rgba(8, 8, 15, 0.50) 100%);
+    }
+  </style>
 </head>
 <body class="page-glow">
 
@@ -62,9 +75,6 @@
     <span class="hero-eyebrow"><span class="dot"></span>Web & Mobile App Development</span>
     <h1 class="hero-title">Full-cycle development,<br>from <span class="serif">idea to deployment</span></h1>
     <p class="hero-subtitle">We own the entire build lifecycle — discovery, architecture, design, development, QA, and launch. You get a working product, not a handoff problem.</p>
-    <div class="hero-actions">
-      <a href="../contact.html" class="btn btn-primary btn-lg">Start a project</a>
-    </div>
   </div>
 </header>
 

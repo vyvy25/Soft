@@ -1877,27 +1877,16 @@ input, textarea, select { font-family: inherit; }
 }
 
 /* ── TESTIMONIALS ── */
-.testimonial-marquee {
-  overflow: hidden;
-  width: 100%;
-}
-.testimonial-track {
-  display: flex;
-  gap: 24px;
-  width: max-content;
-  animation: testimonial-ltr 55s linear infinite;
-}
-@keyframes testimonial-ltr {
-  from { transform: translateX(-50%); }
-  to   { transform: translateX(0%); }
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 .testimonial-card {
-  width: 380px;
-  flex-shrink: 0;
   background: var(--bg-secondary);
   border: 1px solid var(--color-surface);
   border-radius: 12px;
-  padding: 20px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
 }
@@ -2454,7 +2443,7 @@ input, textarea, select { font-family: inherit; }
   .industry-hero-row { grid-template-columns: 1fr; gap: 32px; }
   .detail-content { grid-template-columns: 1fr; gap: 48px; }
   .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-  .testimonials-grid { grid-template-columns: 1fr; }
+  .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
   .benefits-grid { grid-template-columns: 1fr; }
   .process-steps { grid-template-columns: repeat(2, 1fr); }
   .process-steps::before { display: none; }
@@ -2488,6 +2477,7 @@ input, textarea, select { font-family: inherit; }
   .trust-logos { gap: 28px; }
   .detail-content { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr; }
   .who-cards { grid-template-columns: repeat(2, 1fr); }
 }
 
