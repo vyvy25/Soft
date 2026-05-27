@@ -69,33 +69,32 @@
 </header>
 
 <!-- ── WHEN YOU NEED IT ──────────────────────────────────────── -->
-<section class="section">
-  <div class="container">
-    <div class="section-header">
+<section class="ind-section">
+  <div class="ind-bg">
+    <img src="../6-assets/img/card/whoweare.jpg" alt="" aria-hidden="true">
+    <div class="ind-overlay"></div>
+  </div>
+  <div class="container ind-inner">
+    <div class="ind-header">
       <span class="section-eyebrow">When it applies</span>
-      <h2 class="section-title">Companies call us when the path forward isn't clear</h2>
-      <p class="section-subtitle">You don't always need more code. Sometimes you need a second opinion on the architecture, an independent assessment of a vendor proposal, or a clear view of what a rewrite actually involves.</p>
+      <h2 class="ind-heading">Companies call us when the path forward isn't clear</h2>
     </div>
-    <div class="capabilities-grid">
-      <div class="capability-item">
-        <div class="cap-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
-        <h4>Starting a new product</h4>
-        <p>You need a stack decision and architecture blueprint before writing the first line. We'll help you choose well.</p>
+    <div class="ind-grid">
+      <div class="ind-card">
+        <h3 class="ind-card__title">Starting a new product</h3>
+        <p class="ind-card__desc">You need a stack decision and architecture blueprint before writing the first line. We'll help you choose well.</p>
       </div>
-      <div class="capability-item">
-        <div class="cap-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3l18 18M10.5 10.677a2 2 0 102.823 2.823"/><path d="M7.362 7.561C5.68 8.74 4.279 10.42 3 12c1.889 2.991 5.282 6 9 6 1.55 0 3.043-.523 4.395-1.35M12 6c3.392 0 6.235 2.354 8.714 5.518"/></svg></div>
-        <h4>Evaluating a rewrite</h4>
-        <p>Your team says the codebase needs to be rewritten. We'll give you an independent assessment of whether that's true and what it actually involves.</p>
+      <div class="ind-card">
+        <h3 class="ind-card__title">Evaluating a rewrite</h3>
+        <p class="ind-card__desc">Your team says the codebase needs to be rewritten. We'll give you an independent assessment of whether that's true and what it actually involves.</p>
       </div>
-      <div class="capability-item">
-        <div class="cap-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-        <h4>Scaling infrastructure</h4>
-        <p>You're growing faster than your architecture was designed for. We identify the bottlenecks and the right path to scale.</p>
+      <div class="ind-card">
+        <h3 class="ind-card__title">Scaling infrastructure</h3>
+        <p class="ind-card__desc">You're growing faster than your architecture was designed for. We identify the bottlenecks and the right path to scale.</p>
       </div>
-      <div class="capability-item">
-        <div class="cap-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-4 0v2"/><circle cx="12" cy="14" r="2"/></svg></div>
-        <h4>Vendor or platform selection</h4>
-        <p>You have 3 vendors shortlisted and need an independent technical evaluation. We've done this before — in your industry.</p>
+      <div class="ind-card">
+        <h3 class="ind-card__title">Vendor or platform selection</h3>
+        <p class="ind-card__desc">You have 3 vendors shortlisted and need an independent technical evaluation. We've done this before — in your industry.</p>
       </div>
     </div>
   </div>
@@ -145,26 +144,68 @@
       <span class="section-eyebrow">Our approach</span>
       <h2 class="section-title" style="max-width:560px;">What you actually get from a consulting engagement</h2>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;">
-      <div class="service-card">
-        <div style="font-family:var(--font-mono);font-size:11px;color:var(--accent);margin-bottom:16px;">01</div>
-        <h3>Discovery sessions</h3>
-        <p>Structured interviews with your technical leads, product team, and relevant stakeholders. We understand the problem before proposing anything.</p>
+    <div class="flow">
+      <!-- Row 1: LTR -->
+      <div class="flow-row">
+        <div class="flow-step">
+          <div class="flow-node">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <div class="flow-label">
+            <h4>Intake</h4>
+            <p>Structured interviews with your technical leads, product team, and stakeholders. We understand the problem before proposing anything.</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-node">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <div class="flow-label">
+            <h4>Current State</h4>
+            <p>We map the existing architecture, surface dependencies and risks, and present a documented picture back to you for alignment.</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-node">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h.01M7 20v-4"/><path d="M12 20v-8"/><path d="M17 20V8"/><path d="M22 4v16"/></svg>
+          </div>
+          <div class="flow-label">
+            <h4>Gap Analysis</h4>
+            <p>Compare current state against your goals. Identify where the gaps are, what's causing them, and what's required to close them.</p>
+          </div>
+        </div>
       </div>
-      <div class="service-card">
-        <div style="font-family:var(--font-mono);font-size:11px;color:var(--accent);margin-bottom:16px;">02</div>
-        <h3>Documentation & analysis</h3>
-        <p>We document the current state — architecture diagrams, dependency maps, identified risks — and present it back to you for alignment.</p>
-      </div>
-      <div class="service-card">
-        <div style="font-family:var(--font-mono);font-size:11px;color:var(--accent);margin-bottom:16px;">03</div>
-        <h3>Recommendations</h3>
-        <p>Written, prioritized recommendations with clear rationale. Options-based when relevant — you make the final call with full context.</p>
-      </div>
-      <div class="service-card">
-        <div style="font-family:var(--font-mono);font-size:11px;color:var(--accent);margin-bottom:16px;">04</div>
-        <h3>Implementation handoff</h3>
-        <p>Optionally, we can carry the recommendations forward into execution — through our development or QA services, or alongside your internal team.</p>
+      <!-- Curve connector: right turn -->
+      <div class="flow-curve flow-curve--right"></div>
+      <!-- Row 2: RTL -->
+      <div class="flow-row flow-row--rtl">
+        <div class="flow-step">
+          <div class="flow-node">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <div class="flow-label">
+            <h4>Recommendations</h4>
+            <p>Written, prioritized recommendations with clear rationale. Options-based when relevant — you make the final call with full context.</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-node">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
+          </div>
+          <div class="flow-label">
+            <h4>Roadmap</h4>
+            <p>A phased, prioritized plan with timelines, ownership, and success criteria — actionable from day one.</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-node">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+          </div>
+          <div class="flow-label">
+            <h4>Handoff</h4>
+            <p>We hand over documentation, decision records, and optionally carry the work forward through our development or QA services.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -208,40 +249,41 @@
       </div>
       <a href="../case-studies.html" class="btn btn-secondary btn-sm">See all work <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg></a>
     </div>
-    <div class="cards-grid-2">
+    <div class="cards-grid-3">
       <div class="cs-card">
-        <div class="cs-card-img"><img src="https://placehold.co/720x405/2e2f2f/FF4B2E?text=Fintech+Architecture" alt="Fintech architecture review" loading="lazy"></div>
+        <div class="cs-card-img"><img src="../6-assets/img/card/payment-4.jpg" alt="Fintech architecture review" loading="lazy"></div>
         <div class="cs-card-body">
-          <div class="cs-tags"><span class="tag tag-blue">Finance</span><span class="tag tag-cyan">Consulting</span></div>
           <h3>Architecture review that prevented a $2M rewrite six months in</h3>
           <p>We identified the root cause of a fintech startup's scaling failures and proposed a targeted fix — saving a full rewrite and six months of rework.</p>
-          <a href="../case-studies/detail.html" class="card-link">Read case study <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg></a>
+          <a href="../case-studies/detail.html" class="btn btn-secondary" style="width:100%;justify-content:center;">Learn More</a>
         </div>
       </div>
       <div class="cs-card">
-        <div class="cs-card-img"><img src="https://placehold.co/720x405/2e2f2f/FF4B2E?text=Enterprise+Migration" alt="Enterprise legacy migration" loading="lazy"></div>
+        <div class="cs-card-img"><img src="../6-assets/img/card/teamwork.jpg" alt="Enterprise legacy migration" loading="lazy"></div>
         <div class="cs-card-body">
-          <div class="cs-tags"><span class="tag tag-neutral">Enterprise</span><span class="tag tag-blue">Consulting</span></div>
           <h3>Legacy migration: 4 systems consolidated, 40% ops cost reduction</h3>
           <p>Assessed and consolidated four legacy enterprise tools into a single modern platform. Delivered a phased migration plan with zero-disruption execution.</p>
-          <a href="../case-studies/detail.html" class="card-link">Read case study <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg></a>
+          <a href="../case-studies/detail.html" class="btn btn-secondary" style="width:100%;justify-content:center;">Learn More</a>
+        </div>
+      </div>
+      <div class="cs-card">
+        <div class="cs-card-img"><img src="../6-assets/img/card/card-1.jpg" alt="Cloud infrastructure migration" loading="lazy"></div>
+        <div class="cs-card-body">
+          <h3>Cloud migration executed with zero downtime across 14 services</h3>
+          <p>A logistics company running on aging on-premise infrastructure needed a full cloud lift. We planned and executed the migration with no outages and a 35% cost reduction.</p>
+          <a href="../case-studies/detail.html" class="btn btn-secondary" style="width:100%;justify-content:center;">Learn More</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── FINAL CTA ─────────────────────────────────────────────── -->
-<section class="cta-banner">
-  <div class="container">
-    <h2>Not sure which direction to take?<br><span class="serif">Start with a conversation.</span></h2>
-    <p>Tell us where you're stuck. We'll tell you honestly whether we can help and what that looks like.</p>
-    <div class="cta-banner-img">
-      <img src="../6-assets/img/card/white-black.jpg" alt="Consulting team in discussion" loading="lazy" style="filter:grayscale(100%)">
-    </div>
-    <div class="cta-banner-actions">
-      <a href="../contact.html" class="btn btn-primary btn-sm">Start a project</a>
-    </div>
+<!-- ── BOTTOM CTA ────────────────────────────────────────────── -->
+<section class="bottom-cta-section">
+  <div class="bottom-cta-inner">
+    <h2 class="bottom-cta-title">The right technology decision<br>starts with the right questions.</h2>
+    <p class="bottom-cta-sub">Whether you're evaluating a rewrite, choosing a stack, or trying to make sense of a vendor proposal — share the problem and we'll give you a straight answer on what the right next step actually is.</p>
+    <a href="../contact.html" class="btn btn-primary btn-sm">Start a conversation</a>
   </div>
 </section>
 

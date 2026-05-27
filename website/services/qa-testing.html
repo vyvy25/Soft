@@ -69,43 +69,40 @@
 </header>
 
 <!-- ── TESTING SERVICES ──────────────────────────────────────── -->
-<section class="section">
-  <div class="container">
-    <div class="section-header">
+<section class="ind-section">
+  <div class="ind-bg">
+    <img src="../6-assets/img/card/card-2.jpg" alt="" aria-hidden="true">
+    <div class="ind-overlay"></div>
+  </div>
+  <div class="container ind-inner">
+    <div class="ind-header">
       <span class="section-eyebrow">Testing services</span>
-      <h2 class="section-title">Complete QA coverage, not just manual testing</h2>
-      <p class="section-subtitle">We cover the full testing surface — functional correctness, performance under load, security vulnerabilities, and automated regression suites.</p>
+      <h2 class="ind-heading">Complete QA coverage, not just manual testing</h2>
     </div>
-    <div class="capabilities-grid">
-      <div class="capability-item">
-        <div class="cap-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
-        <h4>Functional testing</h4>
-        <p>Verify every feature works as specified. Manual and scripted test cases covering happy paths and edge cases.</p>
+    <div class="ind-grid" style="grid-template-columns:repeat(3,1fr);">
+      <div class="ind-card">
+        <h3 class="ind-card__title">Functional testing</h3>
+        <p class="ind-card__desc">Verify every feature works as specified. Manual and scripted test cases covering happy paths and edge cases.</p>
       </div>
-      <div class="capability-item">
-        <div class="cap-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-        <h4>Regression testing</h4>
-        <p>Automated regression suites that run on every code change. Catch regressions before they reach users.</p>
+      <div class="ind-card">
+        <h3 class="ind-card__title">Regression testing</h3>
+        <p class="ind-card__desc">Automated regression suites that run on every code change. Catch regressions before they reach users.</p>
       </div>
-      <div class="capability-item">
-        <div class="cap-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-        <h4>Performance testing</h4>
-        <p>Load, stress, and soak testing. Verify your system holds up under concurrent users and peak traffic scenarios.</p>
+      <div class="ind-card">
+        <h3 class="ind-card__title">Performance testing</h3>
+        <p class="ind-card__desc">Load, stress, and soak testing. Verify your system holds up under concurrent users and peak traffic scenarios.</p>
       </div>
-      <div class="capability-item">
-        <div class="cap-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
-        <h4>Security testing</h4>
-        <p>OWASP Top 10 coverage, penetration testing, and vulnerability scanning. Critical for fintech and healthcare products.</p>
+      <div class="ind-card">
+        <h3 class="ind-card__title">Security testing</h3>
+        <p class="ind-card__desc">OWASP Top 10 coverage, penetration testing, and vulnerability scanning. Critical for fintech and healthcare products.</p>
       </div>
-      <div class="capability-item">
-        <div class="cap-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
-        <h4>Automated testing</h4>
-        <p>Cypress, Selenium, Appium, and Playwright — automated test suites integrated into your CI/CD pipeline.</p>
+      <div class="ind-card">
+        <h3 class="ind-card__title">Automated testing</h3>
+        <p class="ind-card__desc">Cypress, Selenium, Appium, and Playwright — automated test suites integrated into your CI/CD pipeline.</p>
       </div>
-      <div class="capability-item">
-        <div class="cap-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12" y2="18" stroke-width="2"/></svg></div>
-        <h4>Mobile QA</h4>
-        <p>iOS and Android testing across real devices and simulators. Covers gestures, offline behavior, and platform-specific edge cases.</p>
+      <div class="ind-card">
+        <h3 class="ind-card__title">Mobile QA</h3>
+        <p class="ind-card__desc">iOS and Android testing across real devices and simulators. Covers gestures, offline behavior, and platform-specific edge cases.</p>
       </div>
     </div>
   </div>
@@ -118,26 +115,68 @@
       <span class="section-eyebrow">Our process</span>
       <h2 class="section-title" style="max-width:520px;">Rigorous QA from plan to report</h2>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;">
-      <div class="service-card">
-        <div style="font-family:var(--font-mono);font-size:11px;color:var(--accent);margin-bottom:16px;">01</div>
-        <h3>Test planning</h3>
-        <p>Define scope, test objectives, risk areas, and entry/exit criteria before any testing begins.</p>
+    <div class="flow">
+      <!-- Row 1: LTR -->
+      <div class="flow-row">
+        <div class="flow-step">
+          <div class="flow-node">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <div class="flow-label">
+            <h4>Test Planning</h4>
+            <p>Define scope, objectives, risk areas, and entry/exit criteria before any testing begins.</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-node">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+          </div>
+          <div class="flow-label">
+            <h4>Test Case Design</h4>
+            <p>Write test cases mapped to requirements. Every acceptance criterion has a corresponding test.</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-node">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <div class="flow-label">
+            <h4>Automation Setup</h4>
+            <p>Configure automated test suites for regression and smoke testing — reducing manual overhead on every release.</p>
+          </div>
+        </div>
       </div>
-      <div class="service-card">
-        <div style="font-family:var(--font-mono);font-size:11px;color:var(--accent);margin-bottom:16px;">02</div>
-        <h3>Test case design</h3>
-        <p>Write test cases mapped to requirements. Every acceptance criterion has a corresponding test.</p>
-      </div>
-      <div class="service-card">
-        <div style="font-family:var(--font-mono);font-size:11px;color:var(--accent);margin-bottom:16px;">03</div>
-        <h3>Execution</h3>
-        <p>Manual and automated test runs with detailed logging of environment, steps, and results.</p>
-      </div>
-      <div class="service-card">
-        <div style="font-family:var(--font-mono);font-size:11px;color:var(--accent);margin-bottom:16px;">04</div>
-        <h3>Defect tracking & reporting</h3>
-        <p>Every defect is logged with severity, reproduction steps, and supporting evidence. Weekly status reports included.</p>
+      <!-- Curve connector: right turn -->
+      <div class="flow-curve flow-curve--right"></div>
+      <!-- Row 2: RTL -->
+      <div class="flow-row flow-row--rtl">
+        <div class="flow-step">
+          <div class="flow-node">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </div>
+          <div class="flow-label">
+            <h4>Execution</h4>
+            <p>Manual and automated test runs with detailed logging of environment, steps, and results for each cycle.</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-node">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <div class="flow-label">
+            <h4>Defect Tracking</h4>
+            <p>Every defect is logged with severity, reproduction steps, and supporting evidence. Weekly status reports included.</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-node">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <div class="flow-label">
+            <h4>Sign-off &amp; Report</h4>
+            <p>Final test summary with pass/fail metrics, coverage stats, and a clear go/no-go recommendation for release.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -194,17 +233,51 @@
   </div>
 </section>
 
-<!-- ── FINAL CTA ─────────────────────────────────────────────── -->
-<section class="cta-banner">
+<!-- ── CASE STUDY HIGHLIGHTS ─────────────────────────────────── -->
+<section class="section bg-surface">
   <div class="container">
-    <h2>Stop finding out about bugs <span class="serif">from your users</span></h2>
-    <p>Tell us about your product and your release timeline. We'll tell you what testing coverage you actually need.</p>
-    <div class="cta-banner-img">
-      <img src="../6-assets/img/card/white-black.jpg" alt="QA team testing software" loading="lazy" style="filter:grayscale(100%)">
+    <div class="section-header-row">
+      <div>
+        <span class="section-eyebrow">Our work</span>
+        <h2 class="section-title">QA outcomes that mattered</h2>
+      </div>
+      <a href="../case-studies.html" class="btn btn-secondary btn-sm">See all work <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg></a>
     </div>
-    <div class="cta-banner-actions">
-      <a href="../contact.html" class="btn btn-primary btn-sm">Start a project</a>
+    <div class="cards-grid-3">
+      <div class="cs-card">
+        <div class="cs-card-img"><img src="../6-assets/img/card/game.jpg" alt="Gaming app QA" loading="lazy"></div>
+        <div class="cs-card-body">
+          <h3>Zero critical bugs — 50,000 players at launch</h3>
+          <p>A gaming operator needed certainty before launch. We built a 1,400-case automated test suite and cut the defect escape rate to under 0.3%.</p>
+          <a href="../case-studies/detail.html" class="btn btn-secondary" style="width:100%;justify-content:center;">Learn More</a>
+        </div>
+      </div>
+      <div class="cs-card">
+        <div class="cs-card-img"><img src="../6-assets/img/card/payment-4.jpg" alt="Fintech payment QA" loading="lazy"></div>
+        <div class="cs-card-body">
+          <h3>Payment flow rebuilt after failed QA — zero bugs at release</h3>
+          <p>A fintech's previous vendor missed critical edge cases in payment flows. We rebuilt the test plan from scratch and delivered a zero-bug production release.</p>
+          <a href="../case-studies/detail.html" class="btn btn-secondary" style="width:100%;justify-content:center;">Learn More</a>
+        </div>
+      </div>
+      <div class="cs-card">
+        <div class="cs-card-img"><img src="../6-assets/img/card/card-2.jpg" alt="Mobile regression automation" loading="lazy"></div>
+        <div class="cs-card-body">
+          <h3>Mobile regression automated — release cycle cut from 4 hrs to 40 min</h3>
+          <p>We automated a 200-case manual regression suite for a B2B SaaS mobile app, cutting release validation time by 85% and eliminating deployment blockers.</p>
+          <a href="../case-studies/detail.html" class="btn btn-secondary" style="width:100%;justify-content:center;">Learn More</a>
+        </div>
+      </div>
     </div>
+  </div>
+</section>
+
+<!-- ── BOTTOM CTA ────────────────────────────────────────────── -->
+<section class="bottom-cta-section">
+  <div class="bottom-cta-inner">
+    <h2 class="bottom-cta-title">Stop finding out about bugs<br>from your users</h2>
+    <p class="bottom-cta-sub">Tell us about your product and your release timeline. We'll tell you what testing coverage you actually need.</p>
+    <a href="../contact.html" class="btn btn-primary btn-sm">Talk to us</a>
   </div>
 </section>
 

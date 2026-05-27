@@ -1105,7 +1105,7 @@ input, textarea, select { font-family: inherit; }
 
 .cs-card-img {
   width: 100%;
-  aspect-ratio: 4/3;
+  aspect-ratio: 3/2;
   overflow: hidden;
   flex-shrink: 0;
 }
@@ -1118,11 +1118,37 @@ input, textarea, select { font-family: inherit; }
 .cs-card:hover .cs-card-img img { transform: scale(1.04); }
 
 .cs-card-body {
-  padding: 20px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   flex: 1;
-  gap: 16px;
+  gap: 14px;
+}
+
+.cs-card-body h3 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+}
+
+.cs-card-body p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.cs-card .btn-secondary {
+  border-color: rgba(255, 255, 255, 0.28);
+  height: 44px;
+  font-size: 16px;
+  margin-top: auto;
+}
+.cs-card .btn-secondary:hover,
+.cs-card .btn-secondary:active {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
 .cs-card__title {
@@ -1283,6 +1309,118 @@ input, textarea, select { font-family: inherit; }
   line-height: 1.55;
 }
 
+/* ── PROCESS SNAKE FLOW ─────────────────────────────────────── */
+.flow {
+  position: relative;
+}
+.flow-row {
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+}
+.flow-row--rtl {
+  flex-direction: row-reverse;
+}
+.flow-row::before {
+  content: '';
+  position: absolute;
+  left: calc(100% / 8);
+  right: calc(100% / 8);
+  top: 35px;
+  height: 1.5px;
+  background: rgba(255, 75, 46, 0.35);
+}
+.flow-step {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px 48px;
+  position: relative;
+  z-index: 1;
+}
+.flow-node {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 75, 46, 0.45);
+  background: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+  margin-bottom: 20px;
+  flex-shrink: 0;
+  transition: border-color 0.2s, background 0.2s;
+}
+.flow-node svg {
+  width: 26px;
+  height: 26px;
+  stroke-width: 1.5;
+}
+.flow-step:hover .flow-node {
+  border-color: var(--color-accent);
+  background: rgba(255, 75, 46, 0.08);
+}
+.bg-surface .flow-node {
+  background: var(--bg-secondary);
+}
+.bg-surface .flow-step:hover .flow-node {
+  background: rgba(255, 75, 46, 0.10);
+}
+.flow-label h4 {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+.flow-label p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  opacity: 0.65;
+  line-height: 1.65;
+}
+.flow-curve {
+  position: relative;
+  height: 60px;
+  flex-shrink: 0;
+}
+.flow-curve--right::before {
+  content: '';
+  position: absolute;
+  right: calc(100% / 8 - 35px);
+  top: 0;
+  width: 70px;
+  height: 100%;
+  border-right: 1.5px solid rgba(255, 75, 46, 0.35);
+  border-bottom: 1.5px solid rgba(255, 75, 46, 0.35);
+  border-bottom-right-radius: 35px;
+}
+.flow-curve--left::before {
+  content: '';
+  position: absolute;
+  left: calc(100% / 8 - 35px);
+  top: 0;
+  width: 70px;
+  height: 100%;
+  border-left: 1.5px solid rgba(255, 75, 46, 0.35);
+  border-bottom: 1.5px solid rgba(255, 75, 46, 0.35);
+  border-bottom-left-radius: 35px;
+}
+
+@media (max-width: 768px) {
+  .flow-row,
+  .flow-row--rtl {
+    flex-direction: column;
+    align-items: center;
+  }
+  .flow-row::before { display: none; }
+  .flow-curve { display: none; }
+  .flow-step { padding-bottom: 32px; }
+}
+
 /* ── 16. TECH STACK GRID ────────────────────────────────────── */
 .tech-grid {
   display: flex;
@@ -1321,6 +1459,19 @@ input, textarea, select { font-family: inherit; }
   position: relative;
   overflow: hidden;
   background: var(--bg-primary);
+}
+.cta-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 130% 90% at 50% 100%, rgba(120, 28, 8, 0.90) 0%, rgba(70, 15, 5, 0.60) 35%, rgba(20, 5, 2, 0.30) 60%, transparent 80%);
+  pointer-events: none;
+  z-index: 0;
+}
+.cta-banner .container {
+  position: relative;
+  z-index: 1;
 }
 .cta-banner h2 {
   font-size: 48px;
@@ -1896,28 +2047,26 @@ input, textarea, select { font-family: inherit; }
   gap: 20px;
 }
 .testimonial-card {
-  background: var(--bg-secondary);
-  border: 1px solid var(--color-surface);
+  background: transparent;
+  border: 1px solid var(--color-border);
   border-radius: 12px;
-  padding: 24px;
+  padding: 28px;
   display: flex;
   flex-direction: column;
+  gap: 16px;
 }
 .testimonial-stars {
   display: flex;
   gap: 3px;
-  margin-bottom: 16px;
 }
 .testimonial-quote {
-  font-size: 16px;
+  font-size: 15px;
   color: var(--text-secondary);
   line-height: 1.65;
-  margin-bottom: 24px;
-  font-style: italic;
   flex: 1;
 }
 .testimonial-author {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
   color: var(--text-primary);
 }
