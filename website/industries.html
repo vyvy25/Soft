@@ -9,6 +9,23 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .cta-banner::before {
+      width: 2400px;
+      height: 1600px;
+      border-radius: 50%;
+      background: radial-gradient(ellipse,
+        rgba(255, 75, 46, 0.28) 0%,
+        rgba(255, 75, 46, 0.10) 45%,
+        transparent 70%
+      );
+      inset: auto;
+      bottom: -1000px;
+      left: 50%;
+      transform: translateX(-50%);
+      filter: blur(120px);
+    }
+  </style>
 </head>
 <body class="page-glow">
 
@@ -61,7 +78,7 @@
 <!-- ── HERO ──────────────────────────────────────────────────── -->
 <header class="hero" style="padding-bottom:72px;">
   <div class="container">
-    <span class="hero-eyebrow"><span class="dot"></span>Sector expertise</span>
+    <span class="hero-eyebrow">Sector expertise</span>
     <h1 class="hero-title">Built for the industries<br>that <span class="serif">demand more</span></h1>
     <p class="hero-subtitle">We specialize in sectors where software failures have real costs — financial, operational, and reputational. Deep industry context is baked into how we design, build, and test.</p>
   </div>
@@ -151,7 +168,7 @@
         </div>
       </div>
       <div class="industry-img-col">
-        <img src="https://images.unsplash.com/photo-1539278383962-a7774385fa02?w=600&h=720&auto=format&fit=crop&q=80" alt="eCommerce platform" loading="lazy">
+        <img src="6-assets/img/card/ecommerce.jpg" alt="eCommerce platform" loading="lazy" style="filter: saturate(0.6) brightness(0.85);">
       </div>
     </div>
   </div>

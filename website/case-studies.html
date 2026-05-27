@@ -11,6 +11,21 @@
   <link rel="stylesheet" href="styles.css">
   <style>
     .hero { min-height: 0; }
+    .cta-banner::before {
+      width: 2400px;
+      height: 1600px;
+      border-radius: 50%;
+      background: radial-gradient(ellipse,
+        rgba(255, 75, 46, 0.28) 0%,
+        rgba(255, 75, 46, 0.10) 45%,
+        transparent 70%
+      );
+      inset: auto;
+      bottom: -1000px;
+      left: 50%;
+      transform: translateX(-50%);
+      filter: blur(120px);
+    }
     .pagination {
       display: flex;
       align-items: center;
