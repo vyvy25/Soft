@@ -56,6 +56,13 @@
       from { transform: translateY(0); }
       to   { transform: translateY(-50%); }
     }
+    .svc-hero-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    @media (max-width: 768px) {
+      .hero { padding-top: calc(80px + var(--nav-h)); padding-bottom: 64px; }
+      .svc-hero-grid { grid-template-columns: 1fr; }
+      .tech-split { grid-template-columns: 1fr; gap: 40px; }
+      .tech-panel { grid-template-columns: repeat(2, 1fr); height: 260px; }
+    }
   </style>
 </head>
 <body class="page-glow">
@@ -66,7 +73,7 @@
 <nav class="site-nav">
   <div class="nav-inner">
     <a href="../index.html" class="nav-logo">
-      <img src="../6-assets/logo/logo.svg" alt="MarketGrid" height="20">
+      <img src="../6-assets/logo/logo.svg" alt="MarketGrid" height="16">
     </a>
     <ul class="nav-links">
       <li class="nav-item">
@@ -109,7 +116,7 @@
   <div class="container">
     <span class="hero-eyebrow">Web & Mobile App Development</span>
     <h1 class="hero-title">We build it end-to-end.<br><span style="color:var(--color-accent);">You get a product that works.</span></h1>
-    <div class="ind-grid" style="margin-top:120px;grid-template-columns:repeat(3,1fr);width:100%;gap:20px;text-align:left;">
+    <div class="ind-grid svc-hero-grid" style="margin-top:120px;text-align:left;">
       <div class="ind-card">
         <h3 class="ind-card__title">Consumer web apps</h3>
         <p class="ind-card__desc">React, Next.js, and Vue. Performance-optimized, accessible interfaces built to handle real user traffic at scale.</p>
@@ -327,7 +334,7 @@
     <div class="sf-footer__top">
       <div class="sf-footer__brand">
         <a href="../index.html" class="sf-logo" aria-label="MarketGrid home">
-          <img src="../6-assets/logo/logo.svg" alt="MarketGrid" height="28">
+          <img src="../6-assets/logo/logo.svg" alt="MarketGrid" height="16">
         </a>
         <p class="sf-footer__tagline">End-to-end software development<br>for growth-stage companies.</p>
         <div class="sf-footer__social-icons">
