@@ -11,55 +11,19 @@
   <link rel="stylesheet" href="styles.css">
   <style>
     .hero { min-height: 0; }
+    .hero::before {
+      background:
+        radial-gradient(ellipse 70% 60% at 20% 8%, rgba(100, 60, 220, 0.22) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 55% at 80% 5%, rgba(30, 100, 220, 0.18) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 50% at 55% 12%, rgba(255, 75, 46, 0.10) 0%, transparent 60%);
+    }
+    .cta-banner {
+      background: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    }
     .cta-banner::before {
-      width: 2400px;
-      height: 1600px;
-      border-radius: 50%;
-      background: radial-gradient(ellipse,
-        rgba(255, 75, 46, 0.28) 0%,
-        rgba(255, 75, 46, 0.10) 45%,
-        transparent 70%
-      );
-      inset: auto;
-      bottom: -1000px;
-      left: 50%;
-      transform: translateX(-50%);
-      filter: blur(120px);
+      background: rgba(10, 10, 14, 0.72);
     }
-    @media (max-width: 768px) {
-      .cta-banner::before {
-        background: radial-gradient(ellipse,
-          rgba(255, 75, 46, 0.10) 0%,
-          rgba(255, 75, 46, 0.05) 45%,
-          transparent 70%
-        );
-      }
-    }
-    .pagination {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 56px;
-    }
-    .page-btn {
-      min-width: 40px;
-      height: 40px;
-      padding: 0 14px;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      background: var(--bg-secondary);
-      color: var(--text-secondary);
-      font-size: 15px;
-      font-weight: 500;
-      font-family: var(--font-sans);
-      cursor: pointer;
-      transition: border-color 0.2s, background 0.2s, color 0.2s;
-    }
-    .page-btn:hover { border-color: var(--color-accent); color: var(--color-accent); }
-    .page-btn.active { background: var(--color-accent); border-color: var(--color-accent); color: #fff; }
-    .page-btn:disabled { opacity: 0.35; cursor: default; pointer-events: none; }
-  </style>
+</style>
 </head>
 <body class="page-glow">
 
@@ -107,19 +71,13 @@
   <div class="mobile-nav-footer"><a href="contact.html" class="btn btn-primary" style="width:100%;justify-content:center;">Get in touch</a></div>
 </div>
 
-<!-- ── HERO ──────────────────────────────────────────────────── -->
-<header class="hero" style="padding-bottom:80px;">
+<!-- ── HERO + CASE STUDY GRID ─────────────────────────────────── -->
+<header class="hero" style="padding-bottom:120px;">
   <div class="container">
     <h1 class="hero-title">Work that speaks<br><span style="color:var(--color-accent);">in numbers.</span></h1>
-    <p class="hero-subtitle">14 projects across fintech, gaming, eCommerce, and enterprise. Every outcome is real, every number is verified.</p>
-  </div>
-</header>
+    <p class="hero-subtitle">5 projects across fintech, gaming, and enterprise. Every outcome is real, every number is verified.</p>
 
-<!-- ── CASE STUDY GRID ────────────────────────────────────────── -->
-<section class="section" style="padding-top:0;">
-  <div class="container">
-
-    <div class="cards-grid-3" id="csGrid">
+    <div class="cards-grid-3" id="csGrid" style="margin-top:72px;text-align:left;">
 
       <!-- Card 1 -->
       <a href="case-studies/detail.html?id=1" class="svc-card cs-case">
@@ -140,17 +98,6 @@
         <div class="svc-card__body">
           <h3 class="svc-card__title">Zero critical bugs — 50,000 players at launch</h3>
           <p class="svc-card__desc">A gaming operator needed certainty before a massive launch. We built a 1,400-case automated test suite and drove the defect escape rate to near zero.</p>
-        </div>
-      </a>
-
-      <!-- Card 3 -->
-      <a href="case-studies/detail.html?id=3" class="svc-card cs-case">
-        <div class="svc-card__img">
-          <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=800&q=80" alt="eCommerce replatform" loading="lazy">
-        </div>
-        <div class="svc-card__body">
-          <h3 class="svc-card__title">eCommerce stack rebuilt — checkout 60% faster</h3>
-          <p class="svc-card__desc">A fragmented eCommerce stack was bleeding sales at every checkout step. We replatformed it and connected 12 services end-to-end.</p>
         </div>
       </a>
 
@@ -176,61 +123,6 @@
         </div>
       </a>
 
-      <!-- Card 6 -->
-      <a href="case-studies/detail.html?id=6" class="svc-card cs-case">
-        <div class="svc-card__img">
-          <img src="https://images.unsplash.com/photo-1609921141835-710b7fa6e438?auto=format&fit=crop&w=800&q=80" alt="Cross-platform mobile app" loading="lazy">
-        </div>
-        <div class="svc-card__body">
-          <h3 class="svc-card__title">Cross-platform app on iOS & Android in 14 weeks</h3>
-          <p class="svc-card__desc">A consumer-facing app launched simultaneously on both platforms without the cost and timeline of two native builds, using a shared codebase.</p>
-        </div>
-      </a>
-
-      <!-- Card 7 -->
-      <a href="case-studies/detail.html?id=7" class="svc-card cs-case">
-        <div class="svc-card__img">
-          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="SaaS platform scale" loading="lazy">
-        </div>
-        <div class="svc-card__body">
-          <h3 class="svc-card__title">SaaS platform scaled to 10,000 tenants</h3>
-          <p class="svc-card__desc">A multi-tenant SaaS product grew from 500 to 10,000 accounts without architectural changes — because we built the right foundation from day one.</p>
-        </div>
-      </a>
-
-      <!-- Card 8 -->
-      <a href="case-studies/detail.html?id=8" class="svc-card cs-case">
-        <div class="svc-card__img">
-          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Internal analytics dashboard" loading="lazy">
-        </div>
-        <div class="svc-card__body">
-          <h3 class="svc-card__title">Internal analytics dashboard — 4 hrs to 3 min</h3>
-          <p class="svc-card__desc">An enterprise reporting tool replaced manual Excel workflows for a 200-person operations team, with full role-based access and real-time data.</p>
-        </div>
-      </a>
-
-      <!-- Card 9 -->
-      <a href="case-studies/detail.html?id=9" class="svc-card cs-case">
-        <div class="svc-card__img">
-          <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80" alt="API gateway consolidation" loading="lazy">
-        </div>
-        <div class="svc-card__body">
-          <h3 class="svc-card__title">11 internal APIs unified — 42% faster response</h3>
-          <p class="svc-card__desc">Eleven disparate internal APIs consolidated under a single gateway with consistent authentication, rate limiting, and observability built in.</p>
-        </div>
-      </a>
-
-      <!-- Card 10 -->
-      <a href="case-studies/detail.html?id=10" class="svc-card cs-case">
-        <div class="svc-card__img">
-          <img src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=800&q=80" alt="Logistics tracking platform" loading="lazy">
-        </div>
-        <div class="svc-card__body">
-          <h3 class="svc-card__title">Real-time logistics platform — 68% fewer support tickets</h3>
-          <p class="svc-card__desc">A 3PL operator's customer support volume dropped dramatically once shipments became trackable in real time across 14 carrier integrations.</p>
-        </div>
-      </a>
-
       <!-- Card 11 -->
       <a href="case-studies/detail.html?id=11" class="svc-card cs-case">
         <div class="svc-card__img">
@@ -242,51 +134,9 @@
         </div>
       </a>
 
-      <!-- Card 12 -->
-      <a href="case-studies/detail.html?id=12" class="svc-card cs-case">
-        <div class="svc-card__img">
-          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Team collaboration tool" loading="lazy">
-        </div>
-        <div class="svc-card__body">
-          <h3 class="svc-card__title">Custom collaboration tool adopted by 400+ employees</h3>
-          <p class="svc-card__desc">A custom team management tool replaced three separate SaaS subscriptions, built around how the client's teams actually plan and deliver work.</p>
-        </div>
-      </a>
-
-      <!-- Card 13 -->
-      <a href="case-studies/detail.html?id=13" class="svc-card cs-case">
-        <div class="svc-card__img">
-          <img src="https://images.unsplash.com/photo-1565402170291-8491f14678db?auto=format&fit=crop&w=800&q=80" alt="Real estate listing platform" loading="lazy">
-        </div>
-        <div class="svc-card__body">
-          <h3 class="svc-card__title">Real estate platform handling 50,000+ listings</h3>
-          <p class="svc-card__desc">A property listing and management platform built to scale, with sub-200ms search across 50,000 active listings and a mobile-first design throughout.</p>
-        </div>
-      </a>
-
-      <!-- Card 14 -->
-      <a href="case-studies/detail.html?id=14" class="svc-card cs-case">
-        <div class="svc-card__img">
-          <img src="https://images.unsplash.com/photo-1504439468489-c8920d796a29?auto=format&fit=crop&w=800&q=80" alt="Healthcare patient portal" loading="lazy">
-        </div>
-        <div class="svc-card__body">
-          <h3 class="svc-card__title">HIPAA-compliant patient portal for 12,000 users</h3>
-          <p class="svc-card__desc">A healthcare provider needed a secure patient portal connecting patients with providers and health records — built to pass compliance from day one.</p>
-        </div>
-      </a>
-
     </div>
-
-    <!-- Pagination -->
-    <div class="pagination" id="pagination">
-      <button class="page-btn page-prev" id="prevBtn" disabled>← Prev</button>
-      <button class="page-btn active" data-page="1">1</button>
-      <button class="page-btn" data-page="2">2</button>
-      <button class="page-btn page-next" id="nextBtn">Next →</button>
-    </div>
-
   </div>
-</section>
+</header>
 
 <!-- ── FINAL CTA ─────────────────────────────────────────────── -->
 <section class="cta-banner">
@@ -349,32 +199,6 @@
     this.classList.toggle('open');
   });
 
-  // Pagination
-  const CARDS_PER_PAGE = 9;
-  const cards = Array.from(document.querySelectorAll('.cs-case'));
-  let currentPage = 1;
-  const totalPages = Math.ceil(cards.length / CARDS_PER_PAGE);
-
-  function showPage(page) {
-    currentPage = page;
-    cards.forEach((card, i) => {
-      card.style.display = (i >= (page - 1) * CARDS_PER_PAGE && i < page * CARDS_PER_PAGE) ? '' : 'none';
-    });
-    document.querySelectorAll('.page-btn[data-page]').forEach(btn => {
-      btn.classList.toggle('active', parseInt(btn.dataset.page) === page);
-    });
-    document.getElementById('prevBtn').disabled = page === 1;
-    document.getElementById('nextBtn').disabled = page === totalPages;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  document.querySelectorAll('.page-btn[data-page]').forEach(btn => {
-    btn.addEventListener('click', () => showPage(parseInt(btn.dataset.page)));
-  });
-  document.getElementById('prevBtn').addEventListener('click', () => showPage(currentPage - 1));
-  document.getElementById('nextBtn').addEventListener('click', () => showPage(currentPage + 1));
-
-  showPage(1);
 </script>
 </body>
 </html>
