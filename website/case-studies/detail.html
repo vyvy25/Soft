@@ -43,7 +43,6 @@
       font-size: 17px;
       color: var(--text-secondary);
       padding-bottom: 28px;
-      border-bottom: 1px solid var(--border);
     }
     .cd-article__meta strong {
       color: var(--text-primary);
@@ -229,7 +228,7 @@
   <nav class="site-nav cd-hero__nav">
     <div class="nav-inner">
       <a href="../index.html" class="nav-logo">
-        <img src="../6-assets/logo/logo.svg" alt="MarketGrid" height="16">
+        <img src="../6-assets/logo/updated-logo.svg" alt="MarketGrid" height="16">
       </a>
       <ul class="nav-links">
         <li class="nav-item">
@@ -311,7 +310,7 @@
     <div class="sf-footer__top">
       <div class="sf-footer__brand">
         <a href="../index.html" class="sf-logo" aria-label="MarketGrid home">
-          <img src="../6-assets/logo/logo.svg" alt="MarketGrid" height="16">
+          <img src="../6-assets/logo/updated-logo.svg" alt="MarketGrid" height="16">
         </a>
         <p class="sf-footer__tagline">End-to-end software development<br>for growth-stage companies.</p>
       </div>
@@ -378,7 +377,7 @@ const CASE_STUDIES = {
     eyebrow: 'Finance & Fintech · Web Development · 2025',
     heroTitle: 'Payment platform rebuilt —\n3× faster transaction processing',
     heroSubtitle: 'A high-volume fintech company\'s legacy payment system was causing cart abandonment at checkout. We redesigned the architecture and rebuilt the frontend, cutting transaction latency from 4.2 s to 1.1 s.',
-    heroImg: 'https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?auto=format&fit=crop&w=1920&q=80',
+    heroImg: '../6-assets/img/card/cs-payment.webp',
     stats: [
       { label: 'Average transaction time', value: '1.1 s' },
       { label: 'Reduction in latency', value: '73%' },
@@ -388,7 +387,7 @@ const CASE_STUDIES = {
     client: 'FinCore — B2B fintech platform',
     timeline: '6 months',
     services: 'Web Development, Architecture Consulting',
-    coverImg: 'https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?auto=format&fit=crop&w=1200&q=80',
+    coverImg: '../6-assets/img/card/cs-payment.webp',
     coverAlt: 'Contactless payment in action',
     intro: 'FinCore, a B2B fintech platform processing over $200M in annual transactions, was losing customers at checkout. Their legacy payment stack — built over five years with multiple vendor additions — had accumulated enough latency that transaction completion times regularly exceeded 4 seconds.\n\nThe business had tried optimizing the existing system twice and hit a ceiling. The architecture was the problem. At 4.2 s average completion time, cart abandonment on their checkout page had reached 38% — double the industry baseline.\n\nThey needed a rebuild, not another patch. The constraint: their largest client contract required zero downtime during migration.',
     approach: 'We started with a three-week discovery and architecture review. The core problem was sequential processing — seven vendor API calls made in series, any one of which could timeout and cascade. We proposed a parallel processing architecture with local result caching for idempotent lookups.\n\nThe migration used a strangler-fig pattern: new flows ran alongside the existing system in shadow mode for four weeks, with real traffic replayed against both. When the error rates matched and latency was confirmed to be below our target, we switched over — with the existing system on standby for 48 hours.',
@@ -465,7 +464,7 @@ const CASE_STUDIES = {
     eyebrow: 'Enterprise · IT Consulting · 2024',
     heroTitle: 'Four legacy systems —\nconsolidated into one platform',
     heroSubtitle: 'A 600-person enterprise was running four separate systems that never shared data. We consolidated the stack into a single operational platform, cutting manual reconciliation work by 80% and eliminating 3 FTE of duplicate overhead.',
-    heroImg: 'https://images.unsplash.com/photo-1695668548342-c0c1ad479aee?auto=format&fit=crop&w=1920&q=80',
+    heroImg: '../6-assets/img/card/cs-legacy.jpg',
     stats: [
       { label: 'Systems consolidated', value: '4 → 1' },
       { label: 'Manual work reduction', value: '80%' },
@@ -475,7 +474,7 @@ const CASE_STUDIES = {
     client: 'OperaCore — Enterprise operations group',
     timeline: '9 months',
     services: 'IT Consulting, Web Development, Systems Integration',
-    coverImg: 'https://images.unsplash.com/photo-1695668548342-c0c1ad479aee?auto=format&fit=crop&w=1200&q=80',
+    coverImg: '../6-assets/img/card/cs-legacy.jpg',
     coverAlt: 'Enterprise operations platform',
     intro: 'OperaCore was a 600-person logistics group that had grown by acquisition. Four separate business units, each with its own operational software, were now nominally a single company — but their systems had never been connected. Every week, a team of six manually reconciled data across four systems to produce reports that were already 48 hours out of date by the time they were read.\n\nLeadership had tried to standardize on a single enterprise SaaS platform three years earlier. The migration had stalled after six months when it became clear the off-the-shelf solution couldn\'t support the group\'s operational nuances without significant customization.',
     approach: 'We spent the first six weeks embedded with the operations team before writing a single line of code. We mapped every workflow that touched more than one system, categorized them by frequency and business impact, and identified the 20% of integrations that accounted for 80% of the manual reconciliation work.\n\nRather than a big-bang replacement, we designed a phased consolidation. We built a shared data layer first — a central API that all four legacy systems could write to — then migrated workflows onto a new unified interface one business unit at a time. Each migration was reversible for 30 days post-cutover.',
@@ -668,7 +667,7 @@ const CASE_STUDIES = {
     eyebrow: 'SaaS · QA & Testing · 2024',
     heroTitle: 'QA pipeline automated —\nrelease cycle from 3 weeks to 4 days',
     heroSubtitle: 'A growing SaaS company\'s three-week manual QA cycle was blocking their ability to ship. We replaced it with a fully automated CI/CD-integrated test pipeline, cutting release time by 80% and reducing regression bugs by 70%.',
-    heroImg: 'https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&w=1920&q=80',
+    heroImg: '../6-assets/img/card/cs-qa-pipeline.webp',
     stats: [
       { label: 'Release cycle reduction', value: '80%' },
       { label: 'Regression bug reduction', value: '70%' },
@@ -678,7 +677,7 @@ const CASE_STUDIES = {
     client: 'Stackly — B2B project management SaaS',
     timeline: '8 weeks',
     services: 'QA & Testing, Test Automation, DevOps',
-    coverImg: 'https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&w=1200&q=80',
+    coverImg: '../6-assets/img/card/cs-qa-pipeline.webp',
     coverAlt: 'QA automation dashboard',
     intro: 'Stackly was shipping new features every two weeks — but each release required a three-week manual QA cycle before it could go to production. The result was a growing backlog: features that were code-complete sat waiting for QA to catch up, developers context-switched between old and new work, and the three-week lag between completion and production was causing friction with enterprise clients expecting faster turnaround.\n\nThe QA team of three was doing their best, but the test surface had grown faster than the team. Test plans were documented in spreadsheets and executed manually. Regression testing meant re-running the full suite after every change — a 40-hour exercise.',
     approach: 'We started with a coverage audit: what tests existed, what flows were covered, and where the highest regression risk lay. The spreadsheet test plan had 800 test cases, of which we assessed 620 as suitable for automation based on stability and execution cost.\n\nWe prioritized by risk rather than volume — the top 200 tests covering the highest-traffic flows went into automation first, giving the team immediate regression confidence before the full suite was complete. Automation was integrated into the existing GitHub Actions CI/CD pipeline from day one.',

@@ -2515,6 +2515,13 @@ input, textarea, select { font-family: inherit; }
   flex: 1;
   margin-bottom: 0;
 }
+.cs-case .svc-card__desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex: none;
+}
 .svc-card__list {
   display: flex;
   flex-direction: column;

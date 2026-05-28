@@ -74,7 +74,7 @@
 <nav class="site-nav">
   <div class="nav-inner">
     <a href="../index.html" class="nav-logo">
-      <img src="../6-assets/logo/logo.svg" alt="MarketGrid" height="16">
+      <img src="../6-assets/logo/updated-logo.svg" alt="MarketGrid" height="16">
     </a>
     <ul class="nav-links">
       <li class="nav-item">
@@ -299,34 +299,60 @@
       <span class="section-eyebrow">Our work</span>
       <h2 class="section-title">QA outcomes that mattered</h2>
     </div>
-    <div class="cards-grid-3">
-      <div class="svc-card">
-        <div class="svc-card__img"><img src="../6-assets/img/card/game.jpg" alt="Gaming app QA" loading="lazy"></div>
+            <div class="cards-grid-3" id="workGrid">
+      <div class="svc-card cs-case">
+        <div class="svc-card__img"><img src="../6-assets/img/card/cs-payment.webp" alt="Payment platform rebuild" loading="lazy"></div>
+        <div class="svc-card__body">
+          <h3 class="svc-card__title">Payment platform rebuilt — 3× faster</h3>
+          <p class="svc-card__desc">A fintech startup's slow checkout was losing customers at the final step. We rebuilt the full payment architecture from the ground up.</p>
+          <a href="../case-studies/detail.html?id=1" class="btn btn-secondary btn-sm" style="margin-top:20px;">Learn More</a>
+        </div>
+      </div>
+      <div class="svc-card cs-case">
+        <div class="svc-card__img"><img src="https://images.unsplash.com/photo-1600861194942-f883de0dfe96?auto=format&fit=crop&w=800&q=80" alt="Gaming platform QA" loading="lazy"></div>
         <div class="svc-card__body">
           <h3 class="svc-card__title">Zero critical bugs — 50,000 players at launch</h3>
-          <p class="svc-card__desc">A gaming operator faced a hard launch date with untested edge cases across five device targets. We embedded six weeks out, built a 1,400-case suite, and delivered zero critical defects at launch.</p>
-          <a href="../case-studies/detail.html" class="btn btn-secondary btn-sm" style="margin-top:20px;">Learn More</a>
+          <p class="svc-card__desc">A gaming operator needed certainty before a massive launch. We built a 1,400-case automated test suite and drove the defect escape rate to near zero.</p>
+          <a href="../case-studies/detail.html?id=2" class="btn btn-secondary btn-sm" style="margin-top:20px;">Learn More</a>
         </div>
       </div>
-      <div class="svc-card">
-        <div class="svc-card__img"><img src="../6-assets/img/card/payment-4.jpg" alt="Fintech payment QA" loading="lazy"></div>
+      <div class="svc-card cs-case">
+        <div class="svc-card__img"><img src="../6-assets/img/card/cs-legacy.jpg" alt="Legacy system migration" loading="lazy"></div>
         <div class="svc-card__body">
-          <h3 class="svc-card__title">Payment flow rebuilt — zero production defects</h3>
-          <p class="svc-card__desc">A fintech's vendor missed critical edge cases in authorization and refund flows. We rebuilt the test plan, added failure scenarios for declined cards, and delivered a zero-defect release on time.</p>
-          <a href="../case-studies/detail.html" class="btn btn-secondary btn-sm" style="margin-top:20px;">Learn More</a>
+          <h3 class="svc-card__title">4 legacy systems, one platform</h3>
+          <p class="svc-card__desc">Four legacy systems consolidated into a single platform, eliminating duplicate workflows and cutting operational overhead for a 600-person enterprise.</p>
+          <a href="../case-studies/detail.html?id=4" class="btn btn-secondary btn-sm" style="margin-top:20px;">Learn More</a>
         </div>
       </div>
-      <div class="svc-card">
-        <div class="svc-card__img"><img src="../6-assets/img/card/card-2.jpg" alt="Mobile regression automation" loading="lazy"></div>
+      <div class="svc-card cs-case">
+        <div class="svc-card__img"><img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80" alt="Architecture review" loading="lazy"></div>
         <div class="svc-card__body">
-          <h3 class="svc-card__title">Mobile regression cut — 85% faster releases</h3>
-          <p class="svc-card__desc">A B2B SaaS team spent four hours per release on manual mobile validation across two platforms. We automated 200 regression cases, integrated them into CI, and cut validation to under 40 minutes.</p>
-          <a href="../case-studies/detail.html" class="btn btn-secondary btn-sm" style="margin-top:20px;">Learn More</a>
+          <h3 class="svc-card__title">Architecture review that saved a $2M rewrite</h3>
+          <p class="svc-card__desc">An early architecture review identified a structural flaw before it became a full rebuild. The client shipped on time without changing their team or budget.</p>
+          <a href="../case-studies/detail.html?id=5" class="btn btn-secondary btn-sm" style="margin-top:20px;">Learn More</a>
+        </div>
+      </div>
+      <div class="svc-card cs-case">
+        <div class="svc-card__img"><img src="../6-assets/img/card/cs-qa-pipeline.webp" alt="QA pipeline automation" loading="lazy"></div>
+        <div class="svc-card__body">
+          <h3 class="svc-card__title">QA automated — 3 weeks to 4 days</h3>
+          <p class="svc-card__desc">A manual QA process replaced with a fully automated CI/CD-integrated test pipeline, cutting release risk and time to market simultaneously.</p>
+          <a href="../case-studies/detail.html?id=11" class="btn btn-secondary btn-sm" style="margin-top:20px;">Learn More</a>
         </div>
       </div>
     </div>
   </div>
 </section>
+<script>
+  (function () {
+    var cards = Array.from(document.querySelectorAll('#workGrid .svc-card'));
+    for (var i = cards.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = cards[i]; cards[i] = cards[j]; cards[j] = tmp;
+    }
+    cards.slice(3).forEach(function (c) { c.style.display = 'none'; });
+  })();
+</script>
 
 <!-- ── FOOTER ────────────────────────────────────────────────── -->
 <footer class="sf-footer">
@@ -334,7 +360,7 @@
     <div class="sf-footer__top">
       <div class="sf-footer__brand">
         <a href="../index.html" class="sf-logo" aria-label="MarketGrid home">
-          <img src="../6-assets/logo/logo.svg" alt="MarketGrid" height="16">
+          <img src="../6-assets/logo/updated-logo.svg" alt="MarketGrid" height="16">
         </a>
         <p class="sf-footer__tagline">End-to-end software development<br>for growth-stage companies.</p>
       </div>
