@@ -869,14 +869,16 @@ input, textarea, select { font-family: inherit; }
 .testi-image {
   border-radius: 12px;
   overflow: hidden;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 6;
   align-self: start;
 }
+.testi-img { display: none; }
+.testi-img.active { display: block; }
+
 .testi-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale(100%);
 }
 
 .testi-content { padding-top: 20px; position: relative; }
@@ -1447,15 +1449,52 @@ input, textarea, select { font-family: inherit; }
   transform: rotate(45deg);
 }
 
+.flow-nav { display: none; }
+
 @media (max-width: 768px) {
-  .flow-row,
-  .flow-row--rtl {
-    flex-direction: column;
-    align-items: center;
+  .flow {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 0;
+    padding-inline: 36px;
+    mask-image: linear-gradient(to right, black 96%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, black 96%, transparent 100%);
   }
-  .flow-connector { display: none; }
+  .flow::-webkit-scrollbar { display: none; }
+  .flow-row,
+  .flow-row--rtl { display: contents; }
   .flow-curve { display: none; }
-  .flow-step { padding-bottom: 32px; }
+  .flow-connector { display: none; }
+  .flow-step {
+    flex: 0 0 100%;
+    padding: 0;
+    scroll-snap-align: center;
+    transition: opacity 0.25s, filter 0.25s;
+  }
+  .flow-step.blur { opacity: 0.55; filter: blur(1px); }
+  .flow-carousel-wrapper { position: relative; }
+  .flow-nav {
+    display: flex;
+    position: absolute;
+    top: 14px;
+    z-index: 10;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  .flow-nav--prev { left: -4px; }
+  .flow-nav--next { right: -4px; }
+  .flow-nav.hidden { opacity: 0; pointer-events: none; }
 }
 
 /* ── 16. TECH STACK GRID ────────────────────────────────────── */
@@ -2891,6 +2930,16 @@ input, textarea, select { font-family: inherit; }
 
   /* Hero service cards */
   .svc-card__body { padding: 16px; }
+  .benefits-grid { gap: 16px; }
+
+  /* Section title sizing — a little bigger on mobile */
+  .section-title,
+  .who-heading,
+  .ind-heading,
+  .testi-heading,
+  .benefits-heading,
+  .bottom-cta-title,
+  .cta-banner h2 { font-size: 32px; }
 
   /* Who we are logo scroll */
   .who-logo { height: 46px; }
@@ -2904,22 +2953,23 @@ input, textarea, select { font-family: inherit; }
   .svc-slide__img { aspect-ratio: 16/9; }
 
   /* Card grids → single column */
-  .cards-grid-3 { grid-template-columns: 1fr; gap: 40px; }
+  .cards-grid-3 { grid-template-columns: 1fr; gap: 16px; }
   .cards-grid-2 { grid-template-columns: 1fr; }
-  .who-cards { grid-template-columns: 1fr; gap: 40px; }
+  .who-cards { grid-template-columns: 1fr; gap: 16px; }
   .who-card { padding: 16px; }
+  .who-card-title br { display: none; }
   .capabilities-grid { flex-direction: column; }
   .capabilities-grid .capability-item { flex: 0 0 100%; }
   .diff-grid { grid-template-columns: 1fr; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
-  .bg-accent .stats-grid { gap: 40px; }
+  .bg-accent .stats-grid { gap: 16px; }
   .stats-bg-img { background-position: calc(50% - 30px) 50%; }
   .testimonials-grid { grid-template-columns: 1fr; }
   .offices-grid { grid-template-columns: 1fr; }
 
   /* Industries homepage section */
   .ind-inner { grid-template-columns: 1fr; gap: 40px; }
-  .ind-grid { grid-template-columns: 1fr; gap: 40px; }
+  .ind-grid { grid-template-columns: 1fr; gap: 16px; }
   .ind-bg img { object-position: calc(50% + 420px) 50%; }
 
   /* Testimonials 2-col layout */
@@ -2930,7 +2980,7 @@ input, textarea, select { font-family: inherit; }
   .contact-split { grid-template-columns: 1fr; }
   .contact-split-left,
   .contact-split-right { padding: 32px 24px; }
-  .contact-split-right { border-left: none; border-top: 1px solid rgba(255, 255, 255, 0.08); }
+  .contact-split-right { display: none; }
 
   /* Case study detail */
   .cd-stats__grid { grid-template-columns: 1fr; border-left: none; }
@@ -2944,16 +2994,14 @@ input, textarea, select { font-family: inherit; }
   .cd-body__title { font-size: 24px; }
 
   /* Layout */
-  .sf-footer__top { grid-template-columns: 1fr; gap: 32px; }
+  .sf-footer__top { grid-template-columns: 1fr 1fr; gap: 32px 24px; }
   .sf-footer__tagline { display: none; }
-  .sf-footer__top > div:not(.sf-footer__brand) { display: none; }
-  .section-header-row { flex-direction: column; align-items: flex-start; }
+  .section-header-row { flex-direction: column; align-items: stretch; }
   .section-header { margin-bottom: 48px; }
   .form-row { grid-template-columns: 1fr; }
   .process-steps { grid-template-columns: 1fr; }
   .hero-actions { flex-direction: column; align-items: center; }
-  .cta-banner-actions { flex-direction: column; align-items: stretch; }
-  .cta-banner-actions .btn { justify-content: center; }
+  .cta-banner-actions { flex-direction: column; align-items: center; }
   .cta-banner { padding: 72px 0; }
   .trust-logos { gap: 28px; }
   .detail-content { grid-template-columns: 1fr; }
@@ -2974,12 +3022,18 @@ input, textarea, select { font-family: inherit; }
 
   /* Industry page */
   .industry-section { padding: 56px 0; }
-  .industry-img-col { width: 350px; max-width: 100%; height: 350px; margin: 32px auto; }
-  .industry-img-col img { min-height: 0; width: 100%; height: 100%; }
+  .industry-img-col {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+    margin: 24px 0;
+  }
+  .industry-img-col img { min-height: 0; width: 100%; height: 100%; border-radius: 12px; border: none; }
   .industry-section .section-eyebrow,
   .industry-section .section-title,
   .industry-section .section-subtitle { text-align: center; }
-  .industry-pain-list { gap: 40px; }
+  .industry-pain-list { gap: 16px; }
   .pain-item { padding: 16px; }
 
   /* Misc spacing */

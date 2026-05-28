@@ -61,7 +61,8 @@
       .hero { padding-top: calc(80px + var(--nav-h)); padding-bottom: 64px; }
       .svc-hero-grid { grid-template-columns: 1fr; }
       .tech-split { grid-template-columns: 1fr; gap: 40px; }
-      .tech-panel { grid-template-columns: repeat(2, 1fr); height: 260px; }
+      .tech-panel { grid-template-columns: repeat(4, 1fr); height: 320px; }
+      .tech-icon-card { padding: 12px; border-radius: 10px; }
     }
   </style>
 </head>
@@ -370,6 +371,54 @@
   const mobileNav = document.getElementById('mobileNav');
   hamburger.addEventListener('click', () => { const open = mobileNav.classList.toggle('open'); hamburger.classList.toggle('open', open); document.body.style.overflow = open ? 'hidden' : ''; });
   document.getElementById('mobileServicesToggle').addEventListener('click', function() { document.getElementById('mobileServicesBody').classList.toggle('open'); this.classList.toggle('open'); });
+  (function () {
+    document.querySelectorAll('.flow').forEach(function (flow) {
+      var wrapper = document.createElement('div');
+      wrapper.className = 'flow-carousel-wrapper';
+      flow.parentNode.insertBefore(wrapper, flow);
+      wrapper.appendChild(flow);
+      function mkBtn(dir) {
+        var path = dir === 'prev' ? 'M10 3L5 8l5 5' : 'M6 3l5 5-5 5';
+        var el = document.createElement('button');
+        el.className = 'flow-nav flow-nav--' + dir;
+        el.setAttribute('aria-label', dir === 'prev' ? 'Previous' : 'Next');
+        el.innerHTML = '<svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="' + path + '" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+        wrapper.appendChild(el);
+        return el;
+      }
+      var prev = mkBtn('prev'), next = mkBtn('next');
+      function stepW() { var s = flow.querySelector('.flow-step'); return s ? s.offsetWidth : 263; }
+      prev.addEventListener('click', function () { flow.scrollBy({ left: -stepW(), behavior: 'smooth' }); });
+      next.addEventListener('click', function () { flow.scrollBy({ left: stepW(), behavior: 'smooth' }); });
+      function updateBlur() {
+        var fRect = flow.getBoundingClientRect();
+        var fCenter = fRect.left + fRect.width / 2;
+        var steps = Array.from(flow.querySelectorAll('.flow-step'));
+        var active = null; var minDist = Infinity;
+        steps.forEach(function (s) {
+          var r = s.getBoundingClientRect();
+          var d = Math.abs(r.left + r.width / 2 - fCenter);
+          if (d < minDist) { minDist = d; active = s; }
+        });
+        steps.forEach(function (s) { s.classList.toggle('blur', s !== active); });
+      }
+      function sync() {
+        var atStart = flow.scrollLeft <= 0;
+        var atEnd = flow.scrollLeft >= flow.scrollWidth - flow.clientWidth - 1;
+        prev.classList.toggle('hidden', atStart);
+        next.classList.toggle('hidden', atEnd);
+        var m = atStart
+          ? 'linear-gradient(to right, black 96%, transparent 100%)'
+          : atEnd
+            ? 'linear-gradient(to right, transparent 0%, black 4%, black 100%)'
+            : 'linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%)';
+        flow.style.maskImage = m;
+        flow.style.webkitMaskImage = m;
+      }
+      flow.addEventListener('scroll', function () { updateBlur(); sync(); }, { passive: true });
+      updateBlur(); sync();
+    });
+  })();
 </script>
 </body>
 </html>

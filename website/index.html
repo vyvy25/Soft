@@ -104,7 +104,7 @@
       <!-- Card 1 -->
       <div class="svc-card">
         <div class="svc-card__img">
-          <img src="6-assets/img/card/card-1.jpg" alt="Web & Mobile App Development" loading="lazy">
+          <img src="6-assets/img/card/pin-hero.webp" alt="Web & Mobile App Development" loading="lazy">
         </div>
         <div class="svc-card__body">
           <h3 class="svc-card__title">Web &amp; Mobile App Development</h3>
@@ -120,7 +120,7 @@
       <!-- Card 2 -->
       <div class="svc-card">
         <div class="svc-card__img">
-          <img src="6-assets/img/card/card-2.jpg" alt="Quality Control & Software Testing" loading="lazy">
+          <img src="6-assets/img/card/pin-qa.webp" alt="Quality Control & Software Testing" loading="lazy" style="transform:scale(1.18);">
         </div>
         <div class="svc-card__body">
           <h3 class="svc-card__title">Quality Control &amp;<br>Software Testing</h3>
@@ -136,7 +136,7 @@
       <!-- Card 3 -->
       <div class="svc-card">
         <div class="svc-card__img">
-          <img src="6-assets/img/card/card-3.jpg" alt="IT Consulting" loading="lazy">
+          <img src="6-assets/img/card/pin-consulting.jpg" alt="IT Consulting" loading="lazy" style="filter:brightness(1.35) contrast(0.9);">
         </div>
         <div class="svc-card__body">
           <h3 class="svc-card__title">IT Consulting &amp;<br>Technology Strategy</h3>
@@ -382,7 +382,9 @@
     <div class="testi-layout">
 
       <div class="testi-image">
-        <img src="6-assets/img/card/teamwork.jpg" alt="MarketGrid team">
+        <img src="6-assets/img/card/pin-testi-1.webp" alt="Lisa Thompson" class="testi-img active">
+        <img src="6-assets/img/card/pin-testi-2.jpg" alt="Marcus Chen" class="testi-img">
+        <img src="6-assets/img/card/pin-testi-3.webp" alt="Sarah Williams" class="testi-img">
       </div>
 
       <div class="testi-content">
@@ -517,14 +519,17 @@
   // Customer testimonials slider
   (function () {
     const slides = document.querySelectorAll('.testi-slide');
+    const imgs   = document.querySelectorAll('.testi-img');
     const prev = document.getElementById('testiPrev');
     const next = document.getElementById('testiNext');
     if (!slides.length || !prev || !next) return;
     let idx = 0;
     function show(i) {
       slides[idx].classList.remove('active');
+      if (imgs[idx]) imgs[idx].classList.remove('active');
       idx = (i + slides.length) % slides.length;
       slides[idx].classList.add('active');
+      if (imgs[idx]) imgs[idx].classList.add('active');
     }
     prev.addEventListener('click', () => show(idx - 1));
     next.addEventListener('click', () => show(idx + 1));

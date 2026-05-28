@@ -25,6 +25,16 @@
       transform: translateX(-50%);
       filter: blur(120px);
     }
+    @media (max-width: 768px) {
+      .cta-banner::before {
+        background: radial-gradient(ellipse,
+          rgba(255, 75, 46, 0.10) 0%,
+          rgba(255, 75, 46, 0.05) 45%,
+          transparent 70%
+        );
+      }
+      .cta-banner-actions { flex-direction: row; justify-content: center; }
+    }
   </style>
 </head>
 <body class="page-glow">
@@ -92,7 +102,7 @@
       <h2 class="section-title">Built for regulated finance</h2>
       <p class="section-subtitle" style="margin-bottom:32px;">Security, compliance, and performance. Built for environments where failure isn't an option.</p>
       <div class="industry-img-col">
-        <img src="https://images.unsplash.com/photo-1737442528819-5526652236e8?w=600&h=720&auto=format&fit=crop&q=80" alt="Fintech trading platform" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1649359569078-c445b3c6a116?w=600&h=720&auto=format&fit=crop&q=80" alt="Fintech trading platform" loading="lazy">
       </div>
       <div class="industry-pain-list">
         <div class="pain-item">
@@ -120,7 +130,7 @@
       <h2 class="section-title">Platforms built for scale</h2>
       <p class="section-subtitle" style="margin-bottom:32px;">Concurrency, cross-platform, real-money flows — verified before launch, not after.</p>
       <div class="industry-img-col">
-        <img src="6-assets/img/card/game.jpg" alt="Gaming platform" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1607853202273-797f1c22a38e?w=600&h=720&auto=format&fit=crop&q=80" alt="Gaming platform" loading="lazy">
       </div>
       <div class="industry-pain-list">
         <div class="pain-item">

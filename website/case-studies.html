@@ -26,6 +26,15 @@
       transform: translateX(-50%);
       filter: blur(120px);
     }
+    @media (max-width: 768px) {
+      .cta-banner::before {
+        background: radial-gradient(ellipse,
+          rgba(255, 75, 46, 0.10) 0%,
+          rgba(255, 75, 46, 0.05) 45%,
+          transparent 70%
+        );
+      }
+    }
     .pagination {
       display: flex;
       align-items: center;
