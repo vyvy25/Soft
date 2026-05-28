@@ -2931,6 +2931,8 @@ input, textarea, select { font-family: inherit; }
   .nav-links, .nav-cta { display: none; }
   .hamburger { display: flex; }
 
+  .testi-image { display: none; }
+
   .hero { padding: 80px 0 !important; min-height: 0; }
   .hero-subtitle { margin-bottom: 24px; }
   .section { padding: 72px 0; }
