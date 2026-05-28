@@ -88,25 +88,32 @@
 
       <!-- Left: form -->
       <div class="contact-split-left">
+        <h2 style="font-size:30px;font-weight:600;color:#fff;line-height:1.2;letter-spacing:-0.02em;margin-bottom:16px;">Get in touch</h2>
+        <p style="font-size:16px;color:#ffffff;line-height:1.65;margin-bottom:36px;">Tell us about your project and we'll get back to you within one business day with a clear, no-obligation next step.</p>
         <form id="contactForm" novalidate>
           <div class="form-row">
             <div class="form-group">
-              <input class="form-input" type="text" id="firstName" name="firstName" placeholder="First Name" required autocomplete="given-name">
+              <input class="form-input" type="text" id="firstName" name="firstName" placeholder="First Name" autocomplete="given-name">
+              <span class="form-error" id="err-firstName"></span>
             </div>
             <div class="form-group">
-              <input class="form-input" type="text" id="lastName" name="lastName" placeholder="Last Name" required autocomplete="family-name">
+              <input class="form-input" type="text" id="lastName" name="lastName" placeholder="Last Name" autocomplete="family-name">
+              <span class="form-error" id="err-lastName"></span>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
               <input class="form-input" type="tel" id="phone" name="phone" placeholder="Phone Number" autocomplete="tel">
+              <span class="form-error" id="err-phone"></span>
             </div>
             <div class="form-group">
-              <input class="form-input" type="email" id="email" name="email" placeholder="Email" required autocomplete="email">
+              <input class="form-input" type="email" id="email" name="email" placeholder="Email" autocomplete="email">
+              <span class="form-error" id="err-email"></span>
             </div>
           </div>
           <div class="form-group">
-            <textarea class="form-textarea" id="message" name="message" placeholder="Leave your message..." required></textarea>
+            <textarea class="form-textarea" id="message" name="message" placeholder="Leave your message..."></textarea>
+            <span class="form-error" id="err-message"></span>
           </div>
           <button type="submit" class="btn btn-primary btn-sm" style="width:100%;justify-content:center;">Submit</button>
         </form>
@@ -118,7 +125,6 @@
 
       <!-- Right: info panel -->
       <div class="contact-split-right">
-        <p class="contact-panel-eyebrow">MarketGrid LLC</p>
         <h2 class="contact-panel-title">Let's build something remarkable.</h2>
         <p class="contact-panel-desc">We review every submission personally and come back with an honest scope, timeline, and fit assessment — no sales scripts.</p>
         <div class="contact-panel-items">
@@ -151,11 +157,11 @@
           </div>
           <div class="contact-panel-item">
             <div class="contact-panel-item-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V19a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3 4.18 2 2 0 0 1 5 2h2.09a2 2 0 0 1 2 1.72c.12.96.36 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91A16 16 0 0 0 14.09 15.91l1.27-1.27a2 2 0 0 1 2.11-.45c.91.36 1.85.6 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             </div>
             <div>
               <p class="contact-panel-item-label">Direct contact</p>
-              <p class="contact-panel-item-val">hello@marketgrid.io</p>
+              <p class="contact-panel-item-val">16192 Coastal Highway, Lewes, Delaware 19958</p>
             </div>
           </div>
         </div>
@@ -211,10 +217,41 @@
     accToggle.classList.toggle('open');
   });
 
-  document.getElementById('contactForm').addEventListener('submit', function(e) {
+  const form = document.getElementById('contactForm');
+
+  function showError(id, msg) {
+    const el = document.getElementById('err-' + id);
+    if (el) { el.textContent = msg; el.style.display = msg ? 'block' : 'none'; }
+    const input = document.getElementById(id);
+    if (input) input.classList.toggle('input-error', !!msg);
+  }
+
+  function clearErrors() {
+    ['firstName','lastName','phone','email','message'].forEach(function(id) { showError(id, ''); });
+  }
+
+  form.addEventListener('submit', function(e) {
     e.preventDefault();
-    this.style.display = 'none';
-    document.getElementById('formSuccess').style.display = 'block';
+    clearErrors();
+    var valid = true;
+
+    var firstName = document.getElementById('firstName').value.trim();
+    var lastName  = document.getElementById('lastName').value.trim();
+    var phone     = document.getElementById('phone').value.trim();
+    var email     = document.getElementById('email').value.trim();
+    var message   = document.getElementById('message').value.trim();
+
+    if (!firstName) { showError('firstName', 'First name is required.'); valid = false; }
+    if (!lastName)  { showError('lastName',  'Last name is required.');  valid = false; }
+    if (!phone)     { showError('phone',     'Phone number is required.'); valid = false; }
+    if (!email)     { showError('email', 'Email is required.'); valid = false; }
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showError('email', 'Please enter a valid email.'); valid = false; }
+    if (!message)   { showError('message', 'Please leave a message.'); valid = false; }
+
+    if (valid) {
+      form.style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    }
   });
 </script>
 </body>
